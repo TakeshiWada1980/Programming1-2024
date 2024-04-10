@@ -91,10 +91,9 @@ class="toc-section-number">3.3</span> 1000～2000時間の差はなに?</a></li>
 <li><a href="#教員としての願い" id="toc-教員としての願い"><span
 class="toc-section-number">3.4</span> 教員としての願い</a></li>
 </ul></li>
-<li><a href="#python開発実行環境-google-colab."
-id="toc-python開発実行環境-google-colab."><span
-class="toc-section-number">4</span> Python開発・実行環境: Google
-Colab.</a>
+<li><a href="#python実行開発環境-google-colab."
+id="toc-python実行開発環境-google-colab."><span
+class="toc-section-number">4</span> Python実行開発環境 Google Colab.</a>
 <ul>
 <li><a href="#ノートブックの新規作成"
 id="toc-ノートブックの新規作成"><span
@@ -157,11 +156,14 @@ class="toc-section-number">6</span> 宿題</a></li>
       <li>3年 後期 (学修単位) <strong>プログラミング3</strong>
       (ウェブ系開発)
       <ul>
-      <li>フロントエンド (JavaScript/HTML/CSS)・バックエンド
-      (検討中・選定中)</li>
+      <li>バックエンド Django (Python) + フロントエンド React
+      (JavaScript/HTML/CSS)</li>
       </ul></li>
-      <li>3年 半期 (学修単位)
-      <strong>アルゴリズムとデータ構造1</strong></li>
+      <li>3年 半期 (学修単位) <strong>アルゴリズムとデータ構造1</strong>
+      <ul>
+      <li>教科書 <a
+      href="https://www.kspub.co.jp/book/detail/5128442.html">問題解決力を鍛える！アルゴリズムとデータ構造</a></li>
+      </ul></li>
       <li>4年 半期 (学修単位)
       <strong>アルゴリズムとデータ構造2</strong></li>
       <li>4年 半期 (学修単位) <strong>データベース工学</strong></li>
@@ -176,26 +178,29 @@ class="toc-section-number">6</span> 宿題</a></li>
       </ul>
       <p>興味関心のある科目は、<span
       class="masked">授業の開講を待つことなくウェブや書籍を活用</span>
-      して学んでください。また、興味があるものの取っ掛かりがない場合は、知能情報コースの先生に相談してアドバイスをもらいましょう
-      (
-      どの先生に相談すれば分からないときは、<strong>まずは担任に相談</strong>してみましょう
-      )。</p>
+      して学んでください。また、興味があるものの「取っ掛かり」がない場合は、知能情報コースの先生に相談してアドバイスをもらいましょう。どの先生に相談すれば分からないときは、<strong>まずは和田か土井先生
+      (主任) に相談</strong>してみましょう。</p>
       <h2 data-number="1.3" id="授業概要"><span
       class="header-section-number">1.3</span> 授業概要</h2>
       <p><strong><em>プログラミング</em></strong>
       は<strong>ICTエンジニア</strong>（特に <span
       class="masked">ソフトウェアエンジニア</span>
-      ）にとって<strong>最重要スキルのひとつ</strong>に位置づけられます。また、プログラミングは理工学分野の<strong>学び</strong>（情報工学系科目をはじめ数学や物理などの学習）においても理解深化のための強力なツールにもなります。</p>
-      <p>本科目では、その <strong><em>導入教育</em></strong>
-      として、主に <strong>Python言語</strong>
+      ）にとって<strong>最重要スキルのひとつ</strong>に位置づけられます。また、プログラミングは理工学分野の<strong>学び</strong>（情報工学系科目をはじめ数学や物理などの学習）においても
+      <span class="masked">理解深化のための強力な</span>
+      ツールとして役立ちます。</p>
+      <p>本科目では、そのような位置付けである
+      <strong><em>プログラミングの導入教育</em></strong> として、主に
+      <strong>Python言語</strong>
       を使ってプログラムに関する概念や用語、設計、実装、デバックについて
       <span class="masked">経験的に習得すること</span>
       を目指します。</p>
       <p>なお、<strong>Python言語</strong>
-      の特長や特性を知ってもらうために、その他のプログラミング言語（
+      の特徴や長所・短所特性を知ってもらうために、その他のプログラミング言語（
       <span class="masked">C言語やJavaScriptなど</span>
       ）についても簡単に体験 (実装)
-      してもらうこともあります。また、実装演習では<strong>高専1・2年の数学や物理を題材としたもの</strong>も取り上げ、実装力の向上と同時に数学や物理についても理解を深めてもらいます。</p>
+      してもらうこともあります。また、実装演習では
+      <strong>高専1・2年の数学や物理を題材としたもの</strong>
+      も取り上げ、実装力の向上と同時に数学や物理についても理解を深めてもらいます。</p>
       <h2 data-number="1.4" id="科目の達成目標"><span
       class="header-section-number">1.4</span> 科目の達成目標</h2>
       <p><strong>達成目標</strong>
@@ -213,6 +218,11 @@ class="toc-section-number">6</span> 宿題</a></li>
       に有用な小規模アプリを開発できる。</li>
       <li>エラーや意図せぬ結果が生じたとき、その原因特定と解決に向けて適切なアプローチができる。</li>
       </ol>
+      <p>また、就職や進学に使えるようなポートフォリオ
+      (スキルセットや制作物を示すための集合体・作品集)
+      も作成・公開してもらいます。昨年度の学生のポートフォリオは <a
+      href="https://omunet-my.sharepoint.com/:t:/g/personal/z21707r_omu_ac_jp/ES9332xzpPlAtHeuaMkpaU0BT6KiuHJy9C9MxMO8cP4xXQ?e=5lLFOt">こちら</a>
+      配置しています（在校生のみ閲覧可）。</p>
       <h2 data-number="1.5" id="成績評価法"><span
       class="header-section-number">1.5</span> 成績評価法</h2>
       <p><strong>総合成績</strong>（年度末の最終成績）は、次のように評価します。</p>
@@ -238,7 +248,8 @@ class="toc-section-number">6</span> 宿題</a></li>
       class="masked">コンピュータ (CPU)
       が直接的に実行可能な段階（読み込みできる状態）になったプログラム</span>
       のことを「<strong>実行ファイル</strong>」「ソフトウェア」「アプリ（アプリケーションの略）」「<strong>バイナリファイル</strong>」「EXEファイル（エグゼファイル）」のように表現します。</p>
-      <p>単に「<strong>プログラム</strong>」といっても<strong>2通り意味合いがあるので注意</strong>してください（どちらを指すかは文脈から判断してください）。</p>
+      <p>単に「<strong>プログラム</strong>」といっても<strong>二通り意味合いがあるので注意</strong>してください。どちらを指すかは文脈
+      (コンテキスト) から判断してください。</p>
       <p>なお、プログラミング言語によって記述されたソースコード（＝テキストファイル）から、機械語（2進数）で記述される実行ファイルを生成する操作を
       <strong><em>コンパイル（Compile）</em></strong> または
       <strong><em>ビルド（Build）</em></strong>
@@ -248,47 +259,45 @@ class="toc-section-number">6</span> 宿題</a></li>
       <p>厳密には「コンパイル」と「リンク」の2つの作業を総称して「ビルド」と表現します。詳しくは「コンパイル
       ビルド 違い」などで検索してください。</p>
       </div>
-      <p><strong>プログラムは</strong>、コンピュータを相手に最も「効率良く」かつ「齟齬なく」<span
+      <p><strong>プログラムは</strong>、人間がコンピュータを相手に最も「効率良く」かつ「齟齬なく正確に」<span
       class="masked">コミュニケーション</span>
       をとるための手段・媒体とも言えます。</p>
       <h2 data-number="2.2" id="プログラミング-programming"><span
       class="header-section-number">2.2</span> プログラミング
       (Programming)</h2>
-      <p><strong>プログラミング</strong>とは、「ソースコード」を作成する行為や作業を指します。ほぼ同じような意味で
+      <p><strong>プログラミング</strong>とは「ソースコード」を作成・記述する行為や作業を指します。ほぼ同じような意味で
       <span
-      class="masked">「コーディング」</span>「<strong>実装</strong>」「<strong>開発</strong>」という言葉が使われます（厳密には、それぞれニュアンスは異なります。興味がある人はネットで検索してみてください）。</p>
+      class="masked">「コーディング」</span>「<strong>実装</strong>」「<strong>開発</strong>」という言葉が使われます。厳密には、それぞれニュアンスは異なります。興味がある人はネットで検索してみてください。</p>
       <h2 data-number="2.3"
       id="プログラミングスキル-programming-skill"><span
       class="header-section-number">2.3</span> プログラミングスキル
       (Programming Skill)</h2>
-      <p>ラフな表現になりますが、</p>
-      <ul>
-      <li>「<strong>こんなことが（気軽に効率的に）できたらいいよね</strong>
+      <p>ラフな表現になりますが、次のような能力がプログラミングスキルといえるのではないかと思います。</p>
+      <blockquote>
+      <p>「<strong>こんなことが（気軽に効率的に）できたらいいよね</strong>
       」と思うことをデジタル技術を使って実現するために、<strong>どんな構成や手順が必要か</strong>
-      をデジタル技術の特性や制約を踏まえながらロジカルに設計/検討し、実際に<strong>アプリやウェブサービス</strong>として実装してリリースできる能力</li>
-      </ul>
-      <p>がプログラミングスキルといえるのではないかと思います。</p>
+      をデジタル技術の特性や制約を踏まえながらロジカルに設計/検討し、実際に<strong>アプリやウェブサービス</strong>を実装してリリースできる能力</p>
+      </blockquote>
       <h1 data-number="3" id="プログラミング学習をはじめる前に"><span
       class="header-section-number">3</span>
       プログラミング学習をはじめる前に…</h1>
-      <p>これから、皆さんはプログラミングの
-      <strong>未経験者（未学習者）</strong> から <strong>初心者</strong>
-      に向かって「学び」をしていきます。それに先立ち、ぜひ視聴して欲しい動画があります。以下、「エンジニアチャンネル」というYouTubeチャンネルの動画になります。</p>
-      <ul>
-      <li><strong>プログラミングを始める前に知りたかったことトップ３</strong>
-      <ul>
-      <li>https://www.youtube.com/watch?v=8XwG81rHRhU
+      <p>これから、皆さんは
+      <strong>プログラミング未経験者（未学習者）</strong> から
+      <strong>プログラミング初心者</strong>
+      に向かって「学び」を深めていきます。それに先立ち、ぜひ視聴して欲しい動画があります。以下、「エンジニアチャンネル」というYouTubeチャンネルの動画になります。</p>
       <ul>
       <li><a
-      href="https://www.google.com/search?q=%E3%83%9F%E3%83%BC%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%81%A8%E3%81%AF">ミートアップとは</a></li>
-      <li><a
-      href="https://www.google.com/search?q=%E3%82%82%E3%81%8F%E3%82%82%E3%81%8F%E4%BC%9A%E3%81%A8%E3%81%AF">もくもく会とは</a></li>
-      </ul></li>
-      </ul></li>
-      <li><strong>【検証】現役プログラマーは30万円の案件を何時間で出来るのか？</strong>
+      href="https://www.youtube.com/watch?v=8XwG81rHRhU">プログラミングを始める前に知りたかったことトップ３</a>
+      (9:28)
       <ul>
-      <li>https://www.youtube.com/watch?v=rt_X6n9oWa4</li>
+      <li><a
+      href="https://www.google.com/search?q=ミートアップとは">ミートアップとは</a>
+      <a
+      href="https://www.google.com/search?q=もくもく会とは">もくもく会とは</a></li>
       </ul></li>
+      <li><a
+      href="https://www.youtube.com/watch?v=rt_X6n9oWa4">【検証】現役プログラマーは30万円の案件を何時間で出来るのか？</a>
+      (7:27)</li>
       </ul>
       <h2 data-number="3.1"
       id="プログラミングをものにするために投資すべき時間"><span
@@ -296,31 +305,31 @@ class="toc-section-number">6</span> 宿題</a></li>
       プログラミングをものにするために投資すべき時間</h2>
       <ul>
       <li>プログラミングを身に付けるために特別な才能や適性は <span
-      class="masked">必要ない</span> 。
+      class="masked">必要ありません</span> 。
       <ul>
       <li>「自分はプログラミングに向いていない」「全然できるようにならない」と思っても、悩んでも、それは単純に
       <span class="masked">学習時間の不足</span>
-      が原因。ほとんどの人が経験すること。</li>
-      <li>プロのエンジニアでも、過去を振り返れば、1日10時間超、本気の勉強を半年続けるなかで何度も挫折してしまいそうになっている。和田も高専時代
+      が原因です。ほとんどの人が経験することです。</li>
+      <li>プロのエンジニアでも、過去を振り返れば、1日10時間超、本気の勉強を半年続けるなかで何度も挫折してしまいそうになっています。和田も高専時代
       (<span class="citation"
       data-cites="電気工学科">@電気工学科</span>)
-      にプログラミング学習に挫折して遠回りをしている。</li>
+      にプログラミング学習に挫折して遠回りをしてします。</li>
       </ul></li>
       <li><strong>ジュニアレベルのプログラマ</strong>（=ソフトウェアエンジニアのタマゴとして就職ができるレベル）に到達するために必要な学習時間は
-      <span class="masked">1,000～2,000</span> 時間と言われている。
+      <span class="masked">1,000～2,000</span> 時間と言われています。
       <ul>
       <li>そもそも、プログラミング<strong>超初心者</strong>が、<strong>初心者</strong>になるまでには
-      <span class="masked">約250時間</span>
-      の学習（経験）が必要と言われている。</li>
+      <span class="masked">約250時間</span> の学習（経験）が必要。</li>
       <li>膨大な投資であるが <span
       class="masked">そのリターンは一生のなかで継続的に得られる</span>
       。</li>
       <li>高専在学中でもプログラミングスキルを活かした <span
-      class="masked">アルバイト</span> ができる。</li>
+      class="masked">アルバイト</span> が可能。</li>
       </ul></li>
       </ul>
       <div class="note type-tips">
       <p><strong>資格取得に必要とされる学習時間の目安</strong></p>
+      <p>知能情報コースのプログラミングだけが、相応の学習時間を要求されるわけではありません。</p>
       <ul>
       <li>参考:
       <strong>司法試験合格（弁護士）</strong>に必要な学習時間は <span
@@ -333,16 +342,17 @@ class="toc-section-number">6</span> 宿題</a></li>
       </ul>
       </div>
       <ul>
-      <li>一説には、独学によるプログラミング学習は、<span
-      class="masked">挫折率9割</span> とも言われている。</li>
+      <li>一説には、独学によるプログラミング学習は、挫折率が <span
+      class="masked">9割</span> とも言われています。</li>
       <li>挫折を回避し、<strong>プログラミングを楽しく意欲をもって学ぶためには</strong>、(<strong>自分が</strong>)
-      夢中になれるプロジェクト、没頭できるプロジェクトに飛び込んでみること、環境・仕組み（仕掛け）・枠組みのなかに身を置くこと。
+      夢中になれるプロジェクト、没頭できるプロジェクトに飛び込んでみること、環境・仕組み（仕掛け）・枠組みのなかに身を置くことが重要です。
       <ul>
       <li>学習の初期 (少なくとも <span
       class="masked">学習を初めて数か月から１年</span> )
-      は、とても過酷な期間がつづく。目的 (つくりたいアプリやサービス)
-      を設定せずに、仲間もつくらずに、プロジェクトにも参加せずに取り組むと特に挫折しやすい。</li>
-      <li>目的は、ゲーム開発でも、スマホアプリ開発でも、ウェブサービス開発でも、なんでもOK。<strong>自分が「つくりたい」と思うものを定めて</strong>、それを意識に置きながら学びを進めると学習効果がとても高い。</li>
+      は、とても過酷な期間がつづきます。目的
+      (つくりたいアプリやサービス)
+      を設定せずに、仲間もつくらずに、プロジェクトにも参加せずに取り組むと特に挫折しやすです。</li>
+      <li>目的は、ゲーム開発でも、スマホアプリ開発でも、ウェブサービス開発でも、なんでもOKです。<strong>自分が「つくりたい」と思うものを定めて</strong>、それを意識に置きながら学びを進めると学習効果がとても高いです。</li>
       </ul></li>
       </ul>
       <h2 data-number="3.2" id="学校の授業はゲームで言えばxxxx"><span
@@ -356,8 +366,8 @@ class="toc-section-number">6</span> 宿題</a></li>
       <p>事実、この授業は<strong>1回約90分</strong>の通年授業（<strong>約30回</strong>の講義）ですが、ここでの累積学習時間は</p>
       <p><span class="math display">\[ 90 \times 30 = 2,700 \mathrm{min}
       = 45 \mathrm{hr} \]</span></p>
-      <p>です。たとえ宿題で毎回90分を費やしても、90時間です。授業のなかだけの取組みでは、超初心者が初心者になるたための250時間の半分にも到達しない・・・。</p>
-      <p>残念ながら、授業は亀の歩み。独学すれば<strong>休日の午前中に収まる学習内容</strong>でも、<span
+      <p>です。たとえ1回の授業につき宿題で90分を学びにあてたとしても総時間は90時間にしかなりません。授業のなかだけの取組みでは、「プログラミング超初心者」が「プログラミング初心者」になるために必要な250時間の半分にも到達しないのです。</p>
+      <p>残念ながら、マス教育の宿命である一斉講義は「亀の歩み」です。独学すれば<strong>休日の午前中に収まる学習内容</strong>でも、<span
       class="masked">授業では3週間かけて
       (1週間の間隔をあけて90分を3回で)
       </span>提供することになります。特に、1週間も学習間隔があけば、覚えたことも忘れてしまうので、その復習も授業中でやっているとすれば、<strong>休日午前で終わる内容を、授業では4週間から5週間かけて提供</strong>するのかもしれません。</p>
@@ -369,37 +379,41 @@ class="toc-section-number">6</span> 宿題</a></li>
       </ul>
       <h2 data-number="3.4" id="教員としての願い"><span
       class="header-section-number">3.4</span> 教員としての願い</h2>
-      <p>和田が理想と考える高専生は
-      <strong><em>自己効力感を持って、仲間と共に、創造的なモノづくり活動を楽しめる高専生</em></strong>
+      <p>和田が理想と考える高専生とは
+      <strong><em>自己効力感を持って、仲間と共に、創造的なモノづくり活動を楽しめる学生</em></strong>
       です。</p>
-      <p>砕けた言い方をすれば、<strong>自分なりの武器と自信を持って、仲間と一緒に何かクリエイティブな「モノづくり（アウトプット活動）」に取り組むことが「楽しい」「充実している」と思える高専生</strong>
+      <p>砕けた言い方をすれば <span
+      class="masked">自分なりの武器と自信を持って、仲間と一緒に何かクリエイティブな「モノづくり（アウトプット活動）」に取り組むことが「楽しい」「充実している」と思える学生</span>
       です。</p>
-      <p>そのためのチュートリアル（導入やきっかけ）になるような授業を提供したいと思っています。</p>
-      <h1 data-number="4" id="python開発実行環境-google-colab."><span
-      class="header-section-number">4</span> Python開発・実行環境:
-      Google Colab.</h1>
-      <p>これからしばらくは、Pythonの開発・実行環境として
+      <p>この授業では、そのためのチュートリアル（導入やきっかけ）になるような内容を提供したいと思っています。</p>
+      <h1 data-number="4" id="python実行開発環境-google-colab."><span
+      class="header-section-number">4</span> Python実行開発環境 Google
+      Colab.</h1>
+      <p>これからしばらくは、Pythonの実行開発環境として
       <strong><em>GoogleColab.</em></strong>（グーグルコラボ）という<strong>クラウドサービス</strong>を利用していきます。GoogleColab.はネットの接続が必須ですが、ウェブブラウザだけで簡単にプログラミングをはじめることができます。</p>
       <ul>
       <li><a
       href="https://colab.research.google.com/?hl=ja">GoogleColaboratory</a></li>
       </ul>
-      <p>また、以降の授業のどこかのタイミングで、ローカルPCにも
-      Python実行環境を構築し、<span class="masked">VSCode
-      (+各種拡張機能) </span> を IDE
+      <p>また、6月下旬ごろには、ローカルPCにも
+      Python実行開発環境を構築し、<span class="masked">VSCode
+      (+各種拡張機能) </span> を IDE ( Integrated Development
+      Environment)
       として利用して開発するスタイルに移行します。さらに、皆さんが想定以上に意欲的に取り組んでくれれば、<span
       class="masked">Docker</span>
-      を活用した開発・実行環境の構築なども体験させたい、と思っています。</p>
+      を活用した開発・実行環境の構築なども体験させたい、と思っています
+      (前年度は Docker には到達しませんでした)。</p>
       <div class="note type-tips">
-      <p><strong>Tips：GoogleColab.が有料化やサービス終了してしまったら?</strong></p>
+      <p><strong>Tips：もし、GoogleColab.が有料化されたり、サービス終了してしまったら?</strong></p>
       <p>ローカルPCに
       <strong>JupyterNotebook</strong>（ジュピターノートブック／ジュパイターノートブック）という環境を構築すれば、GoogleColab.
       とほぼ同様の開発ができます。そもそも、JupyterNotebook を Google
       が独自拡張し、ウェブサービス（クラウド型）として提供したものが
       GoogleColab. です。</p>
       <p>仮に、GoogleColab.
-      のサービスが終了しても、それまでに開発したプログラムは
-      ローカルPCの JupyterNotebook に引き継ぐことができます。</p>
+      のサービスが終了しても、それまでに開発したプログラムはローカルPCの
+      JupyterNotebook に引き継ぐことができます。授業のなかでも
+      JupyterNotebook の環境構築を取り上げます。</p>
       <p>GoogleColab.についての詳しい情報（FAQ）は<a
       href="https://research.google.com/colaboratory/faq.html">こちら</a></p>
       </div>
@@ -423,14 +437,14 @@ class="toc-section-number">6</span> 宿題</a></li>
       テキストセルの追加と編集</h2>
       <ul>
       <li>箇条書き</li>
-      <li>文字の強調</li>
+      <li>文字の強調 <code>**文字**</code></li>
       </ul>
       <h2 data-number="4.4" id="ノートブックの保存と再開"><span
       class="header-section-number">4.4</span>
       ノートブックの保存と再開</h2>
       <ul>
-      <li>ノートブックのデフォルトの保存先は、Googleドライブの ‘Colab
-      Notebooks’ フォルダのなか。</li>
+      <li>ノートブックのデフォルトの保存先は、Googleドライブの
+      <code>Colab Notebooks</code> フォルダのなかになります。</li>
       </ul>
       <h1 data-number="5" id="文字列の扱いと出力"><span
       class="header-section-number">5</span> 文字列の扱いと出力</h1>
@@ -455,7 +469,7 @@ class="toc-section-number">6</span> 宿題</a></li>
       <ul>
       <li>標準出力 (Standard Output)</li>
       <li><code>print</code> 関数</li>
-      <li>シングルクォーテーションとダブルクォーテーション</li>
+      <li>「シングルクォーテーション」と「ダブルクォーテーション」</li>
       </ul>
       <div class="sourceCode" id="cb2"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
@@ -476,11 +490,8 @@ class="toc-section-number">6</span> 宿題</a></li>
       を準備しておいてください（授業中にアクセスできるようにしておいてください）。このアカウント（リポジトリ）は、インターンシップ、就職、進学において、皆さんの<strong><em>ポートフォリオ</em></strong>
       ( <span class="masked">取組み実績やスキルを示すための作品集</span>
       ) という位置づけになります。</p>
-      <p>そのため、<strong>ユーザーネームは慎重に設定</strong>してください
-      (1年次の実験実習で作成したアカウントを継続使用しても、新規に作成しても、個人使用しているものを利用してもOKです。ユーザーネームは変更可能ですが色々と面倒があるので、この機会に適切なものにしておきましょう)。</p>
-      <p>この授業で作成したプログラミングのほか、他の授業や実験実習で作成したものも、このGitHubアカウントのなかに蓄積していってもらいます
-      (少なくとも教員とクラスメイトには閲覧されるものになります)
-      。。</p>
+      <p>そのため、<strong>ユーザーネームは慎重に設定</strong>してください。1年次の実験実習で作成したアカウントを継続使用しても、新規に作成しても、個人使用しているものを利用してもOKです。ユーザーネームは変更可能ですが色々と面倒があるので、この機会に適切なものにしておきましょう。</p>
+      <p>この授業で作成したプログラミングのほか、他の授業や実験実習で作成したものも、このGitHubアカウントのなかに蓄積していってもらいます。少なくとも教員とクラスメイトには閲覧されるものになります。</p>
       <!-- ---------------------------------------- -->
     </main>
 
