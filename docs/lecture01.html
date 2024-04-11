@@ -119,8 +119,14 @@ class="toc-section-number">6.1</span> 文字の出力1</a></li>
 <li><a href="#文字の出力2" id="toc-文字の出力2"><span
 class="toc-section-number">6.2</span> 文字の出力2</a></li>
 </ul></li>
+<li><a href="#演習" id="toc-演習"><span
+class="toc-section-number">7</span> 演習</a>
+<ul>
+<li><a href="#参考" id="toc-参考"><span
+class="toc-section-number">7.1</span> 参考</a></li>
+</ul></li>
 <li><a href="#宿題" id="toc-宿題"><span
-class="toc-section-number">7</span> 宿題</a></li>
+class="toc-section-number">8</span> 宿題</a></li>
 </ul> 
         <!-- ---------------------------------------- -->
       </div>
@@ -447,6 +453,10 @@ class="toc-section-number">7</span> 宿題</a></li>
       <ul>
       <li><a
       href="https://colab.research.google.com/?hl=ja">GoogleColaboratory</a></li>
+      <li>ノートブックの名前は <code>PG1-第01回講義.ipynb</code>
+      としてください。拡張子は IPython Notebook の略であり、Interactive
+      Python NodeBook と覚えるとよいです。Interactive
+      は「対話的」という意味です。</li>
       </ul>
       <h2 data-number="5.2" id="コードセルの追加と編集実行"><span
       class="header-section-number">5.2</span>
@@ -474,7 +484,9 @@ class="toc-section-number">7</span> 宿題</a></li>
       class="header-section-number">6</span> 文字列の扱いと出力</h1>
       <h2 data-number="6.1" id="文字の出力1"><span
       class="header-section-number">6.1</span> 文字の出力1</h2>
-      <p>文字の出力。きっちり表現すると「<strong>文字列リテラルを標準出力に送る</strong>」という表現になります。</p>
+      <p>文字を画面出力するためには <code>print</code> 関数 (Function)
+      を使用します。厳密な表現をすると「<strong>文字列リテラルを標準出力に出力するためには、組込み関数の
+      print を使用します</strong>」という表現になります。</p>
       <div class="sourceCode" id="cb1"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="bu">print</span>(<span class="st">&#39;Hello World&#39;</span>)</span></code></pre></div>
@@ -508,8 +520,75 @@ class="toc-section-number">7</span> 宿題</a></li>
       <div class="sourceCode" id="cb5"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
 <span id="cb5-2"><a href="#cb5-2"></a><span class="bu">print</span>(<span class="st">&#39;</span><span class="ch">\U0001F923</span><span class="st">&#39;</span>)</span></code></pre></div>
-      <h1 data-number="7" id="宿題"><span
-      class="header-section-number">7</span> 宿題</h1>
+      <h1 data-number="7" id="演習"><span
+      class="header-section-number">7</span> 演習</h1>
+      <p>次のような文字列を出力するPythonプログラムを GoogleColab. 環境
+      (Jupyter環境)
+      で作成して、その動作について検証せよ。ただし、異なるアプローチによるプログラムを2つ以上作成すること。</p>
+      <pre><code>Pythonの世界へようこそ！
+Hello, World!
+これがあなたの最初のプログラム出力です。</code></pre>
+      <h2 data-number="7.1" id="参考"><span
+      class="header-section-number">7.1</span> 参考</h2>
+      <div class="sourceCode" id="cb7" data-caption="解答例1"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="bu">print</span>(<span class="st">&#39;Pythonの世界へようこそ！&#39;</span>)</span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="bu">print</span>(<span class="st">&#39;Hello, World!&#39;</span>)</span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="bu">print</span>(<span class="st">&#39;これがあなたの最初のプログラム出力です。&#39;</span>)</span></code></pre></div>
+      <div class="sourceCode" id="cb8" data-caption="解答例2"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="bu">print</span>(<span class="st">&#39;&#39;&#39;Pythonの世界へようこそ！</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="st">Hello, World!</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="st">これがあなたの最初のプログラム出力です。&#39;&#39;&#39;</span>)</span></code></pre></div>
+      <div class="sourceCode" id="cb9" data-caption="解答例3"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="bu">print</span>(<span class="st">&#39;Pythonの世界へようこそ！&#39;</span>,<span class="st">&#39;Hello, World!&#39;</span>,<span class="st">&#39;これがあなたの最初のプログラム出力です。&#39;</span>,sep<span class="op">=</span><span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span>)</span></code></pre></div>
+      <div class="sourceCode" id="cb10" data-caption="解答例4"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="bu">print</span>(<span class="st">&#39;Pythonの世界へようこそ！</span><span class="ch">\n</span><span class="st">Hello, World!</span><span class="ch">\n</span><span class="st">これがあなたの最初のプログラム出力です。&#39;</span>)</span></code></pre></div>
+      <div class="sourceCode" id="cb11" data-caption="解答例5"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="im">import</span> time</span>
+<span id="cb11-3"><a href="#cb11-3"></a>msg <span class="op">=</span> <span class="st">&#39;Pythonの世界へようこそ！</span><span class="ch">\n</span><span class="st">Hello, World!</span><span class="ch">\n</span><span class="st">これがあなたの最初のプログラム出力です。&#39;</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a><span class="cf">for</span> char <span class="kw">in</span> msg:</span>
+<span id="cb11-5"><a href="#cb11-5"></a>  <span class="bu">print</span>(char, end<span class="op">=</span><span class="st">&#39;&#39;</span>)</span>
+<span id="cb11-6"><a href="#cb11-6"></a>  time.sleep(<span class="fl">0.1</span>)</span>
+<span id="cb11-7"><a href="#cb11-7"></a><span class="bu">print</span>()</span></code></pre></div>
+      <div class="sourceCode" id="cb12" data-caption="解答例6"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="im">from</span> IPython.display <span class="im">import</span> display, HTML</span>
+<span id="cb12-3"><a href="#cb12-3"></a></span>
+<span id="cb12-4"><a href="#cb12-4"></a>html <span class="op">=</span> <span class="st">&#39;&#39;&#39;</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a><span class="st">&lt;style&gt;</span></span>
+<span id="cb12-6"><a href="#cb12-6"></a><span class="st">@keyframes fadeIn {</span></span>
+<span id="cb12-7"><a href="#cb12-7"></a><span class="st">  from { opacity: 0; }</span></span>
+<span id="cb12-8"><a href="#cb12-8"></a><span class="st">  to { opacity: 1; }</span></span>
+<span id="cb12-9"><a href="#cb12-9"></a><span class="st">}</span></span>
+<span id="cb12-10"><a href="#cb12-10"></a><span class="st">.fade-in {</span></span>
+<span id="cb12-11"><a href="#cb12-11"></a><span class="st">  animation: fadeIn 4s ease-in-out;</span></span>
+<span id="cb12-12"><a href="#cb12-12"></a><span class="st">}</span></span>
+<span id="cb12-13"><a href="#cb12-13"></a><span class="st">&lt;/style&gt;</span></span>
+<span id="cb12-14"><a href="#cb12-14"></a><span class="st">&lt;div id=&quot;animated-text&quot; style=&quot;background-color: black; color: white; padding: 10px; text-align: center; &quot;&gt;</span></span>
+<span id="cb12-15"><a href="#cb12-15"></a><span class="st">  &lt;p class=&quot;fade-in&quot;&gt;Pythonの世界へようこそ！&lt;br&gt;Hello, World!&lt;br&gt;これがあなたの最初のプログラム出力です。&lt;/p&gt;</span></span>
+<span id="cb12-16"><a href="#cb12-16"></a><span class="st">&lt;/div&gt;</span></span>
+<span id="cb12-17"><a href="#cb12-17"></a><span class="st">&#39;&#39;&#39;</span></span>
+<span id="cb12-18"><a href="#cb12-18"></a></span>
+<span id="cb12-19"><a href="#cb12-19"></a>display(HTML(html))</span></code></pre></div>
+      <p>この演習で伝えたいことは、<strong>プログラミングには「正解」というものがひとつだけとは限らない</strong>
+      ということです。創造性を発揮し、異なる角度から問題にアプローチする気持ちを持ってください。ある問題に対して多様な解決策が存在し、それぞれが独自の価値を持っていることを理解することが、深い学びにつながります。</p>
+      <p>同時に <span class="masked">遊び心</span>
+      を持つことも極めて重要です。標準的でない方法を試すことが、<strong>予想外の発見や理解進化につながります</strong>。プログラミングは技術だけでなく、創造的な表現の場でもあります
+      (エンジニアにくわえて <span class="masked">クリエイタ</span>
+      としてのマインドも持ってください)。</p>
+      <p>また「プログラムコード」と「その実行結果」から、<strong>その背後にあるメカニズムや規則性を理解し、自分なりのメンタルモデルを構築することが大切です</strong>。「<strong>メンタルモデル</strong>」とは、物事の仕組みを自分なりに解釈・理解して、頭のなかに構築する内的なモデルのことを指します。。たとえば、スマートフォンのアプリがどのように動くかを理解するために、<span
+      class="masked">ユーザーの操作とアプリの反応の関係を頭のなかでイメージする</span>
+      のがメンタルモデルです。ユーザーが特定のボタンをタップしたとき、なぜ画面が切り替わるのか、どのようにデータが処理されるのかを想像することです。プログラミングでも、書いたコードがどのように動作するかを理解し、予測するためにこのモデルを使います。</p>
+      <p>さらに、学んだことを定着させるためには <span
+      class="masked">実際に自分でコードを書いてみること
+      (打ち込んでみること) </span>
+      が重要です。新しい内容を学んだら、それに関するプログラムをコピペではなく自分で打ち込んで、それを実行して、その結果を確認・検証する習慣を身につけてください。習って「理解してた」と思っても、実際にはそれが錯覚であることが常です。</p>
+      <h1 data-number="8" id="宿題"><span
+      class="header-section-number">8</span> 宿題</h1>
       <p>次回の授業までに <strong>GitHubアカウント</strong>
       を準備しておいてください（授業中にアクセスできるようにしておいてください）。このアカウント（リポジトリ）は、インターンシップ、就職、進学において、皆さんの<strong><em>ポートフォリオ</em></strong>
       ( <span class="masked">取組み実績やスキルを示すための作品集</span>
