@@ -72,13 +72,17 @@ class="toc-section-number">4</span> print関数による文字列の出力</a>
 <ul>
 <li><a href="#基本形" id="toc-基本形"><span
 class="toc-section-number">4.1</span> 基本形</a></li>
+<li><a href="#エディタによる文法チェック"
+id="toc-エディタによる文法チェック"><span
+class="toc-section-number">4.2</span>
+エディタによる文法チェック</a></li>
 <li><a href="#文末の処理" id="toc-文末の処理"><span
-class="toc-section-number">4.2</span> 文末の処理</a></li>
+class="toc-section-number">4.3</span> 文末の処理</a></li>
 <li><a href="#変数の埋め込み" id="toc-変数の埋め込み"><span
-class="toc-section-number">4.3</span> 変数の埋め込み</a></li>
+class="toc-section-number">4.4</span> 変数の埋め込み</a></li>
 <li><a href="#変数の埋め込み-f文字列"
 id="toc-変数の埋め込み-f文字列"><span
-class="toc-section-number">4.4</span> 変数の埋め込み ( f文字列
+class="toc-section-number">4.5</span> 変数の埋め込み ( f文字列
 )</a></li>
 </ul></li>
 <li><a href="#乱数処理との組み合わせ"
@@ -143,9 +147,11 @@ class="toc-section-number">6</span> 宿題</a></li>
       <ul>
       <li><a href="https://omu.portalai.jp/">PortalAI for OMU</a> または
       <a href="https://www.office.com/?auth=2">Copilot</a>
-      の利用登録をしてない場合は、いますぐ利用登録してブラウザにブックマークしてください。<a
-      href="https://omu.portalai.jp/">PortalAI for OMU</a>
-      を初めて利用する場合は <strong>サインアップの手続き</strong> と
+      の利用登録をしてない場合は <span
+      class="masked">いますぐ利用登録してブラウザにブックマーク登録</span>
+      してください。<a href="https://omu.portalai.jp/">PortalAI for
+      OMU</a> を初めて利用する場合は
+      <strong>サインアップの手続き</strong> と
       <strong>利用規約への同意</strong> が必要です。</li>
       </ul>
       <figure>
@@ -407,8 +413,19 @@ print(&#39;これがあなたの最初のプログラム出力です。&#39;)
       print関数 は使われているのかな?
       使われているとしたら、<strong>どんなところで使われている</strong>のかな?</li>
       </ul>
-      <h2 data-number="4.2" id="文末の処理"><span
-      class="header-section-number">4.2</span> 文末の処理</h2>
+      <h2 data-number="4.2" id="エディタによる文法チェック"><span
+      class="header-section-number">4.2</span>
+      エディタによる文法チェック</h2>
+      <p>次のようにエディタ上 (コードセル上)
+      に「赤線」や「青線」が表示されのは、プログラムコードに
+      <strong>ミス</strong> があるためです。</p>
+      <figure>
+      <img src="figs/02/colab-06.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>カッコの閉じ忘れがないか、クォーテーションの閉じ忘れがないか、文法上のミスがないかなど、注意深く確認してください。</p>
+      <h2 data-number="4.3" id="文末の処理"><span
+      class="header-section-number">4.3</span> 文末の処理</h2>
       <div class="sourceCode" id="cb9"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
 <span id="cb9-2"><a href="#cb9-2"></a><span class="bu">print</span>(<span class="st">&#39;Hello Python.&#39;</span>)</span>
@@ -425,8 +442,8 @@ Java? No Thanks!</code></pre>
       <strong><em>どのようなプロンプトで生成AIに質問</em></strong>
       すれば目的とする情報が得られるでしょうあか?
       実際に試してみてください。周囲のクラスメイトとも情報交換してみてください。</p>
-      <h2 data-number="4.3" id="変数の埋め込み"><span
-      class="header-section-number">4.3</span> 変数の埋め込み</h2>
+      <h2 data-number="4.4" id="変数の埋め込み"><span
+      class="header-section-number">4.4</span> 変数の埋め込み</h2>
       <p>ここでは、文字列のなかに <strong><em>変数</em></strong>
       を埋め込んで出力する方法を学びます。</p>
       <div class="note type-tips">
@@ -473,8 +490,8 @@ Java? No Thanks!</code></pre>
       href="https://www.oyama-ct.ac.jp/tso/workshop/python/python03.html">小山高専・技術支援室</a>
       を参照してください。</p>
       </div>
-      <h3 data-number="4.3.1" id="演習①-15分"><span
-      class="header-section-number">4.3.1</span> 演習①
+      <h3 data-number="4.4.1" id="演習①-15分"><span
+      class="header-section-number">4.4.1</span> 演習①
       <i class="fa-solid fa-stopwatch"></i>15分</h3>
       <ul>
       <li>Google Colab.
@@ -499,8 +516,8 @@ Java? No Thanks!</code></pre>
 <span id="cb14-3"><a href="#cb14-3"></a>ａ <span class="op">=</span> <span class="st">&#39;かきくけこ&#39;</span>   <span class="co"># 変数名は半角「ａ」</span></span>
 <span id="cb14-4"><a href="#cb14-4"></a><span class="bu">print</span>(a)  <span class="co"># 引数には半角「a」</span></span></code></pre></div>
       </div>
-      <h3 data-number="4.3.2" id="おまけ-文字列に色をつける"><span
-      class="header-section-number">4.3.2</span> おまけ:
+      <h3 data-number="4.4.2" id="おまけ-文字列に色をつける"><span
+      class="header-section-number">4.4.2</span> おまけ:
       文字列に「色」をつける</h3>
       <p>Goole Colab. 環境では <strong>ANSIエスケープシーケンス</strong>
       という特殊な文字列を利用して、出力文字に色を付けることができます。サンプルを以下に示します。詳しくはウェブ検索や生成AIを利用して調べてみてください。</p>
@@ -515,8 +532,8 @@ Java? No Thanks!</code></pre>
       class="masked">下線</span>
       などの装飾をすることもできます。ただし、<strong>実行環境によっては対応していないこともあるので注意</strong>してください。その場合、ANSIエスケープシーケンスの文字がそのまま出力されます
       (文字化けを起こしているように見えます)。</p>
-      <h2 data-number="4.4" id="変数の埋め込み-f文字列"><span
-      class="header-section-number">4.4</span> 変数の埋め込み ( f文字列
+      <h2 data-number="4.5" id="変数の埋め込み-f文字列"><span
+      class="header-section-number">4.5</span> 変数の埋め込み ( f文字列
       )</h2>
       <p>Python のバージョン 3.6 以上では
       <strong><em>f文字列</em></strong>
@@ -540,8 +557,8 @@ Java? No Thanks!</code></pre>
       <div class="sourceCode" id="cb16"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>city <span class="op">=</span> <span class="st">&#39;堺&#39;</span></span>
 <span id="cb16-2"><a href="#cb16-2"></a><span class="bu">print</span>(<span class="ss">f&#39;生まれは</span><span class="sc">{</span>city<span class="sc">}</span><span class="ss">、育ちも</span><span class="sc">{</span>city<span class="sc">}</span><span class="ss">、就職先も</span><span class="sc">{</span>city<span class="sc">}</span><span class="ss">です。両親も</span><span class="sc">{</span>city<span class="sc">}</span><span class="ss">に住んでいます。&#39;</span>)</span></code></pre></div>
-      <h3 data-number="4.4.1" id="演習②-10分"><span
-      class="header-section-number">4.4.1</span> 演習②
+      <h3 data-number="4.5.1" id="演習②-10分"><span
+      class="header-section-number">4.5.1</span> 演習②
       <i class="fa-solid fa-stopwatch"></i>10分</h3>
       <ul>
       <li>Google Colab.
@@ -555,8 +572,8 @@ Java? No Thanks!</code></pre>
       を使用したい。例えば <code>{必読} 山田さま限定の割引情報</code>
       という<strong>波括弧を含んだ文字列</strong>を出力したい。</li>
       </ul>
-      <h3 data-number="4.4.2" id="補足"><span
-      class="header-section-number">4.4.2</span> 補足</h3>
+      <h3 data-number="4.5.2" id="補足"><span
+      class="header-section-number">4.5.2</span> 補足</h3>
       <div class="note type-tips">
       <p><strong>Pythonのバージョンを調べるには</strong></p>
       <p>Pythonのバージョンは、<strong><em>コマンドプロンプト</em></strong>
@@ -653,22 +670,31 @@ Java? No Thanks!</code></pre>
       <h3 data-number="5.1.1" id="演習③"><span
       class="header-section-number">5.1.1</span> 演習③</h3>
       <ul>
-      <li>上記のプログラムを参考に、主に<strong>乱数処理</strong>と<strong>文字列出力</strong>を使って「小学校生が楽しめるアプリ」を作成せよ。</li>
+      <li>上記のプログラムを参考に、主に<strong>乱数処理</strong>と<strong>文字列出力</strong>を組み合わせて「小学校生が楽しめるアプリ」を設計・実装せよ。</li>
       </ul>
       <h1 data-number="6" id="宿題"><span
       class="header-section-number">6</span> 宿題</h1>
       <ul>
-      <li>テキストを再読し、演習❶から演習❸に取り組んでください。</li>
-      <li>次の動画を視聴してください　(約12分の動画)。
+      <li>テキストを再読し「演習①」から「演習③」に取り組んでください。</li>
+      <li>次の動画を視聴してください (約12分の動画)。
       <ul>
       <li><a
       href="https://www.youtube.com/watch?v=ggV3ANAXDy8">プログラミングを「始める前に」知りたかったよくある間違いトップ4</a></li>
       </ul></li>
       <li>次回、<strong>小テスト</strong> (ペーパーテスト)
-      を実施します。今回の授業で扱った文字列出力に関するプログラムを正しく書けるようになっておいてください。「f文字列」「変数」「print関数の
-      <code>sep</code> や <code>end</code>
-      などのオプション」を含みます。また「乱数」「ANSIエスケープシーケンス」は含みません。
+      を実施します。今回の授業で扱った文字列出力に関するプログラムを正しく書けるようになっておいてください。
+      -「f文字列」「変数」「print関数の <code>sep</code> や
+      <code>end</code> などのオプション」を含みます。
+      -「乱数」「ANSIエスケープシーケンス」は含みません。
       <ul>
+      <li>未使用の変数を参照した場合や、クォーテーションや括弧の閉じ忘れがあった場合、変数や関数名に誤りがあった場合、不適切なインデントがあった場合、全角スペースや全角クォーテーションが使われた場合などに、どのようなエラーとメッセージが表示されるのかも把握しておいてください。
+      <ul>
+      <li><code>SyntaxError: unterminated string literal</code></li>
+      <li><code>SyntaxError: incomplete input</code></li>
+      <li><code>SyntaxError: invalid non-printable character U+3000</code></li>
+      <li><code>NameError: name 'xxxx' is not defined</code></li>
+      <li><code>IndentationError: unexpected indent</code></li>
+      </ul></li>
       <li>筆記用具を持参してください。また、遅刻しないように注意してください。</li>
       </ul></li>
       </ul>
