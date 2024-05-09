@@ -129,14 +129,15 @@ class="toc-section-number">7.5</span> 設問5</a></li>
       <h1 data-number="1" id="連絡事項と講義概要"><span
       class="header-section-number">1</span> 連絡事項と講義概要</h1>
       <ul>
-      <li>今回「小テスト①」を実施します。<strong>鉛筆と消しゴム</strong>を準備してください。</li>
-      <li>Googleにログインして<a
+      <li><strong><em>小テスト❶</em></strong>
+      を実施します。<strong>鉛筆と消しゴム</strong>を準備してください。</li>
+      <li>Googleに OMUID でログインして<a
       href="https://colab.research.google.com/?hl=ja">GoogleColab.</a>にアクセスしておいてください。</li>
       </ul>
       <h1 data-number="2" id="前回の復習"><span
       class="header-section-number">2</span> 前回の復習</h1>
-      <p>前回講義の内容について
-      <strong>要点の「おさらい」</strong>をしておきます（少しだけ新規の内容が含まれています）。</p>
+      <p><a
+      href="lecture02.html#print関数による文字列の出力">前回講義</a>の内容について、<strong>要点の「おさらい」</strong>をしておきます（少しだけ新規の内容が含まれています）。</p>
       <h2 data-number="2.1"
       id="プログラミング学習のマインドと姿勢"><span
       class="header-section-number">2.1</span>
@@ -155,7 +156,7 @@ class="toc-section-number">7.5</span> 設問5</a></li>
       <ul>
       <li>2年生に進級し、知能情報コース配属されてから
       <strong>はや約1ヵ月が経過しましたが、その間にどれだけプログラミングの勉強ができて、どの程度のプログラミングスキルが身に付いたでしょうか？</strong></li>
-      <li>もし、受け身で授業だけに頼る学びをしていたなら <span
+      <li>もし、受け身で「授業だけに頼る学び」をしていたなら <span
       class="masked">1ヵ月で「3時間弱」もの勉強</span>
       ができたことでしょう。
       <ul>
@@ -177,7 +178,7 @@ class="toc-section-number">7.5</span> 設問5</a></li>
       <strong>に過ぎません</strong>。授業さえ真面目に受けていれば安心、単位さえを落とさなければ上出来、というわけではありません。前回にも紹介したように、<strong>プログラミングをはじめとする情報工学分野は、ほぼ「お金」を必要とせず、青天井で質の高い学びが可能</strong>です。学びのコンテンツと環境は整っています。あとは、それを活用して「やるか」「やらないか」であって、その結末は
       2～3年後 に残酷なほどの格差となってあらわれます。
       <ul>
-      <li>英会話を、毎月4時間学んだ人と、毎月60時間学んだ人では、それは格差がつきますよね。プログラミングも同じです。</li>
+      <li>例えば「英会話」を、毎月4時間取り組んだ人と、毎月60時間取り組んだ人では、1年後にはどれだけの差がつくでしょうか。プログラミングでも同じです。</li>
       </ul></li>
       <li>自分にとって最適な学びの環境は「<strong>学校 (先生)
       や親が与えてくれるのを待つもの</strong>」のではなく「<strong>自分自身で工夫して築き整えるもの</strong>」です。
@@ -187,14 +188,17 @@ class="toc-section-number">7.5</span> 設問5</a></li>
       などもうまく取り込みながら、学習のモチベーションを高めていくこと、学習意欲が自然と湧いてくる
       <span class="masked">環境や仕掛け</span>
       を構築することがポイントです。</li>
-      <li>「総合課題実習1」「高専祭展示」「プログラミング研究会」「ハッカソンやコンテスト」「もくもく会」「サークル・同好会・勉強会
+      <li>「総合課題実習1」「高専祭展示」「プログラミング研究会」「ハッカソンやコンテスト」「<a
+      href="https://www.google.com/search?q=もくもく会">もくもく会</a>」「サークル・同好会・勉強会
       (クラスメイトと勝手に自由に結成)
       」などから自分に適した枠組みを上手に活用しましょう。</li>
       </ul></li>
+      <li>ただ、価値観は個人でそれぞれです。授業外での学びを強制する権限はありません、自由にしてください。</li>
       </ul>
       <h2 data-number="2.2" id="文字列出力と変数について-15分"><span
       class="header-section-number">2.2</span> 文字列出力と変数について
       <i class="fa-solid fa-stopwatch"></i>15分</h2>
+      <p>ここからは、技術的な内容です。</p>
       <h3 data-number="2.2.1"
       id="googlecolabノートブックの作成-3分"><span
       class="header-section-number">2.2.1</span>
@@ -205,10 +209,10 @@ class="toc-section-number">7.5</span> 設問5</a></li>
       OMUID
       でログインしてください。その後、ノートブックを「<strong>新規作成</strong>」して
       <code>PG1-第03回講義.ipynb</code>
-      に名前を変更してください。ここで、<strong>拡張子</strong>の
+      のように名前を変更してください。ここで、<strong>拡張子</strong>の
       <code>.ipynb</code> は <span class="masked">IPYthon
       NoteBook</span> の略でした。</p>
-      <p>以下、ノートブックに「コードセル」を追加し、指示に従いプログラムを記述し、実際に実行して、その動作確認を確認してください。</p>
+      <p>以下、ノートブックに「<strong>コードセル</strong>」を追加し、指示に従いプログラムを記述し、実際に実行して、その動作を確認してください。</p>
       <h3 data-number="2.2.2" id="文字列の出力-1分"><span
       class="header-section-number">2.2.2</span> 文字列の出力
       (<i class="fa-solid fa-stopwatch"></i>1分)</h3>
@@ -226,7 +230,7 @@ class="toc-section-number">7.5</span> 設問5</a></li>
       変数と組み合わせた文字列の出力
       (<i class="fa-solid fa-stopwatch"></i>3分)</h3>
       <p>次のプログラムについて、[期待する実行結果]
-      が得られるように書き換えてください。「f文字列」を使用するバージョンと、「<code>+</code>演算子」を使用するバージョンの両方を作成してください。</p>
+      が得られるように書き換えてください。「f文字列」を使用するバージョンと、「<code>+</code>演算子」を使用するバージョンの<strong>両方</strong>を作成してください。</p>
       <div class="sourceCode" id="cb3"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="co">#【前回復習】変数と組み合わせた文字列の出力</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
@@ -256,8 +260,9 @@ class="toc-section-number">7.5</span> 設問5</a></li>
       class="header-section-number">2.2.5</span> 改行を含む文字列の出力
       (<i class="fa-solid fa-stopwatch"></i>1分)</h3>
       <p>次のプログラムについて、[期待する実行結果]
-      が得られるように書き換えてください。この際、第05行目の
-      <code>print</code> 文だけで目的の処理を完結させてください。</p>
+      が得られるように書き換えてください。この際、<strong>第05行目</strong>の
+      <code>print</code>
+      文の変更だけで目的の処理を完結させてください。</p>
       <div class="sourceCode" id="cb7"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="co">#【前回復習】改行を含む文字列の出力</span></span>
 <span id="cb7-2"><a href="#cb7-2"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
@@ -272,7 +277,7 @@ class="toc-section-number">7.5</span> 設問5</a></li>
       class="header-section-number">2.2.6</span>
       print関数に複数の引数を与えた場合の挙動
       (<i class="fa-solid fa-stopwatch"></i>2分)</h3>
-      <p>次のプログラムを実行して、その動作を確認してください。つづいて、[期待する実行結果]
+      <p>まずは、次のプログラムを実行して、その動作を確認してください。つづいて、[期待する実行結果]
       が得られるように書き換えてください。</p>
       <div class="sourceCode" id="cb9"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># print関数に複数の引数を与えた場合の挙動</span></span>
@@ -280,11 +285,13 @@ class="toc-section-number">7.5</span> 設問5</a></li>
 <span id="cb9-3"><a href="#cb9-3"></a><span class="bu">print</span>(<span class="st">&#39;Python&#39;</span>,<span class="st">&#39;C/C++&#39;</span>,<span class="st">&#39;Java&#39;</span>,<span class="st">&#39;PHP&#39;</span>,sep<span class="op">=</span><span class="st">&#39;♡&#39;</span>)</span></code></pre></div>
       <p>[期待する実行結果]</p>
       <pre><code>Python と C/C++ と Java と PHP</code></pre>
-      <p>「と」の前後に半角スペースが含まれることに注意してください。</p>
+      <p>出力には「と」の前後に半角スペースが含まれることに注意してください。sep
+      は Separator の略です。</p>
       <h3 data-number="2.2.7"
       id="ex-ansiエスケープシーケンスによる文字列装飾"><span
       class="header-section-number">2.2.7</span> EX:
       ANSIエスケープシーケンスによる文字列装飾</h3>
+      <p>(時間に余裕があれば取り組んでください)</p>
       <p><a
       href="https://www.google.com/search?q=python+ansiエスケープシーケンス">ANSIエスケープシーケンス</a>を利用して、次の
       [期待する実行結果] のような <strong>装飾付き文字列</strong>
@@ -298,7 +305,8 @@ class="toc-section-number">7.5</span> 設問5</a></li>
       <h1 data-number="3" id="変数のクリア"><span
       class="header-section-number">3</span> 変数のクリア</h1>
       <p>(ここからが今回の講義の内容になります)</p>
-      <p>GoogleColab において、あるコードセルで作成（設定）した変数は
+      <p>GoogleColab
+      において、あるコードセルで作成（設定）した「<strong>変数</strong>」は
       <strong>他のコードセルにも引き継がれます</strong>。実際に確認してみましょう
       (試してみましょう)。</p>
       <p>コードセルを新規作成して次のプログラムをコピペして実行します。コードセルの「実行」には
@@ -320,28 +328,29 @@ class="toc-section-number">7.5</span> 設問5</a></li>
       <p>上記プログラムを実行すると、<strong>第01行目</strong>
       で文字列をセットしている変数名 <code>wrod</code>
       と、<strong>第02行目</strong> で参照している変数名
-      <code>word</code> が違うので
-      <code>NameError: name 'wrod' is not defined</code> のような
-      <strong>エラーがでるだろうと期待しますが、実際の結果はそうはなりません</strong>。次のような実行結果が得られたはずです。</p>
+      <code>word</code> が違うので <span
+      class="masked"><code>NameError: name 'wrod' is not defined</code>
+      のようなエラーがでるだろう</span>
+      と期待しますが、実際の結果はそうはなりません。</p>
+      <p>次のような実行結果が得られたはずです。</p>
       <pre><code>無駄!無駄!無駄!無駄!無駄!無駄!無駄!無駄!</code></pre>
       <p>(なお、元ネタは <a
       href="https://www.google.com/search?q=ジョジョの奇妙な冒険+無駄無駄&amp;tbm=isch">ジョジョの奇妙な冒険</a>です。)</p>
       <p>先に実行したセルで作成された変数 <code>word</code>
-      が内部に残っているので<strong>エラーは発生しない</strong>ものの、<span
+      が内部的に残っているので<strong>エラーは発生しない</strong>ものの、<span
       class="masked">意図した結果が得られない</span>
       という状況になります。</p>
-      <p>今回は、変数名に間違いがあることに気づいているために問題ありません。しかし、間違いに気づいていないときに
-      <span
-      class="masked">エラーは発生しないものの、意図した結果が得られない</span>
-      というのは非常に厄介な状況 (バグ)
-      となります。実際、このような原因で何時間も悩んだり、プログラミング学習を挫折したりする初心者も珍しくありません。</p>
+      <p>今回は、<strong>変数名に間違いがあることに気づいているため</strong>に問題ありません。しかし、間違いに気づいていないときに「<span
+      class="masked">エラーは発生しないものの、意図した結果が得られない</span>」という状況は、非常に厄介なものとなります。実際、このようなことで何時間も悩んだり、プログラミング学習に挫折したりする初心者も珍しくありません。</p>
       <p>コードセルを抜けても <strong>変数が生き残っていること</strong>
       は非常に便利な機能なのですが、状況によっては望ましくありません。そのような状況で役立つのが、<strong>変数をオールクリアする</strong>ための
-      <code>%reset -f</code>
-      になります。既に第01回の講義資料から登場しています (<span
-      class="masked">きょうまでに解説されるのを待つことなく、自分で検索等して解決した人は大変に素晴らしいです</span>
+      <code>%reset -f</code> になります。既に<a
+      href="/lecture03.html">第01回の講義資料</a>から登場しています
+      (<span
+      class="masked">解説されるのを待つことなく、自分で検索等して解決した人は大変に素晴らしいです</span>
       )。</p>
-      <p>実際に、確認してみましょう。上記の2つのコードセルを次のように書き換え
+      <p>実際に、<code>%reset -f</code>
+      の働きを確認してみましょう。さきほどのコードセルを次のように書き換え
       (つまり <code>%reset -f</code> を追記し)
       、実行してみてください。</p>
       <div class="sourceCode" id="cb14" data-caption="pg2a.py"><pre
@@ -353,7 +362,7 @@ class="toc-section-number">7.5</span> 設問5</a></li>
       <h2 data-number="3.1" id="演習"><span
       class="header-section-number">3.1</span> 演習</h2>
       <p><code>%reset -f</code> を<code>%reset</code> に書き換えて実行し
-      (<code>-f</code>オプションを<strong>抜いて</strong>実行し)、どのように動作が変わるかを確認してください。</p>
+      (<code>-f</code>オプションを「<strong>抜いて</strong>」実行し)、どのように動作が変わるかを確認してください。</p>
       <div class="note type-tips">
       <p><strong>コマンドのオプション</strong></p>
       <p>一般にコマンドの「<strong>オプション</strong>」の
@@ -374,9 +383,11 @@ class="toc-section-number">7.5</span> 設問5</a></li>
       <p>GoogleColab のコードセルのなかで <code>%</code>
       から開始する文を<strong><em>マジックコマンド</em></strong>といいます。<strong>マジックコマンド</strong>は、Python
       の文・機能ではなく、GoogleColab (Jupyter) の文・機能であり、<span
-      class="masked">(Colab.以外の)ローカルのPython開発環境では使用できません。</span></p>
-      <p>一度は「<strong>Google Colab
-      マジックコマンド</strong>」で検索してみてください。開発を効率的に進めることができる様々なマジックコマンドが存在しています。</p>
+      class="masked">(Colab以外の) ローカルの Python開発環境
+      では使用できません。</span></p>
+      <p>一度は「<a
+      href="https://www.google.com/search?q=Colab+マジックコマンド">Colab
+      マジックコマンド</a>」で検索してみてください。開発を効率的に進めることができる様々なマジックコマンドが存在しています。</p>
       <h1 data-number="4" id="変数の確認"><span
       class="header-section-number">4</span> 変数の確認</h1>
       <p>GoogleColab では、<strong>参照可能な変数
@@ -789,28 +800,35 @@ class="toc-section-number">7.5</span> 設問5</a></li>
       <h1 data-number="7" id="課題01"><span
       class="header-section-number">7</span> 課題01</h1>
       <p><code>PG1-第03回講義.ipynb</code>
-      の末尾に次のテキストセルを作成し、それ以降の位置にコードセルを追加して、以下の各設問に取り組んでください。</p>
+      の末尾に次の内容の「テキストセル」を作成し、それ以降の位置に「コードセル」を追加して、以下の各設問に取り組んでください。</p>
       <pre><code># **プログラミング1 課題01**
 
 - 氏名: 高専太郎 
 - 出席番号: 99</code></pre>
-      <p><strong><em>提出期限</em></strong> : 2024年05月18日 (土) 23時
-      (これ以降に確認・評価します)</p>
-      <p><strong><em>取組みの目安となる時間</em></strong> : 90分</p>
-      <p><strong><em>評価</em></strong>
-      :「8点」を標準として「10点満点」で評価します
-      (学年末の成績評価の際には「重み」が付けられます)。テキストセルの体裁なども評価に含みます。共有範囲
-      (閲覧可)
-      が「大阪公立大学」に設定されず、指摘を受けた場合は、2点減点評価となります。<a
-      href="lecture03.html#googlecolabノートブックの共有設定">解説</a>に従って適切に設定してください。</p>
-      <p><strong><em>提出物・提出先</em></strong> : GoogleColab
+      <ul>
+      <li><p><strong><em>提出期限</em></strong> : 2024年05月18日 (土)
+      23時 (これ以降に確認・評価します)</p></li>
+      <li><p><strong><em>取組みの目安となる時間</em></strong> :
+      <strong>90分</strong></p></li>
+      <li><p><strong><em>評価</em></strong> :</p>
+      <ul>
+      <li>「8点」を標準として「10点満点」で評価します
+      (学年末の成績評価の際には「重み」が付けられます)。</li>
+      <li>テキストセルの体裁なども評価に含みます
+      (特に「設問」5など)。</li>
+      <li>共有範囲 (閲覧可)
+      が「大阪公立大学」に設定されず、指摘を受けた場合は「2点減」となります。<a
+      href="lecture03.html#googlecolabノートブックの共有設定">解説した内容</a>に従って適切に設定してください。</li>
+      </ul></li>
+      <li><p><strong><em>提出物・提出先</em></strong> : GoogleColab
       ノートブック <code>PG1-第03回講義.ipynb</code> の
       <strong>共有リンク(URL)</strong> を GoogleClassroom
-      の指定位置に提出してください。</p>
+      の指定位置に提出してください。</p></li>
+      </ul>
       <h2 data-number="7.1" id="設問1"><span
       class="header-section-number">7.1</span> 設問1</h2>
       <p>CPUのクロック周波数が2.1GHzのとき、そのクロック周期が何秒になるかを計算せよ。なお、<code>X.XXXe-XX</code>
-      のような指数の形式による出力と、SI接頭語 ( μs / ns / ps ) を用いた
+      のような指数の形式による出力と、SI接頭語 ( us / ns / ps ) を用いた
       <code>XXXX(ps)</code> のような形式による出力の両方を得ること。</p>
       <div class="sourceCode" id="cb45"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1"></a><span class="co"># 設問1</span></span>
