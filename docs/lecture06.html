@@ -411,7 +411,7 @@ FFFF</code></pre>
       <div class="sourceCode" id="cb14"
       data-caption="Colabのフォーム機能の利用例2.py"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
-<span id="cb14-2"><a href="#cb14-2"></a><span class="co"># @title **物理学習支援ツール**</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="co">#@title **物理学習支援ツール**</span></span>
 <span id="cb14-3"><a href="#cb14-3"></a><span class="co">#@markdown 時刻 $0$ において速度 $v$ ($\mathrm{m/s}$) の物体が、</span></span>
 <span id="cb14-4"><a href="#cb14-4"></a><span class="co">#@markdown 一定の加速度 $a$ ($\mathrm{m/s^{2}}$) を保ちながら</span></span>
 <span id="cb14-5"><a href="#cb14-5"></a><span class="co">#@markdown $t$ 秒間の間に進む 距離 $x$($\mathrm{m}$) を求めます。</span></span>
@@ -777,27 +777,68 @@ FFFF</code></pre>
 <span id="cb31-5"><a href="#cb31-5"></a>  <span class="bu">print</span>(<span class="st">&#39;点AはX軸上もしくはY軸上に存在します&#39;</span>)</span>
 <span id="cb31-6"><a href="#cb31-6"></a><span class="cf">else</span> :</span>
 <span id="cb31-7"><a href="#cb31-7"></a>  <span class="bu">print</span>(<span class="st">&#39;点AはX軸上にもY軸上にも存在しません&#39;</span>)</span></code></pre></div>
+      <hr />
+      <p>なお、<strong>文字列の等価性の比較</strong>は、<code>card</code>
+      を変数とすれば <code>card == 'UR'</code> のようにします。</p>
+      <ul>
+      <li><code>card == UR</code> とすると、<code>card</code>
+      という変数と、<code>UR</code>
+      という変数の比較になってしまうので注意してください。</li>
+      <li><code>card == 'UR'</code> とすると、<code>card</code>
+      という変数と、<code>'UR'</code>
+      という文字列との比較ができます。シングルクォーテーションで囲むか、囲まないかの使い分けができるようになってください。</li>
+      </ul>
+      <p>以下に、文字列の比較と、ここまでに学習した内容の応用
+      (単なる組み合わせ) を示します。</p>
+      <div class="sourceCode" id="cb32"
+      data-caption="カードガチャ.py"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb32-2"><a href="#cb32-2"></a><span class="im">import</span> random </span>
+<span id="cb32-3"><a href="#cb32-3"></a><span class="im">import</span> time</span>
+<span id="cb32-4"><a href="#cb32-4"></a><span class="im">from</span> IPython.display <span class="im">import</span> clear_output</span>
+<span id="cb32-5"><a href="#cb32-5"></a></span>
+<span id="cb32-6"><a href="#cb32-6"></a>cards <span class="op">=</span> [<span class="st">&#39;UR&#39;</span>,<span class="st">&#39;SSR&#39;</span>,<span class="st">&#39;SR&#39;</span>,<span class="st">&#39;S&#39;</span>] <span class="co"># 排出リスト</span></span>
+<span id="cb32-7"><a href="#cb32-7"></a>card <span class="op">=</span> random.choice(cards)   <span class="co"># リストからランダムに1枚を取得</span></span>
+<span id="cb32-8"><a href="#cb32-8"></a></span>
+<span id="cb32-9"><a href="#cb32-9"></a><span class="co"># 演出</span></span>
+<span id="cb32-10"><a href="#cb32-10"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb32-11"><a href="#cb32-11"></a>  <span class="bu">print</span>(<span class="st">&#39;.&#39;</span>, end<span class="op">=</span><span class="st">&#39;&#39;</span>)</span>
+<span id="cb32-12"><a href="#cb32-12"></a>  time.sleep(<span class="fl">0.5</span>)       <span class="co"># 0.5秒</span></span>
+<span id="cb32-13"><a href="#cb32-13"></a>clear_output()          <span class="co"># 出力をクリア</span></span>
+<span id="cb32-14"><a href="#cb32-14"></a></span>
+<span id="cb32-15"><a href="#cb32-15"></a><span class="co"># 指定のカードを得たときに追加メッセージ</span></span>
+<span id="cb32-16"><a href="#cb32-16"></a><span class="cf">if</span> card <span class="op">==</span> <span class="st">&#39;UR&#39;</span> <span class="kw">or</span> card <span class="op">==</span> <span class="st">&#39;SSR&#39;</span> :</span>
+<span id="cb32-17"><a href="#cb32-17"></a>  <span class="bu">print</span>(<span class="ss">f&#39;🎉おめでとうございます！&#39;</span>, end<span class="op">=</span><span class="st">&#39;&#39;</span>)</span>
+<span id="cb32-18"><a href="#cb32-18"></a></span>
+<span id="cb32-19"><a href="#cb32-19"></a><span class="co"># 共通メッセージ</span></span>
+<span id="cb32-20"><a href="#cb32-20"></a><span class="bu">print</span>(<span class="ss">f&#39;「</span><span class="sc">{</span>card<span class="sc">}</span><span class="ss">」をゲット！&#39;</span>)</span></code></pre></div>
+      <p><strong>第04行目</strong> と <strong>第13行目</strong> の
+      <code>clear_output</code>
+      のみ新規の要素です。<code>random.choice</code> は <a
+      href="lecture02.html#乱数処理との組み合わせ">第02回講義</a>、<code>time.sleep</code>
+      は <a href="lecture01.html#参考">第01回講義</a>
+      で学習済みです。</p>
       <h2 data-number="7.9" id="数値範囲条件"><span
       class="header-section-number">7.9</span> 数値範囲条件</h2>
       <p>Pythonでは、次のように <strong><em>数値範囲の条件</em></strong>
       を与えることができます。</p>
-      <div class="sourceCode" id="cb32"
-      data-caption="数値範囲条件の与え方1.py"><pre
-      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
-<span id="cb32-2"><a href="#cb32-2"></a>temp <span class="op">=</span> <span class="dv">20</span> <span class="co"># 温度 (Temperature)</span></span>
-<span id="cb32-3"><a href="#cb32-3"></a><span class="cf">if</span> <span class="dv">15</span> <span class="op">&lt;=</span> temp <span class="op">&lt;=</span> <span class="dv">25</span> : <span class="co"># tempが15以上25以下のとき「真」となる</span></span>
-<span id="cb32-4"><a href="#cb32-4"></a>  <span class="bu">print</span>(<span class="st">&#39;正常です&#39;</span>)</span>
-<span id="cb32-5"><a href="#cb32-5"></a><span class="cf">else</span> :</span>
-<span id="cb32-6"><a href="#cb32-6"></a>  <span class="bu">print</span>(<span class="st">&#39;正常範囲外です&#39;</span>)</span></code></pre></div>
-      <p>他のプログラミング言語では、通常、次のように<strong>AND条件を使って上記のような条件の評価</strong>をします。</p>
       <div class="sourceCode" id="cb33"
-      data-caption="数値範囲条件の与え方2.py"><pre
+      data-caption="数値範囲条件の与え方1.py"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
-<span id="cb33-2"><a href="#cb33-2"></a>temp <span class="op">=</span> <span class="dv">20</span></span>
-<span id="cb33-3"><a href="#cb33-3"></a><span class="cf">if</span> temp <span class="op">&gt;=</span> <span class="dv">15</span> <span class="kw">and</span> temp <span class="op">&lt;=</span> <span class="dv">25</span> :</span>
+<span id="cb33-2"><a href="#cb33-2"></a>temp <span class="op">=</span> <span class="dv">20</span> <span class="co"># 温度 (Temperature)</span></span>
+<span id="cb33-3"><a href="#cb33-3"></a><span class="cf">if</span> <span class="dv">15</span> <span class="op">&lt;=</span> temp <span class="op">&lt;=</span> <span class="dv">25</span> : <span class="co"># tempが15以上25以下のとき「真」となる</span></span>
 <span id="cb33-4"><a href="#cb33-4"></a>  <span class="bu">print</span>(<span class="st">&#39;正常です&#39;</span>)</span>
 <span id="cb33-5"><a href="#cb33-5"></a><span class="cf">else</span> :</span>
 <span id="cb33-6"><a href="#cb33-6"></a>  <span class="bu">print</span>(<span class="st">&#39;正常範囲外です&#39;</span>)</span></code></pre></div>
+      <p>他のプログラミング言語では、通常、次のように<strong>AND条件を使って上記のような条件の評価</strong>をします。</p>
+      <div class="sourceCode" id="cb34"
+      data-caption="数値範囲条件の与え方2.py"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb34-2"><a href="#cb34-2"></a>temp <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb34-3"><a href="#cb34-3"></a><span class="cf">if</span> temp <span class="op">&gt;=</span> <span class="dv">15</span> <span class="kw">and</span> temp <span class="op">&lt;=</span> <span class="dv">25</span> :</span>
+<span id="cb34-4"><a href="#cb34-4"></a>  <span class="bu">print</span>(<span class="st">&#39;正常です&#39;</span>)</span>
+<span id="cb34-5"><a href="#cb34-5"></a><span class="cf">else</span> :</span>
+<span id="cb34-6"><a href="#cb34-6"></a>  <span class="bu">print</span>(<span class="st">&#39;正常範囲外です&#39;</span>)</span></code></pre></div>
       <h3 data-number="7.9.1" id="演習3-7分"><span
       class="header-section-number">7.9.1</span> 演習3
       (<i class="fa-solid fa-stopwatch"></i> 7分)</h3>
@@ -816,31 +857,31 @@ FFFF</code></pre>
       <li>点Aは、X軸上に存在します。</li>
       <li>点Aは、Y軸上に存在します。</li>
       </ul>
-      <div class="sourceCode" id="cb34"><pre
-      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
-<span id="cb34-2"><a href="#cb34-2"></a><span class="im">import</span> random <span class="im">as</span> r</span>
-<span id="cb34-3"><a href="#cb34-3"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
-<span id="cb34-4"><a href="#cb34-4"></a>  x <span class="op">=</span> r.choice([<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>])</span>
-<span id="cb34-5"><a href="#cb34-5"></a>  y <span class="op">=</span> r.choice([<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>])</span>
-<span id="cb34-6"><a href="#cb34-6"></a>  <span class="bu">print</span>(<span class="ss">f&#39;点A (</span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">,</span><span class="sc">{</span>y<span class="sc">}</span><span class="ss">)は、&#39;</span>)</span></code></pre></div>
+      <div class="sourceCode" id="cb35"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb35-2"><a href="#cb35-2"></a><span class="im">import</span> random <span class="im">as</span> r</span>
+<span id="cb35-3"><a href="#cb35-3"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb35-4"><a href="#cb35-4"></a>  x <span class="op">=</span> r.choice([<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>])</span>
+<span id="cb35-5"><a href="#cb35-5"></a>  y <span class="op">=</span> r.choice([<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>])</span>
+<span id="cb35-6"><a href="#cb35-6"></a>  <span class="bu">print</span>(<span class="ss">f&#39;点A (</span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">,</span><span class="sc">{</span>y<span class="sc">}</span><span class="ss">)は、&#39;</span>)</span></code></pre></div>
       <h2 data-number="7.10" id="条件式の正体"><span
       class="header-section-number">7.10</span> 条件式の正体</h2>
       <p><code>x &gt; 5</code> や
       <code>x==0</code>、<code>0&lt;=x&lt;=10</code>
       のような条件式は、次のように <span
       class="masked">if文以外の場所</span> でも使うことができます。</p>
-      <div class="sourceCode" id="cb35"><pre
-      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
-<span id="cb35-2"><a href="#cb35-2"></a>x <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb35-3"><a href="#cb35-3"></a></span>
-<span id="cb35-4"><a href="#cb35-4"></a><span class="co"># x &gt; 5 の評価結果を 変数var1 に格納</span></span>
-<span id="cb35-5"><a href="#cb35-5"></a>var1 <span class="op">=</span> x <span class="op">&gt;</span> <span class="dv">5</span>  </span>
-<span id="cb35-6"><a href="#cb35-6"></a></span>
-<span id="cb35-7"><a href="#cb35-7"></a><span class="co"># x == 0 の評価結果を 変数var2 に格納</span></span>
-<span id="cb35-8"><a href="#cb35-8"></a>var2 <span class="op">=</span> x <span class="op">==</span> <span class="dv">0</span>  </span>
-<span id="cb35-9"><a href="#cb35-9"></a></span>
-<span id="cb35-10"><a href="#cb35-10"></a><span class="co"># 変数に格納された値を出力</span></span>
-<span id="cb35-11"><a href="#cb35-11"></a><span class="bu">print</span>(<span class="ss">f&#39;var1=</span><span class="sc">{</span>var1<span class="sc">}</span><span class="ss">, var2=</span><span class="sc">{</span>var2<span class="sc">}</span><span class="ss">&#39;</span>)</span></code></pre></div>
+      <div class="sourceCode" id="cb36"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb36-2"><a href="#cb36-2"></a>x <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb36-3"><a href="#cb36-3"></a></span>
+<span id="cb36-4"><a href="#cb36-4"></a><span class="co"># x &gt; 5 の評価結果を 変数var1 に格納</span></span>
+<span id="cb36-5"><a href="#cb36-5"></a>var1 <span class="op">=</span> x <span class="op">&gt;</span> <span class="dv">5</span>  </span>
+<span id="cb36-6"><a href="#cb36-6"></a></span>
+<span id="cb36-7"><a href="#cb36-7"></a><span class="co"># x == 0 の評価結果を 変数var2 に格納</span></span>
+<span id="cb36-8"><a href="#cb36-8"></a>var2 <span class="op">=</span> x <span class="op">==</span> <span class="dv">0</span>  </span>
+<span id="cb36-9"><a href="#cb36-9"></a></span>
+<span id="cb36-10"><a href="#cb36-10"></a><span class="co"># 変数に格納された値を出力</span></span>
+<span id="cb36-11"><a href="#cb36-11"></a><span class="bu">print</span>(<span class="ss">f&#39;var1=</span><span class="sc">{</span>var1<span class="sc">}</span><span class="ss">, var2=</span><span class="sc">{</span>var2<span class="sc">}</span><span class="ss">&#39;</span>)</span></code></pre></div>
       <p>上記の実行結果から分かるように、比較演算子を使った条件式は、<span
       class="masked"><code>True</code> または <code>False</code> という
       bool型 の値</span>になります。</p>
@@ -849,31 +890,31 @@ FFFF</code></pre>
       float型 (浮動小数点数型) と同様に変数に格納 (バインド)
       することができます。</p>
       <p>そのため、次のように利用することもできます。</p>
-      <div class="sourceCode" id="cb36"><pre
-      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
-<span id="cb36-2"><a href="#cb36-2"></a>x <span class="op">=</span> <span class="op">-</span><span class="dv">5</span></span>
-<span id="cb36-3"><a href="#cb36-3"></a>y <span class="op">=</span> <span class="dv">12</span></span>
-<span id="cb36-4"><a href="#cb36-4"></a>z <span class="op">=</span> <span class="dv">80</span></span>
-<span id="cb36-5"><a href="#cb36-5"></a>c1 <span class="op">=</span> <span class="op">-</span><span class="dv">10</span> <span class="op">&lt;=</span> x <span class="op">&lt;=</span> <span class="dv">10</span> <span class="co"># 条件式の評価結果をc1に格納</span></span>
-<span id="cb36-6"><a href="#cb36-6"></a>c2 <span class="op">=</span> <span class="op">-</span><span class="dv">15</span> <span class="op">&lt;=</span> y <span class="op">&lt;=</span> <span class="dv">15</span> <span class="co">#  〃 をc2に格納</span></span>
-<span id="cb36-7"><a href="#cb36-7"></a>c3 <span class="op">=</span> <span class="op">-</span><span class="dv">20</span> <span class="op">&lt;=</span> z <span class="op">&lt;=</span> <span class="dv">20</span> <span class="co">#  〃 をc3に格納</span></span>
-<span id="cb36-8"><a href="#cb36-8"></a><span class="bu">print</span>(<span class="st">&#39;点Aは指定の空間内に&#39;</span>,end<span class="op">=</span><span class="st">&#39;&#39;</span>)</span>
-<span id="cb36-9"><a href="#cb36-9"></a><span class="cf">if</span> c1 <span class="kw">and</span> c2 <span class="kw">and</span> c3 :</span>
-<span id="cb36-10"><a href="#cb36-10"></a>  <span class="bu">print</span>(<span class="st">&#39;存在します。&#39;</span>)</span>
-<span id="cb36-11"><a href="#cb36-11"></a><span class="cf">else</span> :</span>
-<span id="cb36-12"><a href="#cb36-12"></a>  <span class="bu">print</span>(<span class="st">&#39;存在しません。&#39;</span>)</span></code></pre></div>
-      <p>変数に格納せずに、<code>if</code>
-      に直接的に条件を与えると次のようになります。</p>
       <div class="sourceCode" id="cb37"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
 <span id="cb37-2"><a href="#cb37-2"></a>x <span class="op">=</span> <span class="op">-</span><span class="dv">5</span></span>
 <span id="cb37-3"><a href="#cb37-3"></a>y <span class="op">=</span> <span class="dv">12</span></span>
 <span id="cb37-4"><a href="#cb37-4"></a>z <span class="op">=</span> <span class="dv">80</span></span>
-<span id="cb37-5"><a href="#cb37-5"></a><span class="bu">print</span>(<span class="st">&#39;点Aは指定の空間内に&#39;</span>,end<span class="op">=</span><span class="st">&#39;&#39;</span>)</span>
-<span id="cb37-6"><a href="#cb37-6"></a><span class="cf">if</span> <span class="op">-</span><span class="dv">10</span> <span class="op">&lt;=</span> x <span class="op">&lt;=</span> <span class="dv">10</span> <span class="kw">and</span> <span class="op">-</span><span class="dv">15</span> <span class="op">&lt;=</span> y <span class="op">&lt;=</span> <span class="dv">15</span> <span class="kw">and</span> <span class="op">-</span><span class="dv">20</span> <span class="op">&lt;=</span> z <span class="op">&lt;=</span> <span class="dv">20</span> :</span>
-<span id="cb37-7"><a href="#cb37-7"></a>  <span class="bu">print</span>(<span class="st">&#39;存在します。&#39;</span>)</span>
-<span id="cb37-8"><a href="#cb37-8"></a><span class="cf">else</span> :</span>
-<span id="cb37-9"><a href="#cb37-9"></a>  <span class="bu">print</span>(<span class="st">&#39;存在しません。&#39;</span>)</span></code></pre></div>
+<span id="cb37-5"><a href="#cb37-5"></a>c1 <span class="op">=</span> <span class="op">-</span><span class="dv">10</span> <span class="op">&lt;=</span> x <span class="op">&lt;=</span> <span class="dv">10</span> <span class="co"># 条件式の評価結果をc1に格納</span></span>
+<span id="cb37-6"><a href="#cb37-6"></a>c2 <span class="op">=</span> <span class="op">-</span><span class="dv">15</span> <span class="op">&lt;=</span> y <span class="op">&lt;=</span> <span class="dv">15</span> <span class="co">#  〃 をc2に格納</span></span>
+<span id="cb37-7"><a href="#cb37-7"></a>c3 <span class="op">=</span> <span class="op">-</span><span class="dv">20</span> <span class="op">&lt;=</span> z <span class="op">&lt;=</span> <span class="dv">20</span> <span class="co">#  〃 をc3に格納</span></span>
+<span id="cb37-8"><a href="#cb37-8"></a><span class="bu">print</span>(<span class="st">&#39;点Aは指定の空間内に&#39;</span>,end<span class="op">=</span><span class="st">&#39;&#39;</span>)</span>
+<span id="cb37-9"><a href="#cb37-9"></a><span class="cf">if</span> c1 <span class="kw">and</span> c2 <span class="kw">and</span> c3 :</span>
+<span id="cb37-10"><a href="#cb37-10"></a>  <span class="bu">print</span>(<span class="st">&#39;存在します。&#39;</span>)</span>
+<span id="cb37-11"><a href="#cb37-11"></a><span class="cf">else</span> :</span>
+<span id="cb37-12"><a href="#cb37-12"></a>  <span class="bu">print</span>(<span class="st">&#39;存在しません。&#39;</span>)</span></code></pre></div>
+      <p>変数に格納せずに、<code>if</code>
+      に直接的に条件を与えると次のようになります。</p>
+      <div class="sourceCode" id="cb38"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb38-2"><a href="#cb38-2"></a>x <span class="op">=</span> <span class="op">-</span><span class="dv">5</span></span>
+<span id="cb38-3"><a href="#cb38-3"></a>y <span class="op">=</span> <span class="dv">12</span></span>
+<span id="cb38-4"><a href="#cb38-4"></a>z <span class="op">=</span> <span class="dv">80</span></span>
+<span id="cb38-5"><a href="#cb38-5"></a><span class="bu">print</span>(<span class="st">&#39;点Aは指定の空間内に&#39;</span>,end<span class="op">=</span><span class="st">&#39;&#39;</span>)</span>
+<span id="cb38-6"><a href="#cb38-6"></a><span class="cf">if</span> <span class="op">-</span><span class="dv">10</span> <span class="op">&lt;=</span> x <span class="op">&lt;=</span> <span class="dv">10</span> <span class="kw">and</span> <span class="op">-</span><span class="dv">15</span> <span class="op">&lt;=</span> y <span class="op">&lt;=</span> <span class="dv">15</span> <span class="kw">and</span> <span class="op">-</span><span class="dv">20</span> <span class="op">&lt;=</span> z <span class="op">&lt;=</span> <span class="dv">20</span> :</span>
+<span id="cb38-7"><a href="#cb38-7"></a>  <span class="bu">print</span>(<span class="st">&#39;存在します。&#39;</span>)</span>
+<span id="cb38-8"><a href="#cb38-8"></a><span class="cf">else</span> :</span>
+<span id="cb38-9"><a href="#cb38-9"></a>  <span class="bu">print</span>(<span class="st">&#39;存在しません。&#39;</span>)</span></code></pre></div>
       <h1 data-number="8" id="宿題"><span
       class="header-section-number">8</span> 宿題</h1>
       <p>次回講義、6月4日(火)
