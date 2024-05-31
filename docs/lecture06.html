@@ -501,12 +501,23 @@ FFFF</code></pre>
       <p><span
       class="math inline">\(25\%\)</span>の確率で「<strong>R</strong>」、<span
       class="math inline">\(75\%\)</span>の確率で「<strong>N</strong>」という文字列を出力するプログラムを作成してください。次のプログラムに追記する形で作成してください。</p>
+      <p>まずは、次のプログラムについて、何も変更せずにそのまま実行して結果を確認し、その後、編集を加えてください。</p>
       <div class="sourceCode" id="cb17"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
 <span id="cb17-2"><a href="#cb17-2"></a><span class="im">import</span> random <span class="im">as</span> r</span>
 <span id="cb17-3"><a href="#cb17-3"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">15</span>): <span class="co"># 15連ガチャ</span></span>
 <span id="cb17-4"><a href="#cb17-4"></a>  n <span class="op">=</span> r.random() <span class="co"># 0.0以上1.0未満の実数値</span></span>
 <span id="cb17-5"><a href="#cb17-5"></a>  <span class="bu">print</span>(<span class="ss">f&#39;n=</span><span class="sc">{</span>n<span class="sc">:.3f}</span><span class="ss">&#39;</span>) <span class="co"># 乱数確認用(あとでコメントアウトする)</span></span></code></pre></div>
+      <p><strong>注意</strong> : <code>random()</code>
+      は、<code>randint()</code> とは違って、<code>random(0, 1)</code>
+      のように「引数」を<strong>与えずに</strong>使用します。もし、<span
+      class="math inline">\(0.0\)</span> 以上 <span
+      class="math inline">\(20.0\)</span> 未満の実数を得たい場合は
+      <code>r.random() * 20</code> のようにします。また、<span
+      class="math inline">\(-10.0\)</span> 以上 <span
+      class="math inline">\(のようにします。10.0\)</span>
+      未満の実数を得たい場合は <code>r.random() * 20 - 10</code>
+      のようにします。</p>
       <h2 data-number="7.2" id="等しいという条件の与え方"><span
       class="header-section-number">7.2</span>
       「等しい」という条件の与え方</h2>
@@ -647,8 +658,8 @@ FFFF</code></pre>
 <span id="cb24-12"><a href="#cb24-12"></a><span class="cf">else</span> :</span>
 <span id="cb24-13"><a href="#cb24-13"></a>  <span class="bu">print</span>(<span class="st">&#39;不可&#39;</span>,end<span class="op">=</span><span class="st">&#39;&#39;</span>)</span>
 <span id="cb24-14"><a href="#cb24-14"></a><span class="bu">print</span>(<span class="ss">f&#39;」の評価です。&#39;</span>)</span></code></pre></div>
-      <h3 data-number="7.5.1" id="演習4-10分"><span
-      class="header-section-number">7.5.1</span> 演習4
+      <h3 data-number="7.5.1" id="演習3-10分"><span
+      class="header-section-number">7.5.1</span> 演習3
       (<i class="fa-solid fa-stopwatch"></i> 10分)</h3>
       <p>15連ガチャを実装するとします。<span
       class="math inline">\(10\%\)</span>の確率で「<strong>SR</strong>」、<span
@@ -839,13 +850,13 @@ FFFF</code></pre>
 <span id="cb34-4"><a href="#cb34-4"></a>  <span class="bu">print</span>(<span class="st">&#39;正常です&#39;</span>)</span>
 <span id="cb34-5"><a href="#cb34-5"></a><span class="cf">else</span> :</span>
 <span id="cb34-6"><a href="#cb34-6"></a>  <span class="bu">print</span>(<span class="st">&#39;正常範囲外です&#39;</span>)</span></code></pre></div>
-      <h3 data-number="7.9.1" id="演習3-7分"><span
-      class="header-section-number">7.9.1</span> 演習3
+      <h3 data-number="7.9.1" id="演習4-7分"><span
+      class="header-section-number">7.9.1</span> 演習4
       (<i class="fa-solid fa-stopwatch"></i> 7分)</h3>
       <p><code>数値範囲条件の与え方1.py</code>
       について、フォーム機能を利用して「温度<code>temp</code>」がスライダーで与えられるようにしてください。また、スライダーが変更されると自動実行されるようにしてください。</p>
-      <h3 data-number="7.9.2" id="演習4-10分-1"><span
-      class="header-section-number">7.9.2</span> 演習4
+      <h3 data-number="7.9.2" id="演習5-10分"><span
+      class="header-section-number">7.9.2</span> 演習5
       (<i class="fa-solid fa-stopwatch"></i> 10分)</h3>
       <p>XY平面上に存在する点Aの座標を与えたとき、その値に応じて次の「いずれかの文章」を出力するプログラムを作成してください。可読性と保守性を意識しながら作成してください。</p>
       <ul>
