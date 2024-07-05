@@ -561,16 +561,17 @@ pip install numpy</code></pre>
 <span id="cb14-2"><a href="#cb14-2"></a></span>
 <span id="cb14-3"><a href="#cb14-3"></a><span class="co"># 目的の処理をする関数に書き換える</span></span>
 <span id="cb14-4"><a href="#cb14-4"></a><span class="kw">def</span> star(n):</span>
-<span id="cb14-5"><a href="#cb14-5"></a>  <span class="cf">return</span> <span class="st">&#39;AAAAA&#39;</span></span>
-<span id="cb14-6"><a href="#cb14-6"></a></span>
-<span id="cb14-7"><a href="#cb14-7"></a><span class="co"># </span></span>
-<span id="cb14-8"><a href="#cb14-8"></a><span class="bu">print</span>(star(<span class="dv">4</span>))     <span class="co"># =&gt; ★★★★☆</span></span>
-<span id="cb14-9"><a href="#cb14-9"></a><span class="bu">print</span>(star(<span class="op">-</span><span class="dv">4</span>))    <span class="co"># =&gt; ☆☆☆☆☆</span></span>
-<span id="cb14-10"><a href="#cb14-10"></a><span class="bu">print</span>(star(<span class="dv">10</span>))    <span class="co"># =&gt; ★★★★★</span></span>
-<span id="cb14-11"><a href="#cb14-11"></a></span>
-<span id="cb14-12"><a href="#cb14-12"></a><span class="bu">print</span>(star(<span class="st">&#39;5&#39;</span>))   <span class="co"># =&gt; ERROR</span></span>
-<span id="cb14-13"><a href="#cb14-13"></a><span class="bu">print</span>(star([<span class="st">&#39;5&#39;</span>])) <span class="co"># =&gt; ERROR</span></span>
-<span id="cb14-14"><a href="#cb14-14"></a><span class="bu">print</span>(star(<span class="st">&#39;1.5&#39;</span>)) <span class="co"># =&gt; ERROR</span></span></code></pre></div>
+<span id="cb14-5"><a href="#cb14-5"></a>  r <span class="op">=</span> <span class="st">&#39;★&#39;</span><span class="op">*</span><span class="dv">5</span></span>
+<span id="cb14-6"><a href="#cb14-6"></a>  <span class="cf">return</span> r</span>
+<span id="cb14-7"><a href="#cb14-7"></a></span>
+<span id="cb14-8"><a href="#cb14-8"></a><span class="co"># </span></span>
+<span id="cb14-9"><a href="#cb14-9"></a><span class="bu">print</span>(star(<span class="dv">4</span>))     <span class="co"># =&gt; ★★★★☆</span></span>
+<span id="cb14-10"><a href="#cb14-10"></a><span class="bu">print</span>(star(<span class="op">-</span><span class="dv">4</span>))    <span class="co"># =&gt; ☆☆☆☆☆</span></span>
+<span id="cb14-11"><a href="#cb14-11"></a><span class="bu">print</span>(star(<span class="dv">10</span>))    <span class="co"># =&gt; ★★★★★</span></span>
+<span id="cb14-12"><a href="#cb14-12"></a></span>
+<span id="cb14-13"><a href="#cb14-13"></a><span class="bu">print</span>(star(<span class="st">&#39;5&#39;</span>))   <span class="co"># =&gt; ERROR</span></span>
+<span id="cb14-14"><a href="#cb14-14"></a><span class="bu">print</span>(star([<span class="st">&#39;5&#39;</span>])) <span class="co"># =&gt; ERROR</span></span>
+<span id="cb14-15"><a href="#cb14-15"></a><span class="bu">print</span>(star(<span class="st">&#39;1.5&#39;</span>)) <span class="co"># =&gt; ERROR</span></span></code></pre></div>
       <ul>
       <li>ヒント： <span class="masked">型の判定には
       <code>isinstance</code> や <code>type</code>、<code>is</code>
