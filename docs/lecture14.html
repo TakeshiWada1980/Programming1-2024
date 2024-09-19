@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+
+    <script>
+      MathJax = {
+        chtml: {
+          displayAlign: "left",
+          displayIndent: "1em",
+        },
+      };
+    </script>
+
+    
+
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>第14回 2I-プログラミング1</title>
+  </head>
+
+  <body>
+    <div class="openbtn"><span></span><span></span><span></span></div>
+    <nav id="g-nav">
+      <div id="g-nav-list">
+        <!-- ---------------------------------------- -->
+         <ul>
+<li><a href="#概要連絡" id="toc-概要連絡"><span
+class="toc-section-number">1</span> 概要・連絡</a>
+<ul>
+<li><a href="#課題と前期中間の成績評価"
+id="toc-課題と前期中間の成績評価"><span
+class="toc-section-number">1.1</span> 課題と前期中間の成績評価</a></li>
+<li><a href="#今回の講義の概要" id="toc-今回の講義の概要"><span
+class="toc-section-number">1.2</span> 今回の講義の概要</a></li>
+<li><a href="#gitの概要" id="toc-gitの概要"><span
+class="toc-section-number">1.3</span> Gitの概要</a></li>
+</ul></li>
+<li><a href="#gitのダウンロードとインストール設定"
+id="toc-gitのダウンロードとインストール設定"><span
+class="toc-section-number">2</span>
+gitのダウンロードとインストール・設定</a>
+<ul>
+<li><a href="#gitがインストール済みであるかの確認方法"
+id="toc-gitがインストール済みであるかの確認方法"><span
+class="toc-section-number">2.1</span>
+gitがインストール済みであるかの確認方法</a></li>
+<li><a href="#github-の設定を確認" id="toc-github-の設定を確認"><span
+class="toc-section-number">2.2</span> GitHub の設定を確認</a></li>
+<li><a href="#git-のダウンロード" id="toc-git-のダウンロード"><span
+class="toc-section-number">2.3</span> git のダウンロード</a></li>
+<li><a href="#git-のインストール" id="toc-git-のインストール"><span
+class="toc-section-number">2.4</span> git のインストール</a></li>
+<li><a href="#インストール後の-git-の設定"
+id="toc-インストール後の-git-の設定"><span
+class="toc-section-number">2.5</span> インストール後の git
+の設定</a></li>
+</ul></li>
+<li><a href="#リモートリポジトリの発行変更内容のコミット"
+id="toc-リモートリポジトリの発行変更内容のコミット"><span
+class="toc-section-number">3</span>
+リモートリポジトリの発行・変更内容のコミット</a>
+<ul>
+<li><a href="#プロジェクトフォルダの作成"
+id="toc-プロジェクトフォルダの作成"><span
+class="toc-section-number">3.1</span>
+プロジェクトフォルダの作成</a></li>
+<li><a href="#ファイルの追加" id="toc-ファイルの追加"><span
+class="toc-section-number">3.2</span> ファイルの追加</a></li>
+<li><a href="#リモートリポジトリの発行"
+id="toc-リモートリポジトリの発行"><span
+class="toc-section-number">3.3</span> リモートリポジトリの発行</a></li>
+<li><a href="#github-に正常発行されていることを確認"
+id="toc-github-に正常発行されていることを確認"><span
+class="toc-section-number">3.4</span> GitHub
+に正常発行されていることを確認</a></li>
+<li><a href="#ファイルを変更してコミットプッシュ"
+id="toc-ファイルを変更してコミットプッシュ"><span
+class="toc-section-number">3.5</span>
+ファイルを変更してコミット・プッシュ</a></li>
+</ul></li>
+<li><a href="#リモートリポジトリでのファイル変更と同期"
+id="toc-リモートリポジトリでのファイル変更と同期"><span
+class="toc-section-number">4</span>
+リモートリポジトリでのファイル変更と同期</a></li>
+<li><a href="#リポジトリの削除" id="toc-リポジトリの削除"><span
+class="toc-section-number">5</span> リポジトリの削除</a>
+<ul>
+<li><a href="#リモートリポジトリの削除"
+id="toc-リモートリポジトリの削除"><span
+class="toc-section-number">5.1</span> リモートリポジトリの削除</a></li>
+<li><a href="#ローカルリポジトリの削除"
+id="toc-ローカルリポジトリの削除"><span
+class="toc-section-number">5.2</span> ローカルリポジトリの削除</a></li>
+</ul></li>
+<li><a href="#宿題" id="toc-宿題"><span
+class="toc-section-number">6</span> 宿題</a>
+<ul>
+<li><a href="#宿題①" id="toc-宿題①"><span
+class="toc-section-number">6.1</span> 宿題①</a></li>
+<li><a href="#宿題②" id="toc-宿題②"><span
+class="toc-section-number">6.2</span> 宿題②</a></li>
+<li><a href="#宿題③" id="toc-宿題③"><span
+class="toc-section-number">6.3</span> 宿題③</a></li>
+</ul></li>
+</ul> 
+        <!-- ---------------------------------------- -->
+      </div>
+    </nav>
+
+    <header class="markdown-body">
+      <p>2024-2I プログラミング1 第14回 講義資料</p>
+      <p>2024年09月20日（金）1・2時限</p>
+    </header>
+
+    <main class="markdown-body">
+      <!-- ---------------------------------------- -->
+      <h1 data-number="1" id="概要連絡"><span
+      class="header-section-number">1</span> 概要・連絡</h1>
+      <h2 data-number="1.1" id="課題と前期中間の成績評価"><span
+      class="header-section-number">1.1</span>
+      課題と前期中間の成績評価</h2>
+      <ul>
+      <li>小テスト➌を返却します。</li>
+      <li><strong>課題4 (Colabで実行可能な自由作品)</strong> の<a
+      href="https://classroom.google.com/c/NjgxODIzNjU1NzQy/m/NzAzODc1MTkzNzA4/details">共有リンク</a><span
+      class="citation"
+      data-cites="GoogleClassroom">@GoogleClassroom</span></li>
+      <li><strong>課題2 (ラインアート) </strong>の<a
+      href="https://classroom.google.com/c/NjgxODIzNjU1NzQy/m/NjkxNTc2Njg5NzYz/details">共有リンク</a><span
+      class="citation"
+      data-cites="GoogleClassroom">@GoogleClassroom</span>
+      <ul>
+      <li>「課題2」と「課題4」は<a
+      href="https://omunet-my.sharepoint.com/:t:/r/personal/z21707r_omu_ac_jp/Documents/%E4%B8%80%E8%88%AC%E5%85%B1%E6%9C%89/2023-PG1-%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA.txt?csf=1&amp;web=1&amp;e=5AnvKm">ポートフォリオ</a>に十分に掲載可能な素材となります。少なくともポートフォリオ作成までは、削除しないようにしてください。</li>
+      </ul></li>
+      <li><strong>課題1</strong> ～ <strong>課題4</strong>
+      について10点満点で評価して GoogleClassroom
+      でフィードバックしています。<strong>課題5</strong>
+      を集約したものは、本日、紙媒体で返却します。
+      <ul>
+      <li><strong>課題5</strong>
+      は、各週あたり180分以上の学習をしていれば1点、180文字以上の記録があれば1点（90文字以上180文字未満の記録があれば0.5点）として、5週合計で10点満点となります。</li>
+      </ul></li>
+      <li>前期末成績は、シラバスに示す割合に基づき、以下のように算出します。
+      <ul>
+      <li><strong>課題の提出状況とその内容 (80点)</strong> :
+      各課題を10点満点で評価し、課題1を1倍、課題2を2倍、課題3を1倍、課題4を3倍、課題5を2倍した合計90点を80点換算して四捨五入。</li>
+      <li><strong>小テスト (20点)</strong> :
+      小テスト①～③の合計30点満点を20点換算して四捨五入。</li>
+      </ul></li>
+      <li>前期末成績が、学年末成績の 50%
+      に相当するわけではありません。「<strong>前期末に90点をとったので、後期は30点分だけやれば学年末で60点になる</strong>」のような安易な計算はしないでください。</li>
+      </ul>
+      <h2 data-number="1.2" id="今回の講義の概要"><span
+      class="header-section-number">1.2</span> 今回の講義の概要</h2>
+      <p>今回の講義では <strong>Git</strong> (ギット)
+      のインストール、VSCodeを使った <strong>GitHub</strong> リポジトリ
+      (=リモートリポジトリ)
+      の作成、変更内容のコミット操作・プッシュ操作、GitHubによるソースコードの公開について取り上げます。</p>
+      <p>チーム開発を支援する機能や任意の過去バージョンに戻す機能などは、次回以降に段階的に学んでいきます。今回の講義内容について、既に十分に知識・理解がある学生は、昨年度の資料ですが、先読みしておいてください。</p>
+      <ul>
+      <li><a
+      href="https://takeshiwada1980.github.io/Programming1-2023/lecture15.html">2023年度
+      第15回講義</a> <font size="-1">Git/GitHub 2, HTML/CSS,
+      GitHubPages</font></li>
+      <li><a
+      href="https://takeshiwada1980.github.io/Programming1-2023/lecture16.html">2023年度
+      第16回講義</a> <font size="-1">Git/GitHub 3,
+      チーム開発</font></li>
+      </ul>
+      <h2 data-number="1.3" id="gitの概要"><span
+      class="header-section-number">1.3</span> Gitの概要</h2>
+      <p><strong><em>git</em></strong>
+      とはローカルPCにインストールして利用する
+      <strong>バージョン管理システム</strong> で <span
+      class="masked">ソースコードの変更履歴を管理することができるアプリ
+      (ソフト)</span> です。また、<strong><em>GitHub</em></strong>
+      は、1年の総合工学実験実習の<a
+      href="https://classroom.google.com/c/NjgxODIzNjU1NzQy/m/NzE0MDc0ODQ5NjU3/details">知能情報コースの実験実習テーマ</a>
+      でも体験利用した「<strong>ウェブサービス</strong>」です。<strong>GitHub</strong>
+      は (git と連携して)
+      主にチーム開発の支援や、ソースコードの公開などの機能を提供してくれます。</p>
+      <p>git/GitHub は、就職・進学してからは無論、高専在学中にも<span
+      class="masked">「各種セミナー」や「ハッカソン」「インターンシップ」「ポートフォリオづくり」「就職のエントリ」</span>などの場面で利用します。ある程度の仕組みを分かって
+      git/GitHub を使えるようになっておかないと、非常に困ること
+      (場合によっては開発チームのメンバーに迷惑をかけること)
+      になるので、しっかりと学ぶようにしてください。</p>
+      <p>なお、git/GitHub
+      では「<strong>リポジトリ</strong>」「<strong>コミット</strong>」「<strong>ステージング</strong>」などの専門用語が頻出することにくわえ、仕組み
+      (概念) も初学者にとっては
+      <strong><em>極めて難解なもの</em></strong>
+      になります。これらは、git/GitHub を実際に利活用していくなかで
+      <span class="masked">段階的に理解を深めて</span>
+      いってください。</p>
+      <p>特に、学び始めてからしばらくの間は、<strong>専門用語について調べて意味が完全理解できなくとも「呼称」「名前」として、そのまま受け入れるように努めてください</strong>
+      (調べること自体はは大切でです!)。</p>
+      <div class="note type-tips">
+      <p><strong>git/GitHub 関連の専門用語について</strong></p>
+      <p>野球にも「イニング」「タイムリーエラー」「セーフティバント」「チェンジアップ」など単語を聞いただけでは内容が理解も想像もできない専門用語が多数存在します。野球を経験したことがない人は、これら専門用語について丁寧に説明を受けても、イメージを掴んだり、理解したりすることはなかなかできません。しかし、用語の意味が分からなくても
+      (拙いながらも) <span
+      class="masked">実際に野球をプレーすること</span>
+      は可能で、それを通じて専門用語のイメージをつかみ、理解を深めることができます。</p>
+      <p>これは git/GitHub
+      においても同様です。学習初期では、専門用語の意味を理解しようとするよりも、<strong>まずは、それをひとつの概念や操作・処理として受け入れて、</strong>
+      <span class="masked">失敗を含めた実際の経験や利用のなかで
+      (ある程度の時間をかけながら) イメージや理解を深めていく</span>
+      ことが求められます。</p>
+      </div>
+      <div class="note type-tips">
+      <p><strong>バージョン管理とは何か、何がうれしいのか</strong></p>
+      <p>「バージョン管理とは何か」また「バージョン管理ができると何がうれしいのか」といったことについては、ウェブ記事やYouTubeなどを<a
+      href="https://www.google.com/search?q=バージョン管理+メリット+git">参照</a>
+      してください。分かりやすい解説が掲載されています。</p>
+      </div>
+      <h1 data-number="2" id="gitのダウンロードとインストール設定"><span
+      class="header-section-number">2</span>
+      gitのダウンロードとインストール・設定</h1>
+      <p>以降、PC に Visual Studio Code (VSCode)
+      がインストールされている前提での <strong>git
+      のインストール作業</strong>になります。VSCode
+      のインストール・初期設定については <a
+      href="lecture09.html">第09回講義</a> を参照してください。</p>
+      <p>既に <strong>PC に git
+      がインストールされている場合は、再インストールは</strong>
+      <strong><em>不要</em></strong> です (そのまま利用してください)
+      。ただし、テキストの解説には必ず目を通して、<span
+      class="masked">必要に応じて設定などを変更・修正</span>
+      してください。</p>
+      <div class="note type-caution">
+      <p><strong>Git の最新バージョンについて
+      (講義資料の読み替え)</strong></p>
+      <p><strong>2024年9月19日現在</strong>の Git for Windows
+      の最新バージョンは <code>v2.46.1.windows.1</code>
+      です。以降の講義資料に記載されているバージョンは
+      <code>v2.46.1.windows.1</code> に読み替えてください。</p>
+      </div>
+      <h2 data-number="2.1"
+      id="gitがインストール済みであるかの確認方法"><span
+      class="header-section-number">2.1</span>
+      gitがインストール済みであるかの確認方法</h2>
+      <p>git が PC にインストールされているかどうかは
+      <strong>コマンドプロンプト</strong> から <code>git -v</code>
+      のコマンドを実行して確認できます。以下の例のように
+      <strong>バージョン情報の応答</strong> があれば、git
+      がインストールされています。一方で、<code>'git -v' は、内部コマンドまたは外部コマンド、操作可能なプログラムまたはバッチ ファイルとして認識されていません。</code>
+      という応答があれば git はインストールされていません。</p>
+      <pre><code>C:\Users\xxxx&gt;git -v
+git version 2.39.0.windows.2</code></pre>
+      <div class="note type-tips">
+      <p><strong>gitのバージョンアップ</strong></p>
+      <p>既に PC に git
+      がインストールされている場合、コマンドプロンプトから
+      <code>git update-git-for-windows</code> を実行することで <span
+      class="masked">バージョンのアップデート</span> ができます。</p>
+      <pre><code>C:\Users\xxxx&gt;git update-git-for-windows
+Git for Windows 2.39.0.windows.2 (64-bit)
+Update 2.42.0.windows.2 is available
+Download and install Git for Windows v2.42.0.windows.2 [N/y]?</code></pre>
+      <p>上記に対して <code>y</code>
+      を入力すると<strong>最新版へのアップデート</strong>が開始されます。<strong>基本的には最新版を利用</strong>するようにしてください。</p>
+      </div>
+      <div class="note type-senior">
+      <p><strong>gitを再インストールする場合の注意点</strong></p>
+      <p>gitを再インストールする場合は、Windowsの「設定」-「アプリ」-「インストールされているアプリ」から
+      Git
+      選択して「アンインストール」してから、再度、下記のインストール作業を行ってください。</p>
+      <p>また <strong>git
+      の旧設定を引き継がずに完全に新規インストールと同じ状態にしたい場合</strong>は、アンインストールした後に下記のファイルも手動削除してください
+      (あるいは <code>.gitconfig.bak</code>
+      のようにリネームして無効化してください)。</p>
+      <ul>
+      <li><code>C:\Users\xxxx\.gitconfig</code> ここで <code>xxxx</code>
+      は各自のアカウントに読み替え</li>
+      <li><code>C:\Program Files\Git\etc\gitconfig</code>
+      <ul>
+      <li>もしくは
+      <code>C:\Program Files (x86)\Git\etc\gitconfig</code></li>
+      </ul></li>
+      </ul>
+      </div>
+      <h2 data-number="2.2" id="github-の設定を確認"><span
+      class="header-section-number">2.2</span> GitHub の設定を確認</h2>
+      <p><strong><a href="https://github.co.jp/">GitHub</a></strong>
+      にログインしておきます。</p>
+      <div class="note type-caution">
+      <p><strong>就活等に利用するGitHubアカウントの準備</strong></p>
+      <p>次回の授業までに、就活・進学活動、インターンシップ応募に使うための
+      <strong>GitHubアカウント</strong>
+      を準備しておいてください。このアカウント（リポジトリ）は、インターンシップ、就職、進学において、皆さんの
+      <strong>ポートフォリオ</strong> ( <span
+      class="masked">取組み経験やスキル (実力・実績)
+      を証明するための作品集</span> ) という位置づけになります。</p>
+      <p>そのため、<strong>ユーザーネームは慎重に設定</strong>してください
+      (1年次の実験実習で作成したアカウントを継続使用しても、新規に作成しても、個人使用しているものを利用してもOKです。ユーザーネームは変更可能ですが色々と面倒があるので、この機会に適切なものにしておきましょう)。</p>
+      <p>この授業で作成したプログラミングのほか、他の授業や実験実習で作成したものも、このGitHubアカウントのなかに蓄積していってもらいます
+      (少なくとも教員とクラスメイトには閲覧されるものになります) 。</p>
+      </div>
+      <p>GitHubにログインしている状態で、プロフィール設定のページ (<a
+      href="https://github.com/settings/profile">https://github.com/settings/profile</a>)
+      にアクセスして、Public profile
+      の「<strong>Name</strong>」の設定を確認しておきます。</p>
+      <p>これは <a
+      href="#github-と連携させるための設定の追加">gitインストール後の設定</a>
+      で必要となる情報なのでテキストエディタなどにコピペしておいてください。なお、この
+      Name は <strong>ユーザーネーム・表示名 (≠アカウント名)
+      であり、アカウント名ではないことに注意</strong> してください。</p>
+      <p>また、Nameに <strong>日本語や絵文字を使用している場合</strong>
+      は、あとの作業におけるエラーの原因となるので修正・変更しておいてください。</p>
+      <figure>
+      <img src="figs/14/git-name.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>つづいて、メール設定のページ(<a
+      href="https://github.com/settings/emails">https://github.com/settings/emails</a>)
+      にアクセスして「<strong>Keep my email addresses
+      private</strong>」と「<strong>Block command line pushes that
+      expose my email</strong>」の項目 (ページの下部)
+      にチェックを入れておきます。また、GitHub から付与される
+      <strong>コミット用のメールアドレス</strong>
+      (<code>...@users.noreply.github.com</code>)
+      を確認し、テキストエディタなどにコピペしておいてください。</p>
+      <figure>
+      <img src="figs/14/git-mail.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>上記の<strong>設定の意味</strong>は、以下のとおりです
+      (十分に理解できなくてもいいので、<span
+      class="masked">読み飛ばさずに目を通して</span> ください)。</p>
+      <ul>
+      <li>We’ll remove your public profile email and use
+      <code>12345678+GitHubAccountName@users.noreply.github.com</code>
+      when performing web-based Git operations (e.g. edits and merges)
+      and sending email on your behalf. If you want command line Git
+      operations to use your private email you must set your email in
+      Git.Commits pushed to GitHub using this email will still be
+      associated with your account.
+      <ul>
+      <li><strong>ウェブ上でのGitの操作や、あなたの代わりにメールを送る際には、公開プロフィールのメールアドレスを「非表示」にし、代わりに</strong>
+      <code>12345678+GitHubAccountName@users.noreply.github.com</code>
+      <strong>というアドレスを使用します。コマンドライン上での git
+      操作で個人のメールアドレスを使いたい場合は、git
+      の設定からメールアドレスを設定してください。このアドレスで GitHub
+      にデータをアップロードしても、それは正しくあなたのアカウントと紐づけられます。</strong></li>
+      </ul></li>
+      <li>When you push to GitHub, we’ll check the most recent commit.
+      If the author email on that commit is a private email on your
+      GitHub account, we will block the push and warn you about exposing
+      your private email.
+      <ul>
+      <li><strong>GitHub
+      にデータをアップロードする際、最新の変更点を確認します。もしその変更の著者のメールアドレスが
+      GitHub
+      アカウントの非公開メールだった場合、アップロードは停止され、私的なメールアドレスを公開してしまうリスクについてお知らせします。</strong></li>
+      </ul></li>
+      </ul>
+      <h2 data-number="2.3" id="git-のダウンロード"><span
+      class="header-section-number">2.3</span> git のダウンロード</h2>
+      <p><a href="https://git-scm.com/">Gitの公式サイト</a>
+      にアクセスして、Windows (64bit版・<strong>Standalone
+      Installer</strong>) の 最新版の <strong>Gitインストーラ</strong>
+      をダウンロードしてください。約60MB程度のファイルです。</p>
+      <ul>
+      <li>https://git-scm.com/download/winトップページからダウンロードページにたどりつけない場合は
+      <a
+      href="https://git-scm.com/download/win">https://git-scm.com/download/win</a>
+      に直接アクセスしてください。</li>
+      </ul>
+      <p>PCにアプリをインストールするためのプログラムを「<strong>インストーラ
+      (Installer)</strong>」といいます。</p>
+      <h2 data-number="2.4" id="git-のインストール"><span
+      class="header-section-number">2.4</span> git のインストール</h2>
+      <p>ここでは <code>Git-2.41.0.3-64-bit.exe</code>
+      を対象にインストール手順を説明します。<strong>Gitのバージョンが異なる場合は、適宜、内容を読み替えて作業を進めてください</strong>。</p>
+      <p>ダウンロードした <code>Git-2.41.0.3-64-bit.exe</code>
+      をダブルクリックして<strong>インストーラを起動</strong>します。</p>
+      <h3 data-number="2.4.1" id="git-のライセンスの確認"><span
+      class="header-section-number">2.4.1</span> git
+      のライセンスの確認</h3>
+      <ul>
+      <li>Please read the following important information before
+      continuing.
+      <strong>先に進む前に以下の大切な情報を必ず確認してください。</strong></li>
+      <li>When you are ready to continue with Setup, click Next.
+      <strong>セットアップを続行する準備ができたら「次へ」をクリックします。</strong></li>
+      </ul>
+      <figure>
+      <img src="figs/14/git-inst-01.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>ライセンス (GNU General Public License : <strong>GPL</strong>)
+      について確認して次に進みます。GNU
+      は「<strong>グヌー</strong>」や「<strong>グヌニュー</strong>」と発音します
+      (牛的な動物の <a
+      href="https://www.google.com/search?q=%E3%83%8C%E3%83%BC&amp;tbm=isch">Gnu</a>
+      は「ヌー」と発音しますが、ここでは「グ」をつけて発音します)。</p>
+      <p>なお、GPLは <strong><em>コピーレフト型ライセンス</em></strong>
+      であり、<strong>OSS (オープンソースソフトウェア)</strong>
+      のなかでも<strong>利用に際して注意すべきライセンス</strong>
+      (知らずにライブラリなどに組み込むと恐ろしいこと)
+      になります。特に、ソフトウェアやウェブサービスでビジネスを考えている場合には注意してください。</p>
+      <ul>
+      <li>とほほのライセンス入門
+      <ul>
+      <li>https://www.tohoho-web.com/ex/license.html#gpl-license</li>
+      </ul></li>
+      <li>GPLの解説：GNU General Public Licenseの基本概念と活用法
+      <ul>
+      <li>https://the-simple.jp/gpl-commentary-basic-concepts-and-usage-of-the-gnu-general-public-license</li>
+      </ul></li>
+      </ul>
+      <div class="note type-caution">
+      <p><strong>GPLライセンス・コピーレフト</strong></p>
+      <p>以下、とほほのライセンス入門
+      (https://www.tohoho-web.com/ex/license.html#gpl-license)
+      からの引用です。</p>
+      <p>無償で利用・改造・再配布できますが、GPLのモジュールをライブラリとして呼び出すだけでも、呼び出したソースコード自体も
+      GPL
+      ライセンスとする必要があり、成果物の配布先に開発コードを公開する必要があります。これを
+      <strong>コピーレフト</strong>
+      とも呼びます。<strong>利用しただけでソース公開の義務が生じることから</strong>
+      <span class="masked">GPLに感染する</span>
+      <strong>ともいわれています</strong>。</p>
+      </div>
+      <h3 data-number="2.4.2" id="インストール先の設定"><span
+      class="header-section-number">2.4.2</span>
+      インストール先の設定</h3>
+      <ul>
+      <li>Where should Git be installed? <strong>Git
+      をどこにインストールしますか?</strong></li>
+      </ul>
+      <figure>
+      <img src="figs/14/git-inst-02.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>Gitをインストールするフォルダを設定します。必要があれば変更して次に進みます。</p>
+      <h3 data-number="2.4.3"
+      id="インストールするコンポーネントの選択"><span
+      class="header-section-number">2.4.3</span>
+      インストールするコンポーネントの選択</h3>
+      <ul>
+      <li>Which components should be installed?
+      <strong>どのコンポーネント (機能)
+      をインストールしますか?</strong></li>
+      <li>Select the components you want to install; clear the
+      components you do not want to install. Click Next when you are
+      ready to continue.
+      <strong>インストールしたいコンポーネントを選択し、インストールしたくないコンポーネントを選択解除します。続行する準備ができたら「次へ」をクリックします。</strong></li>
+      </ul>
+      <figure>
+      <img src="figs/14/git-inst-03.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p><strong><em>要変更</em></strong>
+      スクリーンショットを参考に<strong>チェックする箇所を変更</strong>してください。</p>
+      <p>特に「<strong>(NEW!) Add a Git Bash Profile to Windows
+      Terminal</strong>」は忘れずにチェックを入れてください。このオプションを設定すると、以下のように「<strong>ターミナル</strong>」に「<strong>Git
+      Bash</strong>」を統合することができ、便利です。</p>
+      <figure>
+      <img src="figs/14/bash-terminal.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <h3 data-number="2.4.4"
+      id="スタートメニューのフォルダ名称の設定"><span
+      class="header-section-number">2.4.4</span>
+      スタートメニューのフォルダ名称の設定</h3>
+      <ul>
+      <li>Setup will create the program’s shortcuts in the following
+      Start Menu folder.
+      <strong>セットアップにより、次のスタートメニューフォルダーにプログラムのショートカットが作成されます。</strong></li>
+      </ul>
+      <figure>
+      <img src="figs/14/git-inst-04.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>スタートメニューから「すべてのアプリ」に進んだときのフォルダ名称を設定します。必要に応じて変更し次に進みます。</p>
+      <h3 data-number="2.4.5"
+      id="git-で使用する既定のテキストエディタの設定"><span
+      class="header-section-number">2.4.5</span> git
+      で使用する既定のテキストエディタの設定</h3>
+      <ul>
+      <li>Choosing the default editor used by Git. <strong>Git
+      で使用するデフォルト (既定) のテキストエディタの選択</strong></li>
+      <li>Which editor would you like Git to use?
+      <strong>どのエディタを使用したいですか?</strong></li>
+      </ul>
+      <figure>
+      <img src="figs/14/git-inst-05.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p><strong><em>要変更</em></strong> コンフリクト (編集内容の衝突)
+      が発生した場合などに自動起動するデフォルトのテキストエディタを設定します。<span
+      class="masked">Use Visual Studio Code as Git’s default
+      editor</span> を選択してください。<strong>特に「Visual Studio
+      Code」と「Visual Studio Code
+      Insiders」の選び間違いに注意してください</strong>。なお、これらは事前に
+      VSCode がインストールされていないと選択できません。</p>
+      <p>拘りがある場合は「Vim」などの別のエディタを設定しても問題ありません。</p>
+      <div class="note type-tips">
+      <p><strong>ここで設定したデフォルトテキストエディタはどこで使用されるのか</strong></p>
+      <p>デフォルトエディタは、コマンドラインからコミットメッセージを付けずに
+      <code>git commit</code>
+      を実行したり、コンフリクトが生じた場合に、その解消のために git
+      によって自動起動されます。</p>
+      </div>
+      <h3 data-number="2.4.6" id="初期ブランチ名称の設定"><span
+      class="header-section-number">2.4.6</span>
+      初期ブランチ名称の設定</h3>
+      <ul>
+      <li>Adjusting the name of the initial branch in new repositories
+      <strong>新規リポジトリにおける「初期ブランチ名」の変更</strong></li>
+      <li>What would you like Git to name the initial branch after “git
+      init”? <strong>「git
+      init」の実行後、「初期ブランチ」に何という名前を付けますか?</strong></li>
+      </ul>
+      <figure>
+      <img src="figs/14/git-inst-06.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p><strong><em>要変更</em></strong> 「<strong>Override the default
+      branch name for new repositories</strong>
+      (リポジトリのデフォルトのブランチ名を <code>main</code>
+      でオーバーライドする)」を選択してください。2020年10月から GitHub
+      でのデフォルトブランチ名が <code>master</code> から
+      <code>main</code>
+      に変更になっており、ここではこれにあわせていきます (従来
+      <code>master</code>
+      という名称が使用されてきましたが、人権運動・人権問題の関係から最近では
+      <code>main</code> という名称の使用が推奨されています)。</p>
+      <ul>
+      <li>このほか、コンピュータ分野では Blaklist / Whitelist を <span
+      class="masked">Denylist / Allowlist</span>
+      に置き換えるような変化が起きています。</li>
+      </ul>
+      <h3 data-number="2.4.7" id="パス-環境変数-の設定"><span
+      class="header-section-number">2.4.7</span> パス (環境変数)
+      の設定</h3>
+      <ul>
+      <li>How would you like to use Git from the command line?
+      <strong>コマンドラインからGitをどのように使用しますか?</strong></li>
+      </ul>
+      <figure>
+      <img src="figs/14/git-inst-07.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>デフォルトの「Git from the command line and also from 3rd-party
+      software
+      (=<strong>コマンドラインおよびサードパーティソフトウェアからGitを使用する</strong>)」を選択します。</p>
+      <ul>
+      <li>(Recommended) This option adds only some minimal Git wrappers
+      to your PATH to avoid cluttering your environment with optional
+      Unix tools. You will be able to use Git from Git Bash, the Command
+      Prompt and the Windows PowerShell as well as any third-party
+      software looking for Git in PATH.
+      <ul>
+      <li><strong>(推奨) このオプションでは、余計な Unix
+      ツールで環境が汚れるのを防ぐために、最小限の git
+      の設定だけをシステムの PATH に追加します。これにより、Git
+      Bash、コマンドプロンプト、Windows PowerShell、そして PATH 内で Git
+      を検索するサードパーティソフトウェアで Git
+      を利用できます。</strong></li>
+      </ul></li>
+      </ul>
+      <div class="note type-tips">
+      <p><strong>設定の詳細が気になる人はChatGPTに解説を求めてください</strong></p>
+      <p>日本語訳を付けていますが、十分に意味が理解できる人は少なくないと思います。内容が分からないままだと気持ち悪い人は、生成AIに解説してもらってください。</p>
+      <blockquote>
+      <p>Gitのインストールの途中で次のようなメッセージが表示されました。この内容について日本語で補足を加えながら説明してください。初心者向けを想定してください。<br>This
+      option adds only some minimal Git wrappers to your PATH to avoid
+      cluttering your environment with optional Unix tools. You will be
+      able to use Git from Git Bash, the Command Prompt and the Windows
+      PowerShell as well as any third-party software looking for Git in
+      PATH.</p>
+      </blockquote>
+      </div>
+      <h3 data-number="2.4.8"
+      id="デフォルト使用するsshクライアントの選択"><span
+      class="header-section-number">2.4.8</span>
+      デフォルト使用するSSHクライアントの選択</h3>
+      <ul>
+      <li>Which Secure Shell client program would you like Git to use?
+      <strong>git で使用する Secure Shell
+      クライアントプログラムはどちらにしますか</strong></li>
+      </ul>
+      <figure>
+      <img src="figs/14/git-inst-08.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <ul>
+      <li>「Use bundled OpenSSH (バンドルされている OpenSSH
+      を使用する)」を選択してください。git とともにインストールされる
+      ssh.exe を使用する設定になります。</li>
+      </ul>
+      <h3 data-number="2.4.9"
+      id="デフォルト使用するssltlsライブラリの選択"><span
+      class="header-section-number">2.4.9</span>
+      デフォルト使用するSSL/TLSライブラリの選択</h3>
+      <ul>
+      <li>Which SSL/TLS library would you like Git to use for HTTPS
+      connections? <strong>Git において HTTPS 接続に使用する SSL/TLS
+      ライブラリはどちらにしますか?</strong></li>
+      </ul>
+      <figure>
+      <img src="figs/14/git-inst-09.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <ul>
+      <li>「Use the OpenSSL library
+      (<strong>OpenSSLライブラリを使用する</strong>)」を選択してください。</li>
+      </ul>
+      <h3 data-number="2.4.10" id="改行コードに関する設定"><span
+      class="header-section-number">2.4.10</span>
+      改行コードに関する設定</h3>
+      <ul>
+      <li>How should Git treat line endings in text files? <strong>git
+      においてテキストファイルの行末をどのように処理しますか?</strong></li>
+      </ul>
+      <figure>
+      <img src="figs/14/git-inst-10.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p><strong><em>要変更</em></strong> 「<strong>Checkout as-is,
+      commit Unix-style line endings</strong>
+      (そのままチェックアウトし、Unix
+      スタイルの行末をコミットします)」を選択してください。将来的に
+      <strong>Docker で Linux
+      コンテナを立ち上げ、そこにリモート接続して開発・実行することを見越して、この設定を使用します</strong>
+      (VSCodeを使用すれば、改行コードが <code>LF</code>
+      でも画面表示は乱れないので、この設定で問題ありません) 。</p>
+      <ul>
+      <li>Git will not perform any conversion when checking out text
+      files. When committing text files, CRLF will be converted to LF.
+      For cross-platform projects, this is the recommended setting on
+      Unix (“core.autocrif” is set to “input”).
+      <ul>
+      <li><strong>Git はテキスト
+      ファイルをチェックアウトするときに変換を実行しません。テキストファイルをコミットすると、CRLF
+      は LF に変換されます。クロスプラットフォーム
+      プロジェクトの場合、これは Unix での推奨設定です
+      (「core.autocrif」は「input」に設定されます)。</strong></li>
+      </ul></li>
+      </ul>
+      <h3 data-number="2.4.11" id="ターミナルエミュレータの構成"><span
+      class="header-section-number">2.4.11</span>
+      ターミナルエミュレータの構成</h3>
+      <ul>
+      <li>Which terminal emulator do you want to use with your Git Bash?
+      <strong>Git Bash
+      で使用するターミナルエミュレータはどちらにしますか?</strong></li>
+      </ul>
+      <figure>
+      <img src="figs/14/git-inst-11.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p><span class="masked">Use MinTTY (the default terminal of
+      MSYS2)</span> を選択してください。</p>
+      <ul>
+      <li>Git Bash will use MinTTY as terminal emulator, which sports a
+      resizable window non-rectangular selections and a Unicode font.
+      Windows console programs (such as interactive Python) must be
+      launched via ’winpty to work in MinTTY.
+      <ul>
+      <li><strong>Git
+      Bashは、ウィンドウのサイズを変更でき、非矩形の選択ができ、ユニコードフォントをサポートしている
+      MinTTY というターミナルエミュレータを使用します。Windows
+      のコンソールプログラム（例: 対話型Python）は、MinTTY
+      で動作させるためには ‘winpty’
+      を介して起動する必要があります。</strong></li>
+      </ul></li>
+      </ul>
+      <h3 data-number="2.4.12" id="git-pullのデフォルト動作設定"><span
+      class="header-section-number">2.4.12</span> git
+      pullのデフォルト動作設定</h3>
+      <ul>
+      <li>What should <code>git pull</code> do by default? <strong>git
+      pull にはデフォルトではどんな動作をさせますか?</strong></li>
+      </ul>
+      <figure>
+      <img src="figs/14/git-inst-12.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>「<strong>Default (fast-forward or
+      merge)</strong>」を選択してください。</p>
+      <ul>
+      <li>This is the standard behavior of git pull: fast-forward the
+      current branch to the fetched branch when possible, otherwise
+      create a merge commit.
+      <ul>
+      <li><strong>これは git pull
+      の標準的な動作です。可能であれば現在のブランチを、取得したブランチにファストフォワードさせます。それができない場合は新たにマージのコミットを作成します。</strong></li>
+      </ul></li>
+      </ul>
+      <h3 data-number="2.4.13" id="資格情報マネージャの選択"><span
+      class="header-section-number">2.4.13</span>
+      資格情報マネージャの選択</h3>
+      <ul>
+      <li>Which credential helper should be configured?
+      <strong>どの資格情報ヘルパーを構成する必要がありますか?</strong></li>
+      </ul>
+      <figure>
+      <img src="figs/14/git-inst-13.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>「Git Credential Manager」を選択してください。</p>
+      <h3 data-number="2.4.14" id="追加オプションの設定"><span
+      class="header-section-number">2.4.14</span>
+      追加オプションの設定</h3>
+      <ul>
+      <li>Which features would you like to enable?
+      <strong>どの機能を有効にしますか?</strong></li>
+      </ul>
+      <figure>
+      <img src="figs/14/git-inst-14.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>「Enable file system caching
+      (<strong>システムのキャッシュを有効にする</strong>)」にチェックをいれてください。</p>
+      <ul>
+      <li>File system data will be read in bulk and cached in memory for
+      certain operations (“core.fscache” is set to “true”). This
+      provides a significant performance boost.
+      <ul>
+      <li><strong>ファイルシステムデータは一括で読み取られ、特定の操作のためにメモリにキャッシュされます
+      (「core.fscache」が「true」に設定される)。これにより、パフォーマンスが大幅に向上します。</strong></li>
+      </ul></li>
+      </ul>
+      <h3 data-number="2.4.15" id="実験的オプションの構成"><span
+      class="header-section-number">2.4.15</span>
+      実験的オプションの構成</h3>
+      <ul>
+      <li>These features are developed actively. Would you like to try
+      them?
+      <strong>これらの機能は積極的に開発されています。試してみませんか？</strong></li>
+      </ul>
+      <figure>
+      <img src="figs/14/git-inst-15.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>特にチェックを入れずに「<strong>Install</strong>」のボタンを押下してください。インストールが完了したら「<strong>Finish</strong>」のボタンを押下してインストールを完了させてください。</p>
+      <h2 data-number="2.5" id="インストール後の-git-の設定"><span
+      class="header-section-number">2.5</span> インストール後の git
+      の設定</h2>
+      <p>GitHub と連携させて利活用するための
+      <strong><em>重要設定</em></strong> をします。</p>
+      <p>現在の git
+      の「グローバル設定」と「システム設定」について確認します。スタートボタンを右クリックして「<strong>ターミナル
+      (管理者)</strong>」を起動し、ターミナルのタブを「<strong>コマンドプロンプト</strong>」に切り替えます。</p>
+      <figure>
+      <img src="figs/14/cmd-01.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <h3 data-number="2.5.1" id="git-設定の確認"><span
+      class="header-section-number">2.5.1</span> git 設定の確認</h3>
+      <p>git の「<strong>グローバル設定</strong>」を確認するために
+      <code>git config --global -l</code>
+      を実行します。新規インストール直後であれば、次のような応答が返ってくると思います。なお、既に
+      git
+      をインストールして利用している場合は、その他の設定も表示されると思います。</p>
+      <pre><code>C:\Users\xxxx&gt;git config --global -l
+core.editor=&quot;C:\Users\xxxx\AppData\Local\Programs\Microsoft VS Code\bin\code&quot; --wait</code></pre>
+      <p>インストール中に選択したようにデフォルトエディタ設定 (=
+      <code>core.editor</code>) として VSCode
+      が設定されていることを確認してください。</p>
+      <p>次に git の「<strong>システム設定</strong>」を確認するために
+      <code>git config --system -l</code>
+      を実行します。インストール直後であれば、次のような応答が返ってくると思います。</p>
+      <pre><code>C:\Users\xxxx&gt;git config --system -l
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/etc/ssl/certs/ca-bundle.crt
+core.autocrlf=input
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=main</code></pre>
+      <p>ここで、必ず確認して欲しい項目が
+      <code>core.autocrlf=input</code> です。</p>
+      <p>もしも <code>core.autocrlf=true</code> や
+      <code>core.autocrlf=false</code>
+      となっている場合は、以下のようにコマンドを実行して<strong>設定を変更</strong>してください。この設定変更コマンドは「ターミナル
+      <strong>(管理者)</strong>」で実行しないと
+      <code>Permission denied</code>
+      で失敗するので注意してください。</p>
+      <div class="note type-tips">
+      <p><strong>各設定の意味を知りたい場合は…</strong></p>
+      <p>各設定の意味を知りたい場合は、生成AIを利用してください。</p>
+      <blockquote>
+      <p><code>git config --system -l</code>
+      コマンドを実行した結果、次のような応答が返ってきました。まずは、上から5行目までの設定の意味を解説してください。
+      （自分のコンソールに出力された内容を貼り付ける）</p>
+      </blockquote>
+      </div>
+      <pre><code>git config --system core.autocrlf input</code></pre>
+      <p>その他の項目 (インストール途中で設定した項目)
+      についても、上記ようなコマンドで変更することができます。例えば、初期ブランチの名前を
+      <code>master</code>
+      にしたい場合は、以下のコマンドを実行します。</p>
+      <pre><code>git config --system init.defaultbranch master</code></pre>
+      <p>なお、「<strong>グローバル設定</strong>」と「<strong>システム設定</strong>」に異なる設定があった場合は「<strong>グローバル設定</strong>」のほうが優先されます。さらに、必要に応じて「<strong>ローカル設定</strong>」も追加できます。詳しくは「<a
+      href="https://www.google.com/search?q=git+ローカル設定+グローバル設定+システム設定">git
+      ローカル設定 グローバル設定
+      システム設定</a>」などでウェブ検索してください。</p>
+      <div class="note type-senior">
+      <p><strong>設定ファイルのパス</strong></p>
+      <p>ここで <code>--global</code> オプションをつけて設定した内容は
+      <code>C:\Users\xxxx\.gitconfig</code>
+      に保存されます。そのため、このファイルを直接編集することでも設定が可能です。</p>
+      <p>また <code>--system</code> オプションをつけて設定した内容は
+      <code>C:\Program Files\Git\etc\gitconfig</code>
+      に保存されます。OS環境によっては
+      <code>C:\Program Files (x86)\Git\etc\gitconfig</code>
+      となります。</p>
+      </div>
+      <h3 data-number="2.5.2"
+      id="github-と連携させるための設定の追加"><span
+      class="header-section-number">2.5.2</span> GitHub
+      と連携させるための設定の追加</h3>
+      <p><strong><em>重要設定</em></strong> 「ローカルPC上で機能する
+      git」と「ウェブ上で機能する
+      GitHub」を連携させるために、次のコマンドを実行して<strong>グローバル設定</strong>に項目を追加します。</p>
+      <p>ここで <code>K.Taro</code> の部分は<a
+      href="#github-の設定を確認">先にGitHubで確認</a>しておいた<strong>ユーザーネーム・表示名</strong>
+      (≠アカウント名) に書き換えてください。</p>
+      <p>また、<code>12345678+GitHubAccountName@users.noreply.github.com</code>
+      の部分は<a
+      href="#github-の設定を確認">先に確認</a>しておいた<strong>コミット用のメールアドレス</strong>に書き換えてくだい。</p>
+      <pre><code>git config --global user.name &quot;K.Taro&quot;
+git config --global user.email &quot;12345678+GitHubAccountName@users.noreply.github.com&quot;
+git config --global core.quotepath false</code></pre>
+      <p>再び、<code>git config --global -l</code>
+      を実行して、<strong>上記の3つの設定がグローバル設定に追加されていること</strong>を確認してください。</p>
+      <p>以上で、git
+      に関する<strong>最低限の設定</strong>は終了です。</p>
+      <div class="note type-tips">
+      <p><strong>core.quotepathについて</strong></p>
+      <p><code>core.quotepath=false</code> にすることで
+      <code>git status</code>
+      コマンドで「変更ファイル一覧」を表示させたときに日本語のファイル名が文字化けしないようになります。</p>
+      </div>
+      <h1 data-number="3"
+      id="リモートリポジトリの発行変更内容のコミット"><span
+      class="header-section-number">3</span>
+      リモートリポジトリの発行・変更内容のコミット</h1>
+      <p>ここからは、VSCode
+      を使って<strong>プロジェクトフォルダの作成し、そのプロジェクトのリモートリポジトリを
+      GitHub
+      に発行、フォルダ内のファイルを変更して、それをコミット・プッシュするという操作・処理</strong>を体験します。このプロセスによって、ローカルに作成したプロジェクトフォルダのソースコードが
+      GitHub を通じてウェブに公開されるようになります。</p>
+      <div class="note type-tips">
+      <p><strong>「リポジトリ」とは</strong></p>
+      <p><strong>リポジトリ</strong> (直訳すると<strong>収納庫</strong>)
+      とは、プロジェクトを構成するファイルやフォルダ、その変更履歴を保管しておく場所を意味します。PCのローカルストレージに作成・配置するリポジトリを「<strong>ローカルリポジトリ</strong>」、GitHubなどのネットワークに作成・配置するリポジトリを「<strong>リモートリポジトリ</strong>」と言います。</p>
+      <p>なお、<strong>リモートリポジトリ</strong>は<strong>中央リポジトリ</strong>とよばれることもあります。</p>
+      </div>
+      <div class="note type-tips">
+      <p><strong>「コミット」とは</strong></p>
+      <p><strong>コミット</strong>とは、プロジェクトに含まれるファイルやフォルダの変更
+      (新規作成や削除を含む) を<strong>記録する行為</strong>、あるいは
+      <strong>記録そのもの</strong> を意味します。</p>
+      </div>
+      <div class="note type-tips">
+      <p><strong>「プッシュ」とは</strong></p>
+      <p><strong>プッシュ</strong>とは、ローカルリポジトリの変更内容をリモートリポジトリにアップロードすることを意味します。</p>
+      </div>
+      <h2 data-number="3.1" id="プロジェクトフォルダの作成"><span
+      class="header-section-number">3.1</span>
+      プロジェクトフォルダの作成</h2>
+      <p>PC のドキュメントのフォルダ (
+      <code>C:\Users\xxxx\Documents</code> ) のなかに
+      <code>GitHub-Test</code> という名前のフォルダ
+      (プロジェクトフォルダ) を作成し VSCode
+      でオープンします。フォルダ位置は任意でOKですが、フォルダ名称は、必ずこの
+      <code>GitHub-Test</code> にしてください
+      (異なる名称にすると、以下で読み替え作業が必要です)。</p>
+      <p>フォルダを VSCode でオープンする方法は <a
+      href="lecture09.html#プロジェクトフォルダの作成">第09回講義のプロジェクトフォルダの作成</a>
+      参照してください。</p>
+      <h2 data-number="3.2" id="ファイルの追加"><span
+      class="header-section-number">3.2</span> ファイルの追加</h2>
+      <p>VSCode上から <code>README.md</code>
+      という<strong>マークダウン形式のファイル</strong>を新規作成し、以下の内容を記述して保存してください。マークダウン形式
+      (Markdown記法) は Google Colab. (Jupyter)
+      のテキストセルのフォーマットとして既に学習済みです、忘れてしまった場合は<a
+      href="https://www.google.com/search?q=マークダウン+入門">ウェブ検索</a>
+      して再学習ください。</p>
+      <pre><code># GitHub利用の練習
+- VSCode から GitHub にリポジトリを発行</code></pre>
+      <figure>
+      <img src="figs/14/vscode-01.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <h2 data-number="3.3" id="リモートリポジトリの発行"><span
+      class="header-section-number">3.3</span>
+      リモートリポジトリの発行</h2>
+      <p>VSCodeのウィンドウの左側にならぶアイコンから「<strong>ソース管理</strong>」を選択し、パネルから
+      <strong><em>GitHubに公開</em></strong> のボタンを押下します。</p>
+      <figure>
+      <img src="figs/14/vscode-02.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>次のダイアログが表示されるので「<strong>許可</strong>」を押下します。</p>
+      <figure>
+      <img src="figs/14/vscode-03.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>ウェブブラウザが自動起動し GitHub へのログインが要求されるので
+      GitHub の Username と Password を入力して「<strong>Sign
+      in</strong>」のボタンを押下します。</p>
+      <figure>
+      <img src="figs/14/vscode-04.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>ウェブブラウザに、次のようなダイアログが表示がされるので「<strong>Visual
+      Studio Code を開く</strong>」のボタンを押下します。</p>
+      <figure>
+      <img src="figs/14/vscode-05.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>VSCode
+      に次のようなダイアログが表示されるので「<strong>開く</strong>」のボタンを押下します。</p>
+      <figure>
+      <img src="figs/14/vscode-06.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>VSCode
+      のウィンドウの上部に以下のようなドロップボックスが表示されるので「Publish
+      to GitHub <strong>public</strong> repository
+      ….」を選択します。これは、このプロジェクトフォルダを
+      <code>GitHub-Test</code> という名前のリポジトリとして GitHub
+      に発行 (Publish) する、という意味になります。</p>
+      <figure>
+      <img src="figs/14/vscode-07.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>以下のように <code>README.md</code>
+      にチェックがついていることを確認して「<strong>OK</strong>」を押下します。この
+      <code>README.md</code> というファイルを GitHub に発行 (Publish)
+      するという意味になります。</p>
+      <figure>
+      <img src="figs/14/vscode-08.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>次のダイアログが表示されるので「<strong>Sign in with your
+      brower</strong>」を押下します。</p>
+      <figure>
+      <img src="figs/14/vscode-09.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>ウェブブラウザの画面が自動的に次のように変わります。もし、GitHub
+      への再ログインを求められたときは、あらためて Username と Password
+      を入力してください。</p>
+      <figure>
+      <img src="figs/14/vscode-10.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>Authentication Succeeded = <strong>認証成功</strong></p>
+      <h2 data-number="3.4"
+      id="github-に正常発行されていることを確認"><span
+      class="header-section-number">3.4</span> GitHub
+      に正常発行されていることを確認</h2>
+      <p>プロジェクトフォルダの内容 (=<code>README.md</code>) が、各自の
+      GitHub アカウントの <code>GitHub-Test</code>
+      というリポジトリに正常に発行されたことを確認します。</p>
+      <p>ウェブブラウザから
+      <code>https://github.com/XXXX/GitHub-Test</code> つまり GitHub の
+      <code>GitHub-Test</code> リポジトリにアクセスして、次のように
+      <code>README.md</code> が表示されることを確認してください (GitHub
+      でマークダウンファイルはレンダリングされて画面表示されます)。URLの
+      <code>XXXX</code> には各自のアカウント名 (≠表示名)
+      が入ります。</p>
+      <figure>
+      <img src="figs/14/vscode-11.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <h2 data-number="3.5"
+      id="ファイルを変更してコミットプッシュ"><span
+      class="header-section-number">3.5</span>
+      ファイルを変更してコミット・プッシュ</h2>
+      <p>プロジェクトフォルダに含まれる <code>README.md</code>
+      に変更をくわえて、その変更を <strong><em>コミット</em></strong>
+      (=変更を記録) して、さらに、それを <strong><em>プル</em></strong>
+      (=ローカルリポジトリの内容をリモートリポジトリにアップロード)
+      していきます。</p>
+      <p>以下のように <code>README.md</code> にテキストを追記して
+      <strong>保存</strong> してください
+      (必ず保存処理をしてください)。</p>
+      <figure>
+      <img src="figs/14/vscode-12.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>ソース管理のパネルで <code>README.md</code>
+      横の「+」をクリックします。この操作は
+      <strong>ステージング</strong> といって、そのファイルを「コミット
+      (変更履歴の記録) の対象」に含めるという意味があります。VScode
+      のソース管理パネル内で <code>README.md</code>
+      が「変更」グループから、「ステージされている変更」のグループに移動しました
+      (画面を確認してください) 。</p>
+      <div class="note type-tips">
+      <p><strong>「ステージング」とは</strong></p>
+      <p><strong>ステージング</strong>とは、変更したファイルを
+      <strong>コミットの準備として選択 (ステージ) すること</strong>
+      を意味します。git
+      では、ファイルの変更を直接コミットするのではなく、まずその変更をステージングエリアに追加し、その後でコミットするという流れをとります。</p>
+      </div>
+      <figure>
+      <img src="figs/14/vscode-13.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>コミットメッセージ (必須・空欄にできません)
+      を入力します。コミットメッセージには、<strong>変更内容を端的に表すような文章</strong>を書きます。ここでは
+      <code>update README.md</code> とします
+      (コミットメッセージには日本語を使用することもできます)。</p>
+      <figure>
+      <img src="figs/14/vscode-14.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>コミットボタンの右側をクリックして「<strong>コミットして同期</strong>」を選択します。コミットして<strong>同期</strong>
+      とは、コミット、プッシュ、プル (フェッチとマージ)
+      という一連の操作・処理を実行することを意味します。</p>
+      <ul>
+      <li><strong>コミット</strong>:
+      ファイルの変更内容をローカルリポジトリに変更履歴として記録すること。</li>
+      <li><strong>プッシュ</strong>:
+      ローカルリポジトリにある変更履歴を、リモートリポジトリにアップロードすること。</li>
+      <li><strong>プル</strong>:
+      リモートリポジトリの内容をローカルリポジトリにダウンロードして
+      (この操作を <strong>フェッチ</strong> といいます)
+      、リモートリポジトリとローカルリポジトリの内容に差分があれば結合・統合すること
+      (この操作を <strong>マージ</strong>
+      といいまます)。フェッチとマージの処理をあわせてプルと表現します。</li>
+      </ul>
+      <figure>
+      <img src="figs/14/vscode-15.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>次のようなダイアログが表示されるので「<strong>OK</strong>」または「<strong>OK,
+      Don’t Show Again</strong>」を選択します。</p>
+      <figure>
+      <img src="figs/14/vscode-16.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>ウェブブラウザから、再度
+      <code>https://github.com/XXXX/GitHub-Test</code> にアクセスして
+      <code>README.md</code> が更新されていることを確認します。</p>
+      <figure>
+      <img src="figs/14/vscode-17.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <h1 data-number="4"
+      id="リモートリポジトリでのファイル変更と同期"><span
+      class="header-section-number">4</span>
+      リモートリポジトリでのファイル変更と同期</h1>
+      <p>今度は、GitHub (リモートリポジトリ) 側で <code>README.md</code>
+      に変更をくわえてコミットして、それをローカル側で同期させてみます。</p>
+      <p>次のように GitHub で <code>README.md</code>
+      を編集モードに切り替えます。</p>
+      <figure>
+      <img src="figs/14/github-01.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>次のように４行目に「GitHub（リモートリポジトリ）で
+      <code>README.md</code>
+      を直接編集してコミット」とテキストを追記して、右上の「<strong>Commit
+      changes</strong>」のボタンを押下します。</p>
+      <figure>
+      <img src="figs/14/github-02.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>ダイアログが表示されるので、次のようにコミットメッセージを記入して「<strong>Commit
+      changes</strong>」を押下し、変更をコミットします。</p>
+      <figure>
+      <img src="figs/14/github-03.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p><strong>ブラウザをリロード</strong>すると、GitHub
+      上で変更が反映されていることが確認できます。</p>
+      <figure>
+      <img src="figs/14/github-04.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>VSCode に戻ります。この時点では、リモートリポジトリで行なった
+      <code>README.md</code>
+      の変更は<strong>まだ反映されていません</strong>。この状態を「リモートリポジトリとローカルリポジトリが同期されていない」と表現します。同期させるためには
+      <strong>プル</strong>
+      という操作が必要で、これは画面下のアイコンをクリックすることで行ないます。</p>
+      <p>git/GitHub
+      では、<strong>Googleドキュメントのようにリアルタイムの自動同期はされないこと</strong>
+      に注意してください
+      (プログラム開発では手動による同期のほうが何かと都合がよいのです)。</p>
+      <figure>
+      <img src="figs/14/github-05.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <div class="note type-tips">
+      <p><strong>「プル」とは</strong></p>
+      <p><strong>プル</strong>とは、リモートリポジトリの内容をローカルリポジトリにダウンロードして、リモートリポジトリの内容
+      (コミット) と、ローカルリポジトリの内容 (コミット)
+      を統合することを意味します。</p>
+      </div>
+      <p>同期が成功すると、以下のようにローカルリポジトリ側にも変更が反映されます。</p>
+      <figure>
+      <img src="figs/14/github-06.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>ここでは、ローカルリポジトリとリモートリポジトリの両方から
+      <code>README.md</code>
+      に対して編集を加えて、変更の統合を行ないました。同様に、チーム開発でアリスとボブが
+      <strong>それぞれに同じファイルに対して編集を加えた際にも、GitHubを通じて変更の統合を行なうことができます</strong>
+      (このようなチーム開発支援に関する機能は次回以降に学びます)。</p>
+      <p>以上が確認できたら VSCode を閉じてください。</p>
+      <h1 data-number="5" id="リポジトリの削除"><span
+      class="header-section-number">5</span> リポジトリの削除</h1>
+      <p>ここまでに作成したリモートリポジトリとローカルリポジトリは、練習用のものなので削除します。</p>
+      <h2 data-number="5.1" id="リモートリポジトリの削除"><span
+      class="header-section-number">5.1</span>
+      リモートリポジトリの削除</h2>
+      <p>リモートリポジトリ (GitHubに発行したリポジトリ)
+      を削除をしてください。削除の方法については「<a
+      href="https://www.google.com/search?q=GitHub+リポジトリ+削除">GitHub
+      リポジトリ 削除</a>」で検索して実行してください。</p>
+      <h2 data-number="5.2" id="ローカルリポジトリの削除"><span
+      class="header-section-number">5.2</span>
+      ローカルリポジトリの削除</h2>
+      <p>PCのローカルストレージに作成したプロジェクトフォルダ
+      (=ローカルリポジトリ) を削除してください (この作業は VSCode
+      を閉じた状態で行なってください)。なお、削除する際にフォルダのなかに
+      <code>.git</code>
+      という隠しフォルダが作成されていることを確認しておいてください。</p>
+      <p>ローカルリポジトリにおいては、この <code>.git</code>
+      というフォルダのなかに変更の履歴が格納されていきます。そのため、リポジトリを削除するとき以外に
+      <code>.git</code> を削除しないようにしてください。</p>
+      <figure>
+      <img src="figs/14/vscode-18.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <h1 data-number="6" id="宿題"><span
+      class="header-section-number">6</span> 宿題</h1>
+      <p>Git/GitHub
+      を使えるようになるには、プログラミング以上に「経験」や「慣れ」が求められます。<strong>授業で1度体験しただけでは、(実際のところ)
+      最低限のスキルも身に付かないです</strong>。</p>
+      <ul>
+      <li><a
+      href="https://chatgpt.com/share/66ebae60-933c-8011-ace6-c8d26e631549">Git/GitHubが使えないソフトウェアエンジニアとは…</a></li>
+      </ul>
+      <h2 data-number="6.1" id="宿題①"><span
+      class="header-section-number">6.1</span> 宿題①</h2>
+      <p>再度、プロジェクトフォルダを新規作成し、リモートリポジトリを
+      GitHub
+      に発行、フォルダ内のファイルを変更・保存、変更内容のコミットとプッシュ、GitHub
+      でのファイル変更とコミット、リポジトリの同期、リポジトリの削除という一連の操作・処理を、再度、実行してください
+      (2回目以降は GitHub
+      の認証などの一部操作は不要になります。実際に操作してそれを確認してください)。</p>
+      <p>この<strong>一連の作業を3回程度繰返すと、講義資料を見なくても操作ができるようになります</strong>
+      (授業中の1回の操作だけでは絶対に身に付かないので、繰返し練習してください)
+      。</p>
+      <p>次回の授業では、<strong>ここまでの git/GitHub
+      操作が問題なくスムーズにできることを前提</strong>として進めます。問題・不具合がある場合は、<strong><em>次回授業の前日までに解決</em></strong>しておいてください
+      (必要に応じて担当教員にアポをとって問題解決してください)。</p>
+      <h2 data-number="6.2" id="宿題②"><span
+      class="header-section-number">6.2</span> 宿題②</h2>
+      <p>1年の総合工学実験実習で取り組んだ内容 (<a
+      href="https://classroom.google.com/c/NjgxODIzNjU1NzQy/m/NzE0MDc0ODQ5NjU3/details">PG1_補足資料_ホームページをつくろう</a>)
+      について、改めて取り組み、<strong>リポジトリの内容をウェブページとして公開する方法</strong>について復習しておいてください。</p>
+      <p>特に「<strong>GitHub Pages
+      として公開する手順</strong>」と「最低限のHTML」については十分に理解しておいてください
+      (単に資料を読むだけではなく、<strong>実際にPCを操作して機能することを確認</strong>してください)。</p>
+      <p>次回以降、コンフリクトの解消、GitHub
+      からのクローン、ウェブページの作成、GitHub Pages
+      によるウェブページ公開などについて学びます。</p>
+      <ul>
+      <li>HTML/CSSについては <a href="https://prog-8.com/">Progate</a>
+      の「HTML &amp; CSS
+      初級編」などで学んでおくと、以降の授業で役立ちます
+      (情報系の学生として知っておいてください)。</li>
+      </ul>
+      <h2 data-number="6.3" id="宿題③"><span
+      class="header-section-number">6.3</span> 宿題③</h2>
+      <p>git/GitHub
+      に関するウェブ記事やYouTube動画を閲覧して<strong>予習・復習に努め理解を深めてください</strong>。様々な資料を読む、見ることで理解が深まります。</p>
+      <ul>
+      <li><a
+      href="https://www.youtube.com/results?search_query=GitHub+入門">YouTube「GitHub
+      入門」</a></li>
+      <li><a
+      href="https://www.youtube.com/results?search_query=GitHub+入門+vscode">YouTube「GitHub
+      入門 vscode」</a></li>
+      </ul>
+      <div class="note type-caution">
+      <p><strong>git/GitHubの情報を探す場合の注意点</strong></p>
+      <p>ウェブや書籍で git/GitHub
+      の入門情報を探す場合、大きく次の3パターンが存在するので注意してください。</p>
+      <ol type="1">
+      <li><strong>コマンドライン</strong>を使った git/GitHub
+      の操作を説明しているページ/書籍</li>
+      <li><strong>SourceTree</strong> というソフトを使った git/GitHub
+      の操作を説明しているページ/書籍</li>
+      <li><strong>VSCode</strong> を使った git/GitHub
+      の操作を説明しているページ/書籍</li>
+      </ol>
+      <p>この授業では、主に3番目の方法で解説していきます。</p>
+      </div>
+      <!-- ---------------------------------------- -->
+    </main>
+
+    <footer class="markdown-body">
+      <p><a href="https://takeshiwada1980.github.io/Programming1-2024/">講義資料のIndexに移動</a></p>
+    </footer>
+
+    <script>
+      window.onload = function () {
+        // ナビゲーション関連
+        let openBtn = document.getElementsByClassName("openbtn")[0];
+        let navPnl = document.getElementById("g-nav");
+        openBtn.onclick = () => {
+          openBtn.classList.toggle("active");
+          navPnl.classList.toggle("panelactive");
+        };
+
+        let items = navPnl.getElementsByTagName("a");
+        Array.from(items).forEach((item) => {
+          item.onclick = () => {
+            openBtn.classList.toggle("active");
+            navPnl.classList.toggle("panelactive");
+          };
+        });
+
+        // マスク処理
+        let maskedSpans = document.getElementsByClassName("masked");
+        Array.from(maskedSpans).forEach((span) => {
+          span.onclick = () => {
+            span.classList.toggle("open");
+          };
+        });
+
+        // data-startfrom 属性の行番号カウンタのリセット
+        document.querySelectorAll("div.sourceCode").forEach(function (div) {
+          var startFrom = div.getAttribute("data-startfrom");
+          if (startFrom != null) {
+            div.style.counterReset = "pg-line " + (startFrom - 1);
+          }
+        });
+
+        // 画像にリンクを付与
+        // let images = document.querySelectorAll("figure img");
+        // Array.from(images).forEach((img) => {
+        //   img.onclick = () => {
+        //     location.href = img.getAttribute("src");
+        //   };
+        // });
+      };
+    </script>
+  </body>
+</html>
