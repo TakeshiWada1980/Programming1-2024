@@ -289,6 +289,22 @@ class="toc-section-number">5</span> 宿題</a></li>
       を使用しますが、これは前期の「工学基礎実習」のネットワーク系テーマのなでかで既に学んでいる内容です
       (<span class="masked">PC と Raspberry Pi
       を接続してコマンドラインからの操作でネットワーク設定</span>をしているはずです)。</p>
+      <div class="note type-caution">
+      <p><strong>注意</strong></p>
+      <p>以降の作業は、<code>git init</code>
+      で初期化したときのデフォルトブランチが <code>main</code>
+      であることを前提としています。<code>git config --system -l</code>
+      コマンドで、現在の設定が <code>init.defaultbranch=main</code>
+      となっていることを確認してください。特に、前回授業で、Git
+      を新規インストールしていない場合は <code>main</code>
+      になっていない可能性があります。</p>
+      <p><code>init.defaultbranch=master</code>
+      や、その他に設定されている場合は、ターミナルを
+      <strong>管理者モード</strong>
+      で開いて、以下のコマンドを実行して、デフォルトブランチが
+      <code>main</code> になるようにしてください。</p>
+      <pre><code>git config --system init.defaultbranch main</code></pre>
+      </div>
       <h2 data-number="2.1" id="プロジェクトフォルダの作成"><span
       class="header-section-number">2.1</span>
       プロジェクトフォルダの作成</h2>
@@ -429,10 +445,10 @@ nothing to commit (create/copy files and use &quot;git add&quot; to track)</code
       <p>メモ帳などの適当なテキストエディタを使って
       <code>README.md</code> というファイル (拡張子に注意)
       をプロジェクトフォルダ内に作成して、次のような内容を記述して保存してください。</p>
-      <div class="sourceCode" id="cb11" data-caption="README.md"><pre
-      class="sourceCode numberSource markdown numberLines"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu"># コマンドラインから git 操作</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a><span class="ss">- </span>gitの初期化 <span class="in">`git init`</span></span>
-<span id="cb11-3"><a href="#cb11-3"></a><span class="ss">- </span>gitの状態確認 <span class="in">`git status`</span></span></code></pre></div>
+      <div class="sourceCode" id="cb12" data-caption="README.md"><pre
+      class="sourceCode numberSource markdown numberLines"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu"># コマンドラインから git 操作</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="ss">- </span>gitの初期化 <span class="in">`git init`</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="ss">- </span>gitの状態確認 <span class="in">`git status`</span></span></code></pre></div>
       <p>ファイルを保存するとき、文字コードは「<strong>UTF-8
       (BOMなし)</strong>」となるように注意してください。また、ファイル名が
       <code>README.md.txt</code> のような <span
@@ -574,11 +590,11 @@ nothing to commit, working tree clean</code></pre>
       から開始する行は無視されます。また、詳細は省略することができます
       (その場合、1行目にタイトル (概要)
       だけを記入して保存してタブを閉じてください)。</p>
-      <div class="sourceCode" id="cb19"
+      <div class="sourceCode" id="cb20"
       data-caption="COMMIT_EDITMSG"><pre
-      class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>1行目：タイトル (変更内容の概要)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>2行目 ：空行</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>3行目以降：詳細 (変更した理由の詳細)</span></code></pre></div>
+      class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>1行目：タイトル (変更内容の概要)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>2行目 ：空行</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>3行目以降：詳細 (変更した理由の詳細)</span></code></pre></div>
       <p>詳しくは「<a
       href="https://www.google.com/search?q=git+コミットメッセージ+書き方">git
       コミットメッセージ 書き方</a>」などでウェブ検索してください。</p>
@@ -800,53 +816,53 @@ branch &#39;main&#39; set up to track &#39;origin/main&#39;.</code></pre>
       というプロジェクトフォルダを作成して VSCode でオープンし、そこで
       <code>index.html</code>
       というファイルを新規作成して、以下の内容を貼り付けて保存してください。</p>
-      <div class="sourceCode" id="cb23" data-caption="index.html"><pre
-      class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb23-1"><a href="#cb23-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
-<span id="cb23-2"><a href="#cb23-2"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="ot"> lang</span><span class="op">=</span><span class="st">&quot;ja&quot;</span><span class="dt">&gt;</span></span>
-<span id="cb23-3"><a href="#cb23-3"></a>  <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb23-4"><a href="#cb23-4"></a>    <span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> charset</span><span class="op">=</span><span class="st">&quot;utf-8&quot;</span><span class="ot"> </span><span class="dt">/&gt;</span></span>
-<span id="cb23-5"><a href="#cb23-5"></a>    <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>XXX&#39;s Curry Recipe<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
-<span id="cb23-6"><a href="#cb23-6"></a>    <span class="dt">&lt;</span><span class="kw">meta</span></span>
-<span id="cb23-7"><a href="#cb23-7"></a><span class="ot">      name</span><span class="op">=</span><span class="st">&quot;viewport&quot;</span></span>
-<span id="cb23-8"><a href="#cb23-8"></a><span class="ot">      content</span><span class="op">=</span><span class="st">&quot;width=device-width, initial-scale=1.0, user-scalable=yes&quot;</span></span>
-<span id="cb23-9"><a href="#cb23-9"></a><span class="ot">    </span><span class="dt">/&gt;</span></span>
-<span id="cb23-10"><a href="#cb23-10"></a>  <span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb23-11"><a href="#cb23-11"></a></span>
-<span id="cb23-12"><a href="#cb23-12"></a>  <span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span> <span class="co">&lt;!-- ここから本文開始 --&gt;</span></span>
-<span id="cb23-13"><a href="#cb23-13"></a></span>
-<span id="cb23-14"><a href="#cb23-14"></a>    <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>XXX&#39;s Curry Recipe<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
-<span id="cb23-15"><a href="#cb23-15"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb23-16"><a href="#cb23-16"></a>      我が家に伝わる一子相伝・門外不出の<span class="dt">&lt;</span><span class="kw">strong</span><span class="dt">&gt;</span>秘伝のカレーレシピ<span class="dt">&lt;/</span><span class="kw">strong</span><span class="dt">&gt;</span>を</span>
-<span id="cb23-17"><a href="#cb23-17"></a>      今だけ特別に大公開！<span class="dt">&lt;</span><span class="kw">br</span><span class="ot"> </span><span class="dt">/&gt;</span></span>
-<span id="cb23-18"><a href="#cb23-18"></a>      このカレーがなぜ代々受け継がれてきたのか、その魅力をあなたも実感してください。</span>
-<span id="cb23-19"><a href="#cb23-19"></a>      秘伝のスパイスと調理法、家族を幸せにする魔法の一皿を体験してください！</span>
-<span id="cb23-20"><a href="#cb23-20"></a>    <span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb23-21"><a href="#cb23-21"></a></span>
-<span id="cb23-22"><a href="#cb23-22"></a>    <span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">&quot;curryrice.jpg&quot;</span><span class="ot"> alt</span><span class="op">=</span><span class="st">&quot;カレーライスの画像&quot;</span><span class="ot"> width</span><span class="op">=</span><span class="st">&quot;100%&quot;</span><span class="ot"> </span><span class="dt">/&gt;</span></span>
-<span id="cb23-23"><a href="#cb23-23"></a></span>
-<span id="cb23-24"><a href="#cb23-24"></a>    <span class="dt">&lt;</span><span class="kw">h2</span><span class="dt">&gt;</span>材料<span class="dt">&lt;/</span><span class="kw">h2</span><span class="dt">&gt;</span></span>
-<span id="cb23-25"><a href="#cb23-25"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb23-26"><a href="#cb23-26"></a>      <span class="dt">&lt;</span><span class="kw">strong</span><span class="dt">&gt;</span>8皿分の分量<span class="dt">&lt;/</span><span class="kw">strong</span></span>
-<span id="cb23-27"><a href="#cb23-27"></a>      <span class="dt">&gt;</span>です。予算や気分にあわせて具材を追加したり、量を調整してください。</span>
-<span id="cb23-28"><a href="#cb23-28"></a>    <span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb23-29"><a href="#cb23-29"></a></span>
-<span id="cb23-30"><a href="#cb23-30"></a>    <span class="dt">&lt;</span><span class="kw">ul</span><span class="dt">&gt;</span></span>
-<span id="cb23-31"><a href="#cb23-31"></a>      <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>市販のカレールー（中辛）... 1/2箱<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
-<span id="cb23-32"><a href="#cb23-32"></a>      <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>鶏肉 ... 400g<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
-<span id="cb23-33"><a href="#cb23-33"></a>      <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>玉ねぎ ... 3個（中サイズ）<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
-<span id="cb23-34"><a href="#cb23-34"></a>      <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>にんにく ... 1片<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
-<span id="cb23-35"><a href="#cb23-35"></a>      <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>水 ... 700ml<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
-<span id="cb23-36"><a href="#cb23-36"></a>      <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>サラダ油 ... 大さじ1<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
-<span id="cb23-37"><a href="#cb23-37"></a>      <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span></span>
-<span id="cb23-38"><a href="#cb23-38"></a>        <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;https://ja.wikipedia.org/wiki/ガラムマサラ&quot;</span><span class="dt">&gt;</span>ガラムマサラ<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
-<span id="cb23-39"><a href="#cb23-39"></a>        ... 適量</span>
-<span id="cb23-40"><a href="#cb23-40"></a>      <span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
-<span id="cb23-41"><a href="#cb23-41"></a>    <span class="dt">&lt;/</span><span class="kw">ul</span><span class="dt">&gt;</span></span>
-<span id="cb23-42"><a href="#cb23-42"></a></span>
-<span id="cb23-43"><a href="#cb23-43"></a>    <span class="dt">&lt;</span><span class="kw">h2</span><span class="dt">&gt;</span>作り方<span class="dt">&lt;/</span><span class="kw">h2</span><span class="dt">&gt;</span></span>
-<span id="cb23-44"><a href="#cb23-44"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>近日大公開！<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb23-45"><a href="#cb23-45"></a>  <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span> <span class="co">&lt;!-- ここまで本文終了 --&gt;</span></span>
-<span id="cb23-46"><a href="#cb23-46"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div>
+      <div class="sourceCode" id="cb24" data-caption="index.html"><pre
+      class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb24-1"><a href="#cb24-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="ot"> lang</span><span class="op">=</span><span class="st">&quot;ja&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb24-3"><a href="#cb24-3"></a>  <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb24-4"><a href="#cb24-4"></a>    <span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> charset</span><span class="op">=</span><span class="st">&quot;utf-8&quot;</span><span class="ot"> </span><span class="dt">/&gt;</span></span>
+<span id="cb24-5"><a href="#cb24-5"></a>    <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>XXX&#39;s Curry Recipe<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb24-6"><a href="#cb24-6"></a>    <span class="dt">&lt;</span><span class="kw">meta</span></span>
+<span id="cb24-7"><a href="#cb24-7"></a><span class="ot">      name</span><span class="op">=</span><span class="st">&quot;viewport&quot;</span></span>
+<span id="cb24-8"><a href="#cb24-8"></a><span class="ot">      content</span><span class="op">=</span><span class="st">&quot;width=device-width, initial-scale=1.0, user-scalable=yes&quot;</span></span>
+<span id="cb24-9"><a href="#cb24-9"></a><span class="ot">    </span><span class="dt">/&gt;</span></span>
+<span id="cb24-10"><a href="#cb24-10"></a>  <span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb24-11"><a href="#cb24-11"></a></span>
+<span id="cb24-12"><a href="#cb24-12"></a>  <span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span> <span class="co">&lt;!-- ここから本文開始 --&gt;</span></span>
+<span id="cb24-13"><a href="#cb24-13"></a></span>
+<span id="cb24-14"><a href="#cb24-14"></a>    <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>XXX&#39;s Curry Recipe<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
+<span id="cb24-15"><a href="#cb24-15"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb24-16"><a href="#cb24-16"></a>      我が家に伝わる一子相伝・門外不出の<span class="dt">&lt;</span><span class="kw">strong</span><span class="dt">&gt;</span>秘伝のカレーレシピ<span class="dt">&lt;/</span><span class="kw">strong</span><span class="dt">&gt;</span>を</span>
+<span id="cb24-17"><a href="#cb24-17"></a>      今だけ特別に大公開！<span class="dt">&lt;</span><span class="kw">br</span><span class="ot"> </span><span class="dt">/&gt;</span></span>
+<span id="cb24-18"><a href="#cb24-18"></a>      このカレーがなぜ代々受け継がれてきたのか、その魅力をあなたも実感してください。</span>
+<span id="cb24-19"><a href="#cb24-19"></a>      秘伝のスパイスと調理法、家族を幸せにする魔法の一皿を体験してください！</span>
+<span id="cb24-20"><a href="#cb24-20"></a>    <span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb24-21"><a href="#cb24-21"></a></span>
+<span id="cb24-22"><a href="#cb24-22"></a>    <span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">&quot;curryrice.jpg&quot;</span><span class="ot"> alt</span><span class="op">=</span><span class="st">&quot;カレーライスの画像&quot;</span><span class="ot"> width</span><span class="op">=</span><span class="st">&quot;100%&quot;</span><span class="ot"> </span><span class="dt">/&gt;</span></span>
+<span id="cb24-23"><a href="#cb24-23"></a></span>
+<span id="cb24-24"><a href="#cb24-24"></a>    <span class="dt">&lt;</span><span class="kw">h2</span><span class="dt">&gt;</span>材料<span class="dt">&lt;/</span><span class="kw">h2</span><span class="dt">&gt;</span></span>
+<span id="cb24-25"><a href="#cb24-25"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb24-26"><a href="#cb24-26"></a>      <span class="dt">&lt;</span><span class="kw">strong</span><span class="dt">&gt;</span>8皿分の分量<span class="dt">&lt;/</span><span class="kw">strong</span></span>
+<span id="cb24-27"><a href="#cb24-27"></a>      <span class="dt">&gt;</span>です。予算や気分にあわせて具材を追加したり、量を調整してください。</span>
+<span id="cb24-28"><a href="#cb24-28"></a>    <span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb24-29"><a href="#cb24-29"></a></span>
+<span id="cb24-30"><a href="#cb24-30"></a>    <span class="dt">&lt;</span><span class="kw">ul</span><span class="dt">&gt;</span></span>
+<span id="cb24-31"><a href="#cb24-31"></a>      <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>市販のカレールー（中辛）... 1/2箱<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb24-32"><a href="#cb24-32"></a>      <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>鶏肉 ... 400g<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb24-33"><a href="#cb24-33"></a>      <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>玉ねぎ ... 3個（中サイズ）<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb24-34"><a href="#cb24-34"></a>      <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>にんにく ... 1片<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb24-35"><a href="#cb24-35"></a>      <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>水 ... 700ml<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb24-36"><a href="#cb24-36"></a>      <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>サラダ油 ... 大さじ1<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb24-37"><a href="#cb24-37"></a>      <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb24-38"><a href="#cb24-38"></a>        <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;https://ja.wikipedia.org/wiki/ガラムマサラ&quot;</span><span class="dt">&gt;</span>ガラムマサラ<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
+<span id="cb24-39"><a href="#cb24-39"></a>        ... 適量</span>
+<span id="cb24-40"><a href="#cb24-40"></a>      <span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb24-41"><a href="#cb24-41"></a>    <span class="dt">&lt;/</span><span class="kw">ul</span><span class="dt">&gt;</span></span>
+<span id="cb24-42"><a href="#cb24-42"></a></span>
+<span id="cb24-43"><a href="#cb24-43"></a>    <span class="dt">&lt;</span><span class="kw">h2</span><span class="dt">&gt;</span>作り方<span class="dt">&lt;/</span><span class="kw">h2</span><span class="dt">&gt;</span></span>
+<span id="cb24-44"><a href="#cb24-44"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>近日大公開！<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb24-45"><a href="#cb24-45"></a>  <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span> <span class="co">&lt;!-- ここまで本文終了 --&gt;</span></span>
+<span id="cb24-46"><a href="#cb24-46"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div>
       <p>ファイルを保存するときは VSCode
       のウィンドウ右下に表示される文字コードが「<strong>UTF-8</strong>」になっていることを確認してください。</p>
       <figure>
@@ -972,145 +988,145 @@ branch &#39;main&#39; set up to track &#39;origin/main&#39;.</code></pre>
       <strong>レイアウトや装飾を定義するCSSファイル</strong>
       をプロジェクトフォルダに追加します。<code>main.css</code>
       というファイルを新規作成して、以下の内容を貼り付けて保存してください。</p>
-      <div class="sourceCode" id="cb24" data-caption="main.css"><pre
-      class="sourceCode numberSource css numberLines"><code class="sourceCode css"><span id="cb24-1"><a href="#cb24-1"></a>html {</span>
-<span id="cb24-2"><a href="#cb24-2"></a>  <span class="kw">-ms-text-size-adjust</span><span class="ch">:</span> <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb24-3"><a href="#cb24-3"></a>  <span class="kw">-webkit-text-size-adjust</span><span class="ch">:</span> <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb24-4"><a href="#cb24-4"></a>  <span class="kw">font-family</span><span class="ch">:</span> <span class="st">&quot;Yusei Magic&quot;</span><span class="op">,</span> <span class="dv">sans-serif</span><span class="op">;</span></span>
-<span id="cb24-5"><a href="#cb24-5"></a>  <span class="va">--theme-color-1</span><span class="ch">:</span> <span class="cn">#f50</span><span class="op">;</span></span>
-<span id="cb24-6"><a href="#cb24-6"></a>  <span class="va">--theme-color-2</span><span class="ch">:</span> <span class="cn">#fc3</span><span class="op">;</span></span>
-<span id="cb24-7"><a href="#cb24-7"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">#454545</span><span class="op">;</span></span>
-<span id="cb24-8"><a href="#cb24-8"></a>}</span>
-<span id="cb24-9"><a href="#cb24-9"></a></span>
-<span id="cb24-10"><a href="#cb24-10"></a>body {</span>
-<span id="cb24-11"><a href="#cb24-11"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="fu">var(</span><span class="va">--main-foreground</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb24-12"><a href="#cb24-12"></a>  <span class="kw">line-height</span><span class="ch">:</span> <span class="dv">1.5</span><span class="op">;</span></span>
-<span id="cb24-13"><a href="#cb24-13"></a>  word-wrap<span class="ch">:</span> <span class="dv">break-word</span><span class="op">;</span></span>
-<span id="cb24-14"><a href="#cb24-14"></a>  <span class="kw">box-sizing</span><span class="ch">:</span> <span class="dv">border-box</span><span class="op">;</span></span>
-<span id="cb24-15"><a href="#cb24-15"></a>  <span class="kw">max-width</span><span class="ch">:</span> <span class="dv">980</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb24-16"><a href="#cb24-16"></a>  <span class="kw">margin</span><span class="ch">:</span> <span class="dv">2</span><span class="dt">em</span> <span class="bu">auto</span><span class="op">;</span></span>
-<span id="cb24-17"><a href="#cb24-17"></a>  <span class="kw">padding</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span> <span class="dv">30</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb24-18"><a href="#cb24-18"></a>}</span>
-<span id="cb24-19"><a href="#cb24-19"></a></span>
-<span id="cb24-20"><a href="#cb24-20"></a>h1 {</span>
-<span id="cb24-21"><a href="#cb24-21"></a>  <span class="kw">position</span><span class="ch">:</span> <span class="dv">relative</span><span class="op">;</span></span>
-<span id="cb24-22"><a href="#cb24-22"></a>  <span class="kw">text-align</span><span class="ch">:</span> <span class="dv">center</span><span class="op">;</span></span>
-<span id="cb24-23"><a href="#cb24-23"></a>  <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">280</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb24-24"><a href="#cb24-24"></a>  <span class="kw">padding</span><span class="ch">:</span> <span class="dv">0.2</span><span class="dt">em</span> <span class="dv">0.5</span><span class="dt">em</span><span class="op">;</span></span>
-<span id="cb24-25"><a href="#cb24-25"></a>  <span class="kw">letter-spacing</span><span class="ch">:</span> <span class="dv">0.1</span><span class="dt">em</span><span class="op">;</span></span>
-<span id="cb24-26"><a href="#cb24-26"></a>  <span class="kw">text-shadow</span><span class="ch">:</span> <span class="cn">#fff</span> <span class="dv">2</span><span class="dt">px</span> <span class="dv">0</span><span class="op">,</span> <span class="cn">#fff</span> <span class="dv">-2</span><span class="dt">px</span> <span class="dv">0</span><span class="op">,</span> <span class="cn">#fff</span> <span class="dv">0</span> <span class="dv">-2</span><span class="dt">px</span><span class="op">,</span> <span class="cn">#fff</span> <span class="dv">0</span> <span class="dv">2</span><span class="dt">px</span><span class="op">,</span> <span class="cn">#fff</span> <span class="dv">2</span><span class="dt">px</span> <span class="dv">2</span><span class="dt">px</span><span class="op">,</span></span>
-<span id="cb24-27"><a href="#cb24-27"></a>    <span class="cn">#fff</span> <span class="dv">-2</span><span class="dt">px</span> <span class="dv">2</span><span class="dt">px</span><span class="op">,</span> <span class="cn">#fff</span> <span class="dv">2</span><span class="dt">px</span> <span class="dv">-2</span><span class="dt">px</span><span class="op">,</span> <span class="cn">#fff</span> <span class="dv">-2</span><span class="dt">px</span> <span class="dv">-2</span><span class="dt">px</span><span class="op">,</span> <span class="cn">#fff</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">2</span><span class="dt">px</span><span class="op">,</span> <span class="cn">#fff</span> <span class="dv">-1</span><span class="dt">px</span> <span class="dv">2</span><span class="dt">px</span><span class="op">,</span></span>
-<span id="cb24-28"><a href="#cb24-28"></a>    <span class="cn">#fff</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">-2</span><span class="dt">px</span><span class="op">,</span> <span class="cn">#fff</span> <span class="dv">-1</span><span class="dt">px</span> <span class="dv">-2</span><span class="dt">px</span><span class="op">,</span> <span class="cn">#fff</span> <span class="dv">2</span><span class="dt">px</span> <span class="dv">1</span><span class="dt">px</span><span class="op">,</span> <span class="cn">#fff</span> <span class="dv">-2</span><span class="dt">px</span> <span class="dv">1</span><span class="dt">px</span><span class="op">,</span> <span class="cn">#fff</span> <span class="dv">2</span><span class="dt">px</span> <span class="dv">-1</span><span class="dt">px</span><span class="op">,</span></span>
-<span id="cb24-29"><a href="#cb24-29"></a>    <span class="cn">#fff</span> <span class="dv">-2</span><span class="dt">px</span> <span class="dv">-1</span><span class="dt">px</span><span class="op">,</span> <span class="fu">rgba(</span><span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0.5</span><span class="fu">)</span> <span class="dv">3</span><span class="dt">px</span> <span class="dv">3</span><span class="dt">px</span> <span class="dv">3</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb24-30"><a href="#cb24-30"></a>  <span class="kw">background</span><span class="ch">:</span> <span class="fu">var(</span><span class="va">--theme-color-2</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb24-31"><a href="#cb24-31"></a>  <span class="kw">box-shadow</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span> <span class="dv">0</span><span class="dt">px</span> <span class="dv">0</span><span class="dt">px</span> <span class="dv">5</span><span class="dt">px</span> <span class="fu">var(</span><span class="va">--theme-color-2</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb24-32"><a href="#cb24-32"></a>  <span class="kw">border</span><span class="ch">:</span> <span class="dv">dashed</span> <span class="dv">2</span><span class="dt">px</span> <span class="cn">white</span><span class="op">;</span></span>
-<span id="cb24-33"><a href="#cb24-33"></a>}</span>
-<span id="cb24-34"><a href="#cb24-34"></a></span>
-<span id="cb24-35"><a href="#cb24-35"></a>h1<span class="in">::after</span> {</span>
-<span id="cb24-36"><a href="#cb24-36"></a>  <span class="kw">position</span><span class="ch">:</span> <span class="dv">absolute</span><span class="op">;</span></span>
-<span id="cb24-37"><a href="#cb24-37"></a>  <span class="kw">content</span><span class="ch">:</span> <span class="st">&quot;&quot;</span><span class="op">;</span></span>
-<span id="cb24-38"><a href="#cb24-38"></a>  <span class="kw">left</span><span class="ch">:</span> <span class="dv">-7.5</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb24-39"><a href="#cb24-39"></a>  <span class="kw">top</span><span class="ch">:</span> <span class="dv">-7.5</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb24-40"><a href="#cb24-40"></a>  <span class="kw">border-width</span><span class="ch">:</span> <span class="dv">0</span> <span class="dv">0</span> <span class="dv">1</span><span class="dt">em</span> <span class="dv">1</span><span class="dt">em</span><span class="op">;</span></span>
-<span id="cb24-41"><a href="#cb24-41"></a>  <span class="kw">border-style</span><span class="ch">:</span> <span class="dv">solid</span><span class="op">;</span></span>
-<span id="cb24-42"><a href="#cb24-42"></a>  <span class="kw">border-color</span><span class="ch">:</span> <span class="cn">#fff</span> <span class="cn">#fff</span> <span class="fu">var(</span><span class="va">--theme-color-2</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb24-43"><a href="#cb24-43"></a>  <span class="kw">box-shadow</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">1</span><span class="dt">px</span> <span class="fu">rgba(</span><span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0.15</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb24-44"><a href="#cb24-44"></a>}</span>
-<span id="cb24-45"><a href="#cb24-45"></a></span>
-<span id="cb24-46"><a href="#cb24-46"></a>h2 {</span>
-<span id="cb24-47"><a href="#cb24-47"></a>  <span class="kw">position</span><span class="ch">:</span> <span class="dv">relative</span><span class="op">;</span></span>
-<span id="cb24-48"><a href="#cb24-48"></a>  <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">200</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb24-49"><a href="#cb24-49"></a>  <span class="kw">letter-spacing</span><span class="ch">:</span> <span class="dv">0.05</span><span class="dt">em</span><span class="op">;</span></span>
-<span id="cb24-50"><a href="#cb24-50"></a>  <span class="kw">font-weight</span><span class="ch">:</span> <span class="dv">normal</span><span class="op">;</span></span>
-<span id="cb24-51"><a href="#cb24-51"></a>  <span class="kw">padding</span><span class="ch">:</span> <span class="dv">0</span> <span class="dv">0</span> <span class="dv">0</span> <span class="dv">1.5</span><span class="dt">em</span><span class="op">;</span></span>
-<span id="cb24-52"><a href="#cb24-52"></a>  <span class="kw">border-bottom</span><span class="ch">:</span> <span class="dv">3</span><span class="dt">px</span> <span class="dv">solid</span> <span class="fu">var(</span><span class="va">--theme-color-2</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb24-53"><a href="#cb24-53"></a>}</span>
-<span id="cb24-54"><a href="#cb24-54"></a></span>
-<span id="cb24-55"><a href="#cb24-55"></a>h2<span class="in">::before</span> {</span>
-<span id="cb24-56"><a href="#cb24-56"></a>  <span class="kw">position</span><span class="ch">:</span> <span class="dv">absolute</span><span class="op">;</span></span>
-<span id="cb24-57"><a href="#cb24-57"></a>  <span class="kw">left</span><span class="ch">:</span> <span class="dv">0.4</span><span class="dt">em</span><span class="op">;</span></span>
-<span id="cb24-58"><a href="#cb24-58"></a>  <span class="kw">font-weight</span><span class="ch">:</span> <span class="dv">bold</span><span class="op">;</span></span>
-<span id="cb24-59"><a href="#cb24-59"></a>  <span class="kw">font-family</span><span class="ch">:</span> <span class="st">&quot;Font Awesome 6 Free&quot;</span><span class="op">;</span></span>
-<span id="cb24-60"><a href="#cb24-60"></a>  <span class="kw">content</span><span class="ch">:</span> <span class="st">&quot;</span><span class="sc">\f5ad</span><span class="st">&quot;</span><span class="op">;</span></span>
-<span id="cb24-61"><a href="#cb24-61"></a>  <span class="kw">top</span><span class="ch">:</span> <span class="dv">0.2</span><span class="dt">em</span><span class="op">;</span></span>
-<span id="cb24-62"><a href="#cb24-62"></a>  <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">85</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb24-63"><a href="#cb24-63"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="fu">var(</span><span class="va">--theme-color-2</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb24-64"><a href="#cb24-64"></a>}</span>
-<span id="cb24-65"><a href="#cb24-65"></a></span>
-<span id="cb24-66"><a href="#cb24-66"></a>img {</span>
-<span id="cb24-67"><a href="#cb24-67"></a>  <span class="kw">box-shadow</span><span class="ch">:</span> <span class="fu">rgba(</span><span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0.35</span><span class="fu">)</span> <span class="dv">0</span><span class="dt">px</span> <span class="dv">5</span><span class="dt">px</span> <span class="dv">15</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb24-68"><a href="#cb24-68"></a>  <span class="kw">border-radius</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb24-69"><a href="#cb24-69"></a>}</span>
-<span id="cb24-70"><a href="#cb24-70"></a></span>
-<span id="cb24-71"><a href="#cb24-71"></a>strong {</span>
-<span id="cb24-72"><a href="#cb24-72"></a>  <span class="kw">font-style</span><span class="ch">:</span> <span class="dv">normal</span><span class="op">;</span></span>
-<span id="cb24-73"><a href="#cb24-73"></a>  <span class="kw">font-weight</span><span class="ch">:</span> <span class="dv">normal</span><span class="op">;</span></span>
-<span id="cb24-74"><a href="#cb24-74"></a>  <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">125</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb24-75"><a href="#cb24-75"></a>  <span class="kw">padding</span><span class="ch">:</span> <span class="dv">0</span> <span class="dv">0.2</span><span class="dt">em</span><span class="op">;</span></span>
-<span id="cb24-76"><a href="#cb24-76"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="fu">var(</span><span class="va">--theme-color-1</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb24-77"><a href="#cb24-77"></a>}</span>
-<span id="cb24-78"><a href="#cb24-78"></a></span>
-<span id="cb24-79"><a href="#cb24-79"></a>a {</span>
-<span id="cb24-80"><a href="#cb24-80"></a>  <span class="kw">text-decoration</span><span class="ch">:</span> <span class="dv">none</span><span class="op">;</span></span>
-<span id="cb24-81"><a href="#cb24-81"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="fu">var(</span><span class="va">--theme-color-1</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb24-82"><a href="#cb24-82"></a>  <span class="kw">cursor</span><span class="ch">:</span> <span class="dv">pointer</span><span class="op">;</span></span>
-<span id="cb24-83"><a href="#cb24-83"></a>  <span class="kw">border-bottom</span><span class="ch">:</span> <span class="dv">1.5</span><span class="dt">px</span> <span class="dv">dashed</span><span class="op">;</span></span>
-<span id="cb24-84"><a href="#cb24-84"></a>  <span class="kw">transition</span><span class="ch">:</span> <span class="dv">background-color 0.5</span><span class="dt">s</span><span class="op">;</span></span>
-<span id="cb24-85"><a href="#cb24-85"></a>}</span>
-<span id="cb24-86"><a href="#cb24-86"></a></span>
-<span id="cb24-87"><a href="#cb24-87"></a>a<span class="in">:hover</span> {</span>
-<span id="cb24-88"><a href="#cb24-88"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">white</span><span class="op">;</span></span>
-<span id="cb24-89"><a href="#cb24-89"></a>  <span class="kw">background-color</span><span class="ch">:</span> <span class="fu">var(</span><span class="va">--theme-color-1</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb24-90"><a href="#cb24-90"></a>  <span class="kw">border-radius</span><span class="ch">:</span> <span class="dv">4</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb24-91"><a href="#cb24-91"></a>  <span class="kw">border-bottom</span><span class="ch">:</span> <span class="dv">none</span><span class="op">;</span></span>
-<span id="cb24-92"><a href="#cb24-92"></a>}</span>
-<span id="cb24-93"><a href="#cb24-93"></a></span>
-<span id="cb24-94"><a href="#cb24-94"></a>ul {</span>
-<span id="cb24-95"><a href="#cb24-95"></a>  <span class="kw">list-style</span><span class="ch">:</span> <span class="dv">none</span><span class="op">;</span></span>
-<span id="cb24-96"><a href="#cb24-96"></a>  <span class="kw">padding</span><span class="ch">:</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb24-97"><a href="#cb24-97"></a>  <span class="kw">margin-block-start</span><span class="ch">:</span> <span class="dv">0.7</span><span class="dt">em</span><span class="op">;</span></span>
-<span id="cb24-98"><a href="#cb24-98"></a>  <span class="kw">margin-block-end</span><span class="ch">:</span> <span class="dv">0.7</span><span class="dt">em</span><span class="op">;</span></span>
-<span id="cb24-99"><a href="#cb24-99"></a>}</span>
-<span id="cb24-100"><a href="#cb24-100"></a></span>
-<span id="cb24-101"><a href="#cb24-101"></a>ul li {</span>
-<span id="cb24-102"><a href="#cb24-102"></a>  <span class="kw">position</span><span class="ch">:</span> <span class="dv">relative</span><span class="op">;</span></span>
-<span id="cb24-103"><a href="#cb24-103"></a>  <span class="kw">padding</span><span class="ch">:</span> <span class="dv">0</span> <span class="dv">0</span> <span class="dv">0</span> <span class="dv">1.6</span><span class="dt">em</span><span class="op">;</span></span>
-<span id="cb24-104"><a href="#cb24-104"></a>  <span class="kw">margin</span><span class="ch">:</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb24-105"><a href="#cb24-105"></a>  <span class="kw">text-indent</span><span class="ch">:</span> <span class="dv">0.5</span><span class="dt">em</span><span class="op">;</span></span>
-<span id="cb24-106"><a href="#cb24-106"></a>}</span>
-<span id="cb24-107"><a href="#cb24-107"></a></span>
-<span id="cb24-108"><a href="#cb24-108"></a>ul li<span class="in">::before</span> {</span>
-<span id="cb24-109"><a href="#cb24-109"></a>  <span class="kw">position</span><span class="ch">:</span> <span class="dv">absolute</span><span class="op">;</span></span>
-<span id="cb24-110"><a href="#cb24-110"></a>  <span class="kw">left</span><span class="ch">:</span> <span class="dv">0.5</span><span class="dt">em</span><span class="op">;</span></span>
-<span id="cb24-111"><a href="#cb24-111"></a>  <span class="kw">top</span><span class="ch">:</span> <span class="dv">0.4</span><span class="dt">em</span><span class="op">;</span></span>
-<span id="cb24-112"><a href="#cb24-112"></a>  <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">75</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb24-113"><a href="#cb24-113"></a>  <span class="kw">font-family</span><span class="ch">:</span> <span class="st">&quot;Font Awesome 6 Free&quot;</span><span class="op">;</span></span>
-<span id="cb24-114"><a href="#cb24-114"></a>  <span class="kw">font-weight</span><span class="ch">:</span> <span class="dv">bold</span><span class="op">;</span></span>
-<span id="cb24-115"><a href="#cb24-115"></a>  <span class="kw">content</span><span class="ch">:</span> <span class="st">&quot;</span><span class="sc">\f816</span><span class="st">&quot;</span><span class="op">;</span></span>
-<span id="cb24-116"><a href="#cb24-116"></a>}</span></code></pre></div>
+      <div class="sourceCode" id="cb25" data-caption="main.css"><pre
+      class="sourceCode numberSource css numberLines"><code class="sourceCode css"><span id="cb25-1"><a href="#cb25-1"></a>html {</span>
+<span id="cb25-2"><a href="#cb25-2"></a>  <span class="kw">-ms-text-size-adjust</span><span class="ch">:</span> <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
+<span id="cb25-3"><a href="#cb25-3"></a>  <span class="kw">-webkit-text-size-adjust</span><span class="ch">:</span> <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
+<span id="cb25-4"><a href="#cb25-4"></a>  <span class="kw">font-family</span><span class="ch">:</span> <span class="st">&quot;Yusei Magic&quot;</span><span class="op">,</span> <span class="dv">sans-serif</span><span class="op">;</span></span>
+<span id="cb25-5"><a href="#cb25-5"></a>  <span class="va">--theme-color-1</span><span class="ch">:</span> <span class="cn">#f50</span><span class="op">;</span></span>
+<span id="cb25-6"><a href="#cb25-6"></a>  <span class="va">--theme-color-2</span><span class="ch">:</span> <span class="cn">#fc3</span><span class="op">;</span></span>
+<span id="cb25-7"><a href="#cb25-7"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">#454545</span><span class="op">;</span></span>
+<span id="cb25-8"><a href="#cb25-8"></a>}</span>
+<span id="cb25-9"><a href="#cb25-9"></a></span>
+<span id="cb25-10"><a href="#cb25-10"></a>body {</span>
+<span id="cb25-11"><a href="#cb25-11"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="fu">var(</span><span class="va">--main-foreground</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb25-12"><a href="#cb25-12"></a>  <span class="kw">line-height</span><span class="ch">:</span> <span class="dv">1.5</span><span class="op">;</span></span>
+<span id="cb25-13"><a href="#cb25-13"></a>  word-wrap<span class="ch">:</span> <span class="dv">break-word</span><span class="op">;</span></span>
+<span id="cb25-14"><a href="#cb25-14"></a>  <span class="kw">box-sizing</span><span class="ch">:</span> <span class="dv">border-box</span><span class="op">;</span></span>
+<span id="cb25-15"><a href="#cb25-15"></a>  <span class="kw">max-width</span><span class="ch">:</span> <span class="dv">980</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb25-16"><a href="#cb25-16"></a>  <span class="kw">margin</span><span class="ch">:</span> <span class="dv">2</span><span class="dt">em</span> <span class="bu">auto</span><span class="op">;</span></span>
+<span id="cb25-17"><a href="#cb25-17"></a>  <span class="kw">padding</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span> <span class="dv">30</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb25-18"><a href="#cb25-18"></a>}</span>
+<span id="cb25-19"><a href="#cb25-19"></a></span>
+<span id="cb25-20"><a href="#cb25-20"></a>h1 {</span>
+<span id="cb25-21"><a href="#cb25-21"></a>  <span class="kw">position</span><span class="ch">:</span> <span class="dv">relative</span><span class="op">;</span></span>
+<span id="cb25-22"><a href="#cb25-22"></a>  <span class="kw">text-align</span><span class="ch">:</span> <span class="dv">center</span><span class="op">;</span></span>
+<span id="cb25-23"><a href="#cb25-23"></a>  <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">280</span><span class="dt">%</span><span class="op">;</span></span>
+<span id="cb25-24"><a href="#cb25-24"></a>  <span class="kw">padding</span><span class="ch">:</span> <span class="dv">0.2</span><span class="dt">em</span> <span class="dv">0.5</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb25-25"><a href="#cb25-25"></a>  <span class="kw">letter-spacing</span><span class="ch">:</span> <span class="dv">0.1</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb25-26"><a href="#cb25-26"></a>  <span class="kw">text-shadow</span><span class="ch">:</span> <span class="cn">#fff</span> <span class="dv">2</span><span class="dt">px</span> <span class="dv">0</span><span class="op">,</span> <span class="cn">#fff</span> <span class="dv">-2</span><span class="dt">px</span> <span class="dv">0</span><span class="op">,</span> <span class="cn">#fff</span> <span class="dv">0</span> <span class="dv">-2</span><span class="dt">px</span><span class="op">,</span> <span class="cn">#fff</span> <span class="dv">0</span> <span class="dv">2</span><span class="dt">px</span><span class="op">,</span> <span class="cn">#fff</span> <span class="dv">2</span><span class="dt">px</span> <span class="dv">2</span><span class="dt">px</span><span class="op">,</span></span>
+<span id="cb25-27"><a href="#cb25-27"></a>    <span class="cn">#fff</span> <span class="dv">-2</span><span class="dt">px</span> <span class="dv">2</span><span class="dt">px</span><span class="op">,</span> <span class="cn">#fff</span> <span class="dv">2</span><span class="dt">px</span> <span class="dv">-2</span><span class="dt">px</span><span class="op">,</span> <span class="cn">#fff</span> <span class="dv">-2</span><span class="dt">px</span> <span class="dv">-2</span><span class="dt">px</span><span class="op">,</span> <span class="cn">#fff</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">2</span><span class="dt">px</span><span class="op">,</span> <span class="cn">#fff</span> <span class="dv">-1</span><span class="dt">px</span> <span class="dv">2</span><span class="dt">px</span><span class="op">,</span></span>
+<span id="cb25-28"><a href="#cb25-28"></a>    <span class="cn">#fff</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">-2</span><span class="dt">px</span><span class="op">,</span> <span class="cn">#fff</span> <span class="dv">-1</span><span class="dt">px</span> <span class="dv">-2</span><span class="dt">px</span><span class="op">,</span> <span class="cn">#fff</span> <span class="dv">2</span><span class="dt">px</span> <span class="dv">1</span><span class="dt">px</span><span class="op">,</span> <span class="cn">#fff</span> <span class="dv">-2</span><span class="dt">px</span> <span class="dv">1</span><span class="dt">px</span><span class="op">,</span> <span class="cn">#fff</span> <span class="dv">2</span><span class="dt">px</span> <span class="dv">-1</span><span class="dt">px</span><span class="op">,</span></span>
+<span id="cb25-29"><a href="#cb25-29"></a>    <span class="cn">#fff</span> <span class="dv">-2</span><span class="dt">px</span> <span class="dv">-1</span><span class="dt">px</span><span class="op">,</span> <span class="fu">rgba(</span><span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0.5</span><span class="fu">)</span> <span class="dv">3</span><span class="dt">px</span> <span class="dv">3</span><span class="dt">px</span> <span class="dv">3</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb25-30"><a href="#cb25-30"></a>  <span class="kw">background</span><span class="ch">:</span> <span class="fu">var(</span><span class="va">--theme-color-2</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb25-31"><a href="#cb25-31"></a>  <span class="kw">box-shadow</span><span class="ch">:</span> <span class="dv">0</span><span class="dt">px</span> <span class="dv">0</span><span class="dt">px</span> <span class="dv">0</span><span class="dt">px</span> <span class="dv">5</span><span class="dt">px</span> <span class="fu">var(</span><span class="va">--theme-color-2</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb25-32"><a href="#cb25-32"></a>  <span class="kw">border</span><span class="ch">:</span> <span class="dv">dashed</span> <span class="dv">2</span><span class="dt">px</span> <span class="cn">white</span><span class="op">;</span></span>
+<span id="cb25-33"><a href="#cb25-33"></a>}</span>
+<span id="cb25-34"><a href="#cb25-34"></a></span>
+<span id="cb25-35"><a href="#cb25-35"></a>h1<span class="in">::after</span> {</span>
+<span id="cb25-36"><a href="#cb25-36"></a>  <span class="kw">position</span><span class="ch">:</span> <span class="dv">absolute</span><span class="op">;</span></span>
+<span id="cb25-37"><a href="#cb25-37"></a>  <span class="kw">content</span><span class="ch">:</span> <span class="st">&quot;&quot;</span><span class="op">;</span></span>
+<span id="cb25-38"><a href="#cb25-38"></a>  <span class="kw">left</span><span class="ch">:</span> <span class="dv">-7.5</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb25-39"><a href="#cb25-39"></a>  <span class="kw">top</span><span class="ch">:</span> <span class="dv">-7.5</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb25-40"><a href="#cb25-40"></a>  <span class="kw">border-width</span><span class="ch">:</span> <span class="dv">0</span> <span class="dv">0</span> <span class="dv">1</span><span class="dt">em</span> <span class="dv">1</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb25-41"><a href="#cb25-41"></a>  <span class="kw">border-style</span><span class="ch">:</span> <span class="dv">solid</span><span class="op">;</span></span>
+<span id="cb25-42"><a href="#cb25-42"></a>  <span class="kw">border-color</span><span class="ch">:</span> <span class="cn">#fff</span> <span class="cn">#fff</span> <span class="fu">var(</span><span class="va">--theme-color-2</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb25-43"><a href="#cb25-43"></a>  <span class="kw">box-shadow</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">1</span><span class="dt">px</span> <span class="fu">rgba(</span><span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0.15</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb25-44"><a href="#cb25-44"></a>}</span>
+<span id="cb25-45"><a href="#cb25-45"></a></span>
+<span id="cb25-46"><a href="#cb25-46"></a>h2 {</span>
+<span id="cb25-47"><a href="#cb25-47"></a>  <span class="kw">position</span><span class="ch">:</span> <span class="dv">relative</span><span class="op">;</span></span>
+<span id="cb25-48"><a href="#cb25-48"></a>  <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">200</span><span class="dt">%</span><span class="op">;</span></span>
+<span id="cb25-49"><a href="#cb25-49"></a>  <span class="kw">letter-spacing</span><span class="ch">:</span> <span class="dv">0.05</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb25-50"><a href="#cb25-50"></a>  <span class="kw">font-weight</span><span class="ch">:</span> <span class="dv">normal</span><span class="op">;</span></span>
+<span id="cb25-51"><a href="#cb25-51"></a>  <span class="kw">padding</span><span class="ch">:</span> <span class="dv">0</span> <span class="dv">0</span> <span class="dv">0</span> <span class="dv">1.5</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb25-52"><a href="#cb25-52"></a>  <span class="kw">border-bottom</span><span class="ch">:</span> <span class="dv">3</span><span class="dt">px</span> <span class="dv">solid</span> <span class="fu">var(</span><span class="va">--theme-color-2</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb25-53"><a href="#cb25-53"></a>}</span>
+<span id="cb25-54"><a href="#cb25-54"></a></span>
+<span id="cb25-55"><a href="#cb25-55"></a>h2<span class="in">::before</span> {</span>
+<span id="cb25-56"><a href="#cb25-56"></a>  <span class="kw">position</span><span class="ch">:</span> <span class="dv">absolute</span><span class="op">;</span></span>
+<span id="cb25-57"><a href="#cb25-57"></a>  <span class="kw">left</span><span class="ch">:</span> <span class="dv">0.4</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb25-58"><a href="#cb25-58"></a>  <span class="kw">font-weight</span><span class="ch">:</span> <span class="dv">bold</span><span class="op">;</span></span>
+<span id="cb25-59"><a href="#cb25-59"></a>  <span class="kw">font-family</span><span class="ch">:</span> <span class="st">&quot;Font Awesome 6 Free&quot;</span><span class="op">;</span></span>
+<span id="cb25-60"><a href="#cb25-60"></a>  <span class="kw">content</span><span class="ch">:</span> <span class="st">&quot;</span><span class="sc">\f5ad</span><span class="st">&quot;</span><span class="op">;</span></span>
+<span id="cb25-61"><a href="#cb25-61"></a>  <span class="kw">top</span><span class="ch">:</span> <span class="dv">0.2</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb25-62"><a href="#cb25-62"></a>  <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">85</span><span class="dt">%</span><span class="op">;</span></span>
+<span id="cb25-63"><a href="#cb25-63"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="fu">var(</span><span class="va">--theme-color-2</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb25-64"><a href="#cb25-64"></a>}</span>
+<span id="cb25-65"><a href="#cb25-65"></a></span>
+<span id="cb25-66"><a href="#cb25-66"></a>img {</span>
+<span id="cb25-67"><a href="#cb25-67"></a>  <span class="kw">box-shadow</span><span class="ch">:</span> <span class="fu">rgba(</span><span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0.35</span><span class="fu">)</span> <span class="dv">0</span><span class="dt">px</span> <span class="dv">5</span><span class="dt">px</span> <span class="dv">15</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb25-68"><a href="#cb25-68"></a>  <span class="kw">border-radius</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb25-69"><a href="#cb25-69"></a>}</span>
+<span id="cb25-70"><a href="#cb25-70"></a></span>
+<span id="cb25-71"><a href="#cb25-71"></a>strong {</span>
+<span id="cb25-72"><a href="#cb25-72"></a>  <span class="kw">font-style</span><span class="ch">:</span> <span class="dv">normal</span><span class="op">;</span></span>
+<span id="cb25-73"><a href="#cb25-73"></a>  <span class="kw">font-weight</span><span class="ch">:</span> <span class="dv">normal</span><span class="op">;</span></span>
+<span id="cb25-74"><a href="#cb25-74"></a>  <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">125</span><span class="dt">%</span><span class="op">;</span></span>
+<span id="cb25-75"><a href="#cb25-75"></a>  <span class="kw">padding</span><span class="ch">:</span> <span class="dv">0</span> <span class="dv">0.2</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb25-76"><a href="#cb25-76"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="fu">var(</span><span class="va">--theme-color-1</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb25-77"><a href="#cb25-77"></a>}</span>
+<span id="cb25-78"><a href="#cb25-78"></a></span>
+<span id="cb25-79"><a href="#cb25-79"></a>a {</span>
+<span id="cb25-80"><a href="#cb25-80"></a>  <span class="kw">text-decoration</span><span class="ch">:</span> <span class="dv">none</span><span class="op">;</span></span>
+<span id="cb25-81"><a href="#cb25-81"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="fu">var(</span><span class="va">--theme-color-1</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb25-82"><a href="#cb25-82"></a>  <span class="kw">cursor</span><span class="ch">:</span> <span class="dv">pointer</span><span class="op">;</span></span>
+<span id="cb25-83"><a href="#cb25-83"></a>  <span class="kw">border-bottom</span><span class="ch">:</span> <span class="dv">1.5</span><span class="dt">px</span> <span class="dv">dashed</span><span class="op">;</span></span>
+<span id="cb25-84"><a href="#cb25-84"></a>  <span class="kw">transition</span><span class="ch">:</span> <span class="dv">background-color 0.5</span><span class="dt">s</span><span class="op">;</span></span>
+<span id="cb25-85"><a href="#cb25-85"></a>}</span>
+<span id="cb25-86"><a href="#cb25-86"></a></span>
+<span id="cb25-87"><a href="#cb25-87"></a>a<span class="in">:hover</span> {</span>
+<span id="cb25-88"><a href="#cb25-88"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">white</span><span class="op">;</span></span>
+<span id="cb25-89"><a href="#cb25-89"></a>  <span class="kw">background-color</span><span class="ch">:</span> <span class="fu">var(</span><span class="va">--theme-color-1</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb25-90"><a href="#cb25-90"></a>  <span class="kw">border-radius</span><span class="ch">:</span> <span class="dv">4</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb25-91"><a href="#cb25-91"></a>  <span class="kw">border-bottom</span><span class="ch">:</span> <span class="dv">none</span><span class="op">;</span></span>
+<span id="cb25-92"><a href="#cb25-92"></a>}</span>
+<span id="cb25-93"><a href="#cb25-93"></a></span>
+<span id="cb25-94"><a href="#cb25-94"></a>ul {</span>
+<span id="cb25-95"><a href="#cb25-95"></a>  <span class="kw">list-style</span><span class="ch">:</span> <span class="dv">none</span><span class="op">;</span></span>
+<span id="cb25-96"><a href="#cb25-96"></a>  <span class="kw">padding</span><span class="ch">:</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb25-97"><a href="#cb25-97"></a>  <span class="kw">margin-block-start</span><span class="ch">:</span> <span class="dv">0.7</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb25-98"><a href="#cb25-98"></a>  <span class="kw">margin-block-end</span><span class="ch">:</span> <span class="dv">0.7</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb25-99"><a href="#cb25-99"></a>}</span>
+<span id="cb25-100"><a href="#cb25-100"></a></span>
+<span id="cb25-101"><a href="#cb25-101"></a>ul li {</span>
+<span id="cb25-102"><a href="#cb25-102"></a>  <span class="kw">position</span><span class="ch">:</span> <span class="dv">relative</span><span class="op">;</span></span>
+<span id="cb25-103"><a href="#cb25-103"></a>  <span class="kw">padding</span><span class="ch">:</span> <span class="dv">0</span> <span class="dv">0</span> <span class="dv">0</span> <span class="dv">1.6</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb25-104"><a href="#cb25-104"></a>  <span class="kw">margin</span><span class="ch">:</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb25-105"><a href="#cb25-105"></a>  <span class="kw">text-indent</span><span class="ch">:</span> <span class="dv">0.5</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb25-106"><a href="#cb25-106"></a>}</span>
+<span id="cb25-107"><a href="#cb25-107"></a></span>
+<span id="cb25-108"><a href="#cb25-108"></a>ul li<span class="in">::before</span> {</span>
+<span id="cb25-109"><a href="#cb25-109"></a>  <span class="kw">position</span><span class="ch">:</span> <span class="dv">absolute</span><span class="op">;</span></span>
+<span id="cb25-110"><a href="#cb25-110"></a>  <span class="kw">left</span><span class="ch">:</span> <span class="dv">0.5</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb25-111"><a href="#cb25-111"></a>  <span class="kw">top</span><span class="ch">:</span> <span class="dv">0.4</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb25-112"><a href="#cb25-112"></a>  <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">75</span><span class="dt">%</span><span class="op">;</span></span>
+<span id="cb25-113"><a href="#cb25-113"></a>  <span class="kw">font-family</span><span class="ch">:</span> <span class="st">&quot;Font Awesome 6 Free&quot;</span><span class="op">;</span></span>
+<span id="cb25-114"><a href="#cb25-114"></a>  <span class="kw">font-weight</span><span class="ch">:</span> <span class="dv">bold</span><span class="op">;</span></span>
+<span id="cb25-115"><a href="#cb25-115"></a>  <span class="kw">content</span><span class="ch">:</span> <span class="st">&quot;</span><span class="sc">\f816</span><span class="st">&quot;</span><span class="op">;</span></span>
+<span id="cb25-116"><a href="#cb25-116"></a>}</span></code></pre></div>
       <p>さらに <code>index.html</code> ファイルなかの
       <code>&lt;head&gt;</code> から <code>&lt;/head&gt;</code>
       の範囲を<strong>次の内容に差し替えて上書き保存してください</strong>。<code>&lt;link&gt;</code>
       タグを使用して <span
       class="masked">各種スタイルシートを取得して読み込ませる</span>
       ようにしています。</p>
-      <div class="sourceCode" id="cb25"
+      <div class="sourceCode" id="cb26"
       data-caption="index.html (抜粋)"><pre
-      class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb25-1"><a href="#cb25-1"></a><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb25-2"><a href="#cb25-2"></a>  <span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> charset</span><span class="op">=</span><span class="st">&quot;utf-8&quot;</span><span class="ot"> </span><span class="dt">/&gt;</span></span>
-<span id="cb25-3"><a href="#cb25-3"></a>  <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>XXX&#39;s Curry Recipe<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
-<span id="cb25-4"><a href="#cb25-4"></a>  <span class="dt">&lt;</span><span class="kw">meta</span></span>
-<span id="cb25-5"><a href="#cb25-5"></a><span class="ot">    name</span><span class="op">=</span><span class="st">&quot;viewport&quot;</span></span>
-<span id="cb25-6"><a href="#cb25-6"></a><span class="ot">    content</span><span class="op">=</span><span class="st">&quot;width=device-width, initial-scale=1.0, user-scalable=yes&quot;</span><span class="ot"> </span><span class="dt">/&gt;</span></span>
-<span id="cb25-7"><a href="#cb25-7"></a>  <span class="dt">&lt;</span><span class="kw">link</span></span>
-<span id="cb25-8"><a href="#cb25-8"></a><span class="ot">    rel</span><span class="op">=</span><span class="st">&quot;stylesheet&quot;</span></span>
-<span id="cb25-9"><a href="#cb25-9"></a><span class="ot">    href</span><span class="op">=</span><span class="st">&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css&quot;</span><span class="ot"> </span><span class="dt">/&gt;</span></span>
-<span id="cb25-10"><a href="#cb25-10"></a>  <span class="dt">&lt;</span><span class="kw">link</span></span>
-<span id="cb25-11"><a href="#cb25-11"></a><span class="ot">    rel</span><span class="op">=</span><span class="st">&quot;stylesheet&quot;</span></span>
-<span id="cb25-12"><a href="#cb25-12"></a><span class="ot">    href</span><span class="op">=</span><span class="st">&quot;https://fonts.googleapis.com/css2?family=Yusei+Magic</span><span class="er">&amp;</span><span class="st">display=swap&quot;</span><span class="ot"> </span><span class="dt">/&gt;</span></span>
-<span id="cb25-13"><a href="#cb25-13"></a>  <span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> rel</span><span class="op">=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;main.css&quot;</span><span class="ot"> </span><span class="dt">/&gt;</span></span>
-<span id="cb25-14"><a href="#cb25-14"></a><span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span></code></pre></div>
+      class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="cb26-1"><a href="#cb26-1"></a><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb26-2"><a href="#cb26-2"></a>  <span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> charset</span><span class="op">=</span><span class="st">&quot;utf-8&quot;</span><span class="ot"> </span><span class="dt">/&gt;</span></span>
+<span id="cb26-3"><a href="#cb26-3"></a>  <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>XXX&#39;s Curry Recipe<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb26-4"><a href="#cb26-4"></a>  <span class="dt">&lt;</span><span class="kw">meta</span></span>
+<span id="cb26-5"><a href="#cb26-5"></a><span class="ot">    name</span><span class="op">=</span><span class="st">&quot;viewport&quot;</span></span>
+<span id="cb26-6"><a href="#cb26-6"></a><span class="ot">    content</span><span class="op">=</span><span class="st">&quot;width=device-width, initial-scale=1.0, user-scalable=yes&quot;</span><span class="ot"> </span><span class="dt">/&gt;</span></span>
+<span id="cb26-7"><a href="#cb26-7"></a>  <span class="dt">&lt;</span><span class="kw">link</span></span>
+<span id="cb26-8"><a href="#cb26-8"></a><span class="ot">    rel</span><span class="op">=</span><span class="st">&quot;stylesheet&quot;</span></span>
+<span id="cb26-9"><a href="#cb26-9"></a><span class="ot">    href</span><span class="op">=</span><span class="st">&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css&quot;</span><span class="ot"> </span><span class="dt">/&gt;</span></span>
+<span id="cb26-10"><a href="#cb26-10"></a>  <span class="dt">&lt;</span><span class="kw">link</span></span>
+<span id="cb26-11"><a href="#cb26-11"></a><span class="ot">    rel</span><span class="op">=</span><span class="st">&quot;stylesheet&quot;</span></span>
+<span id="cb26-12"><a href="#cb26-12"></a><span class="ot">    href</span><span class="op">=</span><span class="st">&quot;https://fonts.googleapis.com/css2?family=Yusei+Magic</span><span class="er">&amp;</span><span class="st">display=swap&quot;</span><span class="ot"> </span><span class="dt">/&gt;</span></span>
+<span id="cb26-13"><a href="#cb26-13"></a>  <span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> rel</span><span class="op">=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;main.css&quot;</span><span class="ot"> </span><span class="dt">/&gt;</span></span>
+<span id="cb26-14"><a href="#cb26-14"></a><span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span></code></pre></div>
       <p>第07行目にある1個目の<code>&lt;link&gt;</code>タグでは「<strong>アイコンフォントライブラリ</strong>」を提供している<a
       href="https://fontawesome.com/icons/categories">FontAwesome</a>というサービス関連のスタイルシートを読み込んでいます。これにより<i class="fa-solid fa-fish-fins"></i>
       <i class="fa-solid fa-faucet-drip"></i>
@@ -1207,19 +1223,19 @@ branch &#39;main&#39; set up to track &#39;origin/main&#39;.</code></pre>
       コマンドを使って「ローカルリポジトリ (=プロジェクトフォルダ)
       を作成したいフォルダ」まで移動します。移動後は <code>pwd</code>
       コマンドで現在位置を確認しておきます。</p>
-      <div class="sourceCode" id="cb26" data-caption="実行例"><pre
-      class="sourceCode bash"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd <span class="st">&quot;C:\Users\xxxx\Documents&quot;</span></span></code></pre></div>
+      <div class="sourceCode" id="cb27" data-caption="実行例"><pre
+      class="sourceCode bash"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd <span class="st">&quot;C:\Users\xxxx\Documents&quot;</span></span></code></pre></div>
       <p>次のように <code>git clone [URL]</code>
       とコマンド入力すると、カレントフォルダに
       <code>Curry-Recipe-2</code>
       という<strong>フォルダが作成され</strong>、そのなかにURLで指定したリモートリポジトリの内容がクローンされます。</p>
-      <div class="sourceCode" id="cb27" data-caption="実行例"><pre
-      class="sourceCode bash"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git clone https://github.com/TakeshiWada1980/Curry-Recipe-2.git</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Cloning</span> into <span class="st">&#39;Curry-Recipe-2&#39;</span>...</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="ex">remote:</span> Enumerating objects: 5, done.</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="ex">remote:</span> Counting objects: 100% <span class="er">(</span><span class="ex">5/5</span><span class="kw">)</span><span class="ex">,</span> done.</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="ex">remote:</span> Compressing objects: 100% <span class="er">(</span><span class="ex">5/5</span><span class="kw">)</span><span class="ex">,</span> done.</span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="ex">Receiving</span> objects: 100% <span class="er">(</span><span class="ex">5/5</span><span class="kw">)</span><span class="ex">,</span> 151.90 KiB <span class="kw">|</span> <span class="ex">75.95</span> MiB/s, don</span></code></pre></div>
+      <div class="sourceCode" id="cb28" data-caption="実行例"><pre
+      class="sourceCode bash"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git clone https://github.com/TakeshiWada1980/Curry-Recipe-2.git</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Cloning</span> into <span class="st">&#39;Curry-Recipe-2&#39;</span>...</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="ex">remote:</span> Enumerating objects: 5, done.</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="ex">remote:</span> Counting objects: 100% <span class="er">(</span><span class="ex">5/5</span><span class="kw">)</span><span class="ex">,</span> done.</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="ex">remote:</span> Compressing objects: 100% <span class="er">(</span><span class="ex">5/5</span><span class="kw">)</span><span class="ex">,</span> done.</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="ex">Receiving</span> objects: 100% <span class="er">(</span><span class="ex">5/5</span><span class="kw">)</span><span class="ex">,</span> 151.90 KiB <span class="kw">|</span> <span class="ex">75.95</span> MiB/s, don</span></code></pre></div>
       <p>なお、<strong>作成されるフォルダ名を変えることもできます</strong>。例えば
       <code>My-Curry-Recipe</code> というフォルダにクローンしたい場合は
       <code>git clone [URL] My-Curry-Recipe</code>
@@ -1228,15 +1244,15 @@ branch &#39;main&#39; set up to track &#39;origin/main&#39;.</code></pre>
       class="header-section-number">3.4.3</span>
       不要なファイルの削除</h3>
       <p>クローンによって作成されたフォルダの内部に移動します。</p>
-      <div class="sourceCode" id="cb28" data-caption="実行例"><pre
-      class="sourceCode bash"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd Curry-Recipe-2/</span></code></pre></div>
+      <div class="sourceCode" id="cb29" data-caption="実行例"><pre
+      class="sourceCode bash"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd Curry-Recipe-2/</span></code></pre></div>
       <p><code>ls -al</code> で確認すると <code>.git</code>
       フォルダが存在することが確認できます。ここでは、提出課題のテンプレートとして使用するためにクローンしてきたので、元のリポジトリの
       git履歴 (<code>.git</code>の内容) は不要です。<code>rm</code>
       コマンドで <code>.git</code>
       <strong>フォルダを削除</strong>しておきます。</p>
-      <div class="sourceCode" id="cb29" data-caption="実行例"><pre
-      class="sourceCode bash"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> rm <span class="at">-fr</span> .git</span></code></pre></div>
+      <div class="sourceCode" id="cb30" data-caption="実行例"><pre
+      class="sourceCode bash"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> rm <span class="at">-fr</span> .git</span></code></pre></div>
       <p>この <code>.git</code>
       フォルダには元のリポジトリで使用していたgit設定 (config)
       なども含まれているため
