@@ -1424,13 +1424,12 @@ dtype: object</code></pre>
       <h2 data-number="6.10" id="ラムダ式を使った変換"><span
       class="header-section-number">6.10</span>
       ラムダ式を使った変換</h2>
-      <p>DataFrameオブジェクト の <code>applymap</code>
+      <p>DataFrameオブジェクト の <code>map</code>
       メソッドを使うと、DataFrame内の「各要素」に対して「任意の関数
-      (ラムダ式)を適用すること」ができます。<code>applymap</code>
-      は、元の DataFrameオブジェクトを
-      <strong>変更せず</strong>に、新しい DataFrameオブジェクト
-      を戻り値として返します。</p>
-      <p>以下のプログラムは <code>applymap</code> メソッドを使って
+      (ラムダ式)を適用すること」ができます。<code>map</code> は、元の
+      DataFrameオブジェクトを <strong>変更せず</strong>に、新しい
+      DataFrameオブジェクト を戻り値として返します。</p>
+      <p>以下のプログラムは <code>map</code> メソッドを使って
       <strong>60点未満を「不合格」、60点以上を「合格」という文字列</strong>
       に置き換えた <code>df2</code> という DataFrameオブジェクト
       を作成・生成出力する例です。ここでは
@@ -1445,7 +1444,7 @@ dtype: object</code></pre>
 <span id="cb47-5"><a href="#cb47-5"></a>df <span class="op">=</span> pd.read_csv(fn,encoding<span class="op">=</span><span class="st">&#39;utf-8&#39;</span>,index_col<span class="op">=</span><span class="st">&#39;氏名&#39;</span>)</span>
 <span id="cb47-6"><a href="#cb47-6"></a></span>
 <span id="cb47-7"><a href="#cb47-7"></a>subjects <span class="op">=</span> [<span class="st">&#39;国語&#39;</span>,<span class="st">&#39;数学&#39;</span>,<span class="st">&#39;英語&#39;</span>,<span class="st">&#39;理科&#39;</span>,<span class="st">&#39;社会&#39;</span>]</span>
-<span id="cb47-8"><a href="#cb47-8"></a>df2 <span class="op">=</span> df[subjects].applymap(<span class="kw">lambda</span> p: <span class="st">&#39;合格&#39;</span> <span class="cf">if</span> p <span class="op">&gt;=</span><span class="dv">60</span> <span class="cf">else</span> <span class="st">&#39;不合格&#39;</span> )</span>
+<span id="cb47-8"><a href="#cb47-8"></a>df2 <span class="op">=</span> df[subjects].<span class="bu">map</span>(<span class="kw">lambda</span> p: <span class="st">&#39;合格&#39;</span> <span class="cf">if</span> p <span class="op">&gt;=</span><span class="dv">60</span> <span class="cf">else</span> <span class="st">&#39;不合格&#39;</span> )</span>
 <span id="cb47-9"><a href="#cb47-9"></a>display(df2)</span>
 <span id="cb47-10"><a href="#cb47-10"></a><span class="co"># display(df) # df は影響を受けていない。</span></span></code></pre></div>
       <p>実行結果は次のようになります。</p>
@@ -1466,7 +1465,7 @@ dtype: object</code></pre>
       <p><strong>演習</strong>
       90点以上を「秀」、90点未満80点以上を「優」、80点未満70点以上を「良」、70点未満60点以上を「可」、60点未満を「不可」のような文字列に置き換えた
       DataFrameオブジェクト <code>df3</code>
-      を作成し、出力せよ。なお、このような多段階の条件分岐をラムダ式で扱うことは適切ではないので、通常の関数定義を利用すること。</p>
+      を作成し、出力せよ。なお、<strong>このような多段階の条件分岐をラムダ式で扱うことは適切ではないので、通常の関数定義を利用すること</strong>。</p>
       <p>(<strong>ヒント</strong>) 上記の <code>合格・不合格.py</code>
       をラムダ式を使用せずに通常の関数定義を使って記述すると、次のようになります。</p>
       <div class="sourceCode" id="cb49"
@@ -1484,7 +1483,7 @@ dtype: object</code></pre>
 <span id="cb49-11"><a href="#cb49-11"></a>df <span class="op">=</span> pd.read_csv(fn,encoding<span class="op">=</span><span class="st">&#39;utf-8&#39;</span>,index_col<span class="op">=</span><span class="st">&#39;氏名&#39;</span>)</span>
 <span id="cb49-12"><a href="#cb49-12"></a></span>
 <span id="cb49-13"><a href="#cb49-13"></a>subjects <span class="op">=</span> [<span class="st">&#39;国語&#39;</span>,<span class="st">&#39;数学&#39;</span>,<span class="st">&#39;英語&#39;</span>,<span class="st">&#39;理科&#39;</span>,<span class="st">&#39;社会&#39;</span>]</span>
-<span id="cb49-14"><a href="#cb49-14"></a>df2 <span class="op">=</span> df[subjects].applymap(grade_converter)</span>
+<span id="cb49-14"><a href="#cb49-14"></a>df2 <span class="op">=</span> df[subjects].<span class="bu">map</span>(grade_converter)</span>
 <span id="cb49-15"><a href="#cb49-15"></a>display(df2)</span></code></pre></div>
       <h1 data-number="7" id="大学編入試の問題に挑戦-1"><span
       class="header-section-number">7</span> 大学編入試の問題に挑戦
