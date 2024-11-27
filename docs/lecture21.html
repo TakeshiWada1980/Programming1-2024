@@ -495,8 +495,8 @@ shape =&gt; (480, 640)</code></pre>
       <h3 data-number="3.4.1" id="表示方法1"><span
       class="header-section-number">3.4.1</span> 表示方法1</h3>
       <p><code>cv2.imshow</code>
-      を使ってウィンドウに画像を表示する方法です。<strong>Jupyter環境 や
-      GoogleColab環境
+      を使ってウィンドウに画像を表示する方法です。この方法は
+      <strong>Jupyter環境 や GoogleColab環境
       では使用できません</strong>。この方法では、ウィンドウが閉じられるまで<strong>プログラムをブロック</strong>します。つまり、<span
       class="masked">ウィンドウが閉じられるまで <code>my_imshow</code>
       関数以降のプログラムが実行されません</span>。</p>
@@ -835,10 +835,7 @@ p    =&gt; [ 44 136  77]</code></pre>
       <p>ここでは、OpenCV
       の画像操作について理解を深めるために、<code>cv2.cvtColor</code>
       関数を使わずに
-      <strong>多次元配列の直接編集によってグレースケール画像を生成すること</strong>も行ないます。「情報2」の<a
-      href="https://classroom.google.com/c/NjAzMjM4NjAzNTQ3/m/NTE4NDg3MTA5MzQx/details">第05回講義</a>の資料
-      p.83
-      で学んだように、グレースケール画像は次のような計算で作成することができます。</p>
+      <strong>多次元配列の直接編集によってグレースケール画像を生成すること</strong>も行ないます。「情報2」の第05回講義の資料で学んだように、グレースケール画像は次のような計算で作成することができます。</p>
       <p><span class="math display">\[ \mathrm{Gray}
       =\mathrm{Blue}\cdot0.11 + \mathrm{Green}\cdot0.59 +
       \mathrm{Red}\cdot 0.3 \]</span></p>
